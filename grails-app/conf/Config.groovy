@@ -138,9 +138,9 @@ log4j.main = {
 // Added by the Spring Security Core plugin:
 grails.plugin.springsecurity.password.algorithm = 'bcrypt'
 grails.plugin.springsecurity.password.bcrypt.logrounds = 15
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.wirekom.tenant.AuthUser'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.wirekom.tenant.AuthUserAuthRole'
-grails.plugin.springsecurity.authority.className = 'com.wirekom.tenant.AuthRole'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.pantau.user.AuthUser'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.pantau.user.AuthUserAuthRole'
+grails.plugin.springsecurity.authority.className = 'com.pantau.user.AuthRole'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                              ['permitAll'],
 	'/index':                         ['permitAll'],
@@ -153,5 +153,5 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 ]
 
 grails.plugin.springsecurity.rememberMe.persistent = true
-grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.wirekom.tenant.PersistentLogin'
+grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.pantau.user.PersistentLogin'
 

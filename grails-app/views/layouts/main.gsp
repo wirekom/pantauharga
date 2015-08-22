@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title><g:layoutTitle default="Tenant Application"/></title>
+    <title><g:layoutTitle default="Pantau Harga Application"/></title>
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
     <g:layoutHead/>
@@ -19,7 +19,7 @@
                     class="icon-bar"></span> <span class="icon-bar"></span> <span
                     class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="${createLink(uri: '/')}">Tenant
+            <a class="navbar-brand" href="${createLink(uri: '/')}">Pantau Harga
             App</a>
         </div>
         <!-- Top Menu Items -->
@@ -56,12 +56,12 @@
                 <sec:ifAnyGranted
                         roles="ROLE_TENANT_ADMIN, ROLE_TENANT_PARKING, ROLE_TENANT_PHONE, ROLE_TENANT_RFID, ROLE_TENANT_SIKB, ROLE_TENANT_OVERTIME">
                     <li><a href="javascript:;" data-toggle="collapse"
-                           data-target="#panelTenant"><i class="fa fa-fw fa-user"></i>
-                        Panel Tenant <i class="fa fa-fw fa-caret-down"></i></a>
-                        <ul id="panelTenant" class="collapse">
+                           data-target="#panelPantau Harga"><i class="fa fa-fw fa-user"></i>
+                        Panel Pantau Harga <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="panelPantau Harga" class="collapse">
                             <li><g:link controller="profile" action="profile">Profile</g:link></li>
                             <sec:ifAllGranted roles="ROLE_TENANT_ADMIN	">
-                                <li><g:link controller="profile" action="tenant">Tenant Account</g:link></li>
+                                <li><g:link controller="profile" action="tenant">Pantau Harga Account</g:link></li>
                             </sec:ifAllGranted>
                             <li><g:link controller="profile" action="ticket">Ticket</g:link></li>
                             <li><g:link controller="profile" action="invoice">Invoice</g:link></li>
@@ -107,9 +107,9 @@
                                 class="fa fa-fw fa-table"></i> Manage Lease <i
                                 class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="manageLease" class="collapse">
-                            <li><g:link controller="customer" action="create">Input Tenant Detail</g:link></li>
+                            <li><g:link controller="customer" action="create">Input Pantau Harga Detail</g:link></li>
                             <li><g:link controller="leaseConfirmation">Lease Confirmation</g:link></li>
-                            <li><g:link controller="tenant">Tenant Account</g:link></li>
+                            <li><g:link controller="tenant">Pantau Harga Account</g:link></li>
                             <li><g:link controller="leaseAsset">Manage Unit</g:link></li>
                             <li><g:link controller="freeFacility">Free Facility</g:link></li>
                         </ul></li>

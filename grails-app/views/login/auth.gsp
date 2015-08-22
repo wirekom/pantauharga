@@ -22,7 +22,6 @@
 							${flash.message}
 						</div>
 					</g:if>
-
 					<form action='${postUrl}' method='POST' id='loginForm'
 						class='cssform' autocomplete='off'>
 
