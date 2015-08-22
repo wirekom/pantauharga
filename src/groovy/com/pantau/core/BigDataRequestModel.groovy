@@ -22,7 +22,7 @@ class BigDataRequestModel {
         def restBuilder = new RestBuilder()
         MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>()
         form.add("key", "58b066d5064c98e75bb02adb853bc1ad")
-        def restRequest = restBuilder.post("https://api.bigdataindonesia.com/poi/nearby/json?lat=-6.2087634&lng=106.84559899999999&rad=0.03") {
+        def restRequest = restBuilder.post("https://api.bigdataindonesia.com/poi/nearby/json?lat="+lat+"&lng="+lng+"&rad="+rad) {
             accept("application/json")
             contentType("application/x-www-form-urlencoded")
             body(form)

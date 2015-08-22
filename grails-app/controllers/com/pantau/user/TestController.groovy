@@ -9,6 +9,6 @@ class TestController {
 
     def index() {
         def test = new BigDataRequestModel()
-        println test.getNearby('-6.2087634', '106.84559899999999', '0.03')
+        println test.getNearby('-6.2087634', '106.8455', '10')
     }
 }

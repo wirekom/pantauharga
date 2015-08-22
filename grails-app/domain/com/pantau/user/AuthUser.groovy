@@ -20,6 +20,8 @@ class AuthUser {
     static constraints = {
         username blank: false, unique: true
         password blank: false
+		ktp blank: true
+		nohp blank: true
         email blank: false, unique: true, email: true
         roles bindable: true
     }

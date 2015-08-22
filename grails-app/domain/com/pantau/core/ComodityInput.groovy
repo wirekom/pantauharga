@@ -6,6 +6,7 @@ import com.pantau.user.AuthUser
 class ComodityInput {
 
     Double price
+	Double delta
     String geoTag
     Date dateCreated
     Date lastUpdated
