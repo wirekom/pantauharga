@@ -7,23 +7,21 @@ class ComodityInput {
 
     Double price
 	Double delta
-    Date inputDate
     String geoTag
-	Integer quantity
-
+    Date dateCreated
+    Date lastUpdated
+	Integer amount
     Double plus(ComodityInput other) {
-        price + other.price
+        delta + other.delta
     }
     static belongsTo = [
             comodityName: Comodity,
             user        : AuthUser,
-            region      : Region,
-			location      : Location
+            region      : Region
     ]
 
     static constraints = {
         price blank: false
-        inputDate blank: false
         user nullable: true, blank: true
         region nullable: true, blank: true
     }
