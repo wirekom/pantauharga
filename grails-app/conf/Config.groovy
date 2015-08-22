@@ -154,4 +154,8 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 
 grails.plugin.springsecurity.rememberMe.persistent = true
 grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.pantau.user.PersistentLogin'
+grails.plugin.springsecurity.rest.token.storage.useGorm	= true
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName	= 'tokenValue'
+grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName =	'username'
 
