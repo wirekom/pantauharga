@@ -1,6 +1,10 @@
 package com.pantau.core
 
-class AuthenticationToken {
+import grails.plugin.springsecurity.rest.token.AccessToken
+import grails.plugin.springsecurity.rest.token.generation.TokenGenerator
+import org.springframework.security.core.userdetails.UserDetails
+
+class AuthenticationToken implements TokenGenerator{
     String tokenValue
     String username
 
@@ -8,5 +12,14 @@ class AuthenticationToken {
         version false
     }
     static constraints = {
+    }
+
+    @Override
+    AccessToken generateAccessToken(UserDetails principal) {
+    }
+
+    @Override
+    AccessToken generateAccessToken(UserDetails principal, Integer expiration) {
+        return null
     }
 }
