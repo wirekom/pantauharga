@@ -12,7 +12,6 @@ class AuthUser {
 	boolean accountLocked
 	boolean passwordExpired
 
-\
 
 	static transients = ['springSecurityService']
 
