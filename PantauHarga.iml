@@ -27,32 +27,6 @@
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/java" value="linksrc:.link_to_grails_plugins/tomcat-7.0.55/src/java" />
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/src/groovy" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/controllers" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/services" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/services" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/taglib" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/java" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/controllers" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/grails-app/controllers" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/grails-app/views" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/hibernate4-4.3.6.1/src/java" kind="linksrc:" value=".link_to_grails_plugins/hibernate4-4.3.6.1/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/services" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/taglib" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/scaffolding-2.1.2/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/java" kind="linksrc:" value=".link_to_grails_plugins/scaffolding-2.1.2/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/tomcat-7.0.55/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/java" kind="linksrc:" value=".link_to_grails_plugins/tomcat-7.0.55/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/src/groovy" kind="linksrc:" value=".link_to_grails_plugins/webxml-1.4.1/src/groovy" />
     <conelement value="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER" />
     <src_description expected_position="1">
       <src_folder value="file://$MODULE_DIR$/src/java" expected_position="0" />
