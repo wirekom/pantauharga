@@ -6,8 +6,9 @@ import com.pantau.user.AuthUser
 class ComodityInput {
 
     Double price
-    Date inputDate
     String geoTag
+    Date dateCreated
+    Date lastUpdated
 
     Double plus(ComodityInput other) {
         price + other.price
@@ -20,7 +21,6 @@ class ComodityInput {
 
     static constraints = {
         price blank: false
-        inputDate blank: false
         user nullable: true, blank: true
         region nullable: true, blank: true
     }
