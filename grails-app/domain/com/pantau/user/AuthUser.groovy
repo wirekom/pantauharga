@@ -13,7 +13,7 @@ class AuthUser {
     boolean passwordExpired
     List<AuthRole> roles
 
-    static transients = ['springSecurityService']
+    static transients = ['springSecurityService', 'roles']
 
     static constraints = {
         username blank: false, unique: true
