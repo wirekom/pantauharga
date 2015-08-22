@@ -2,25 +2,25 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: regionInstance, field: 'name', 'error')} required">
+<div class="form-group ${hasErrors(bean: regionInstance, field: 'name', 'error')} required">
 	<label for="name">
 		<g:message code="region.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="name" required="" value="${regionInstance?.name}"/>
+	<g:textField class="form-control" name="name" required="" value="${regionInstance?.name}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: regionInstance, field: 'geolocation', 'error')} required">
+<div class="form-group ${hasErrors(bean: regionInstance, field: 'geolocation', 'error')} required">
 	<label for="geolocation">
 		<g:message code="region.geolocation.label" default="Geolocation" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="geolocation" required="" value="${regionInstance?.geolocation}"/>
+	<g:textField class="form-control" name="geolocation" required="" value="${regionInstance?.geolocation}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: regionInstance, field: 'children', 'error')} ">
+<div class="form-group ${hasErrors(bean: regionInstance, field: 'children', 'error')} ">
 	<label for="children">
 		<g:message code="region.children.label" default="Children" />
 		
@@ -38,12 +38,12 @@
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: regionInstance, field: 'parent', 'error')} required">
+<div class="form-group ${hasErrors(bean: regionInstance, field: 'parent', 'error')} required">
 	<label for="parent">
 		<g:message code="region.parent.label" default="Parent" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:select id="parent" name="parent.id" from="${com.pantau.core.Region.list()}" optionKey="id" required="" value="${regionInstance?.parent?.id}" class="many-to-one"/>
+	<g:select id="parent" name="parent.id" from="${com.pantau.core.Region.list()}" optionKey="id" required="" value="${regionInstance?.parent?.id}" class="form-control many-to-one"/>
 
 </div>
 

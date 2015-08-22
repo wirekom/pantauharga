@@ -8,66 +8,82 @@
 		<title><g:message code="default.show.label" args="[entityName]" /></title>
 	</head>
 	<body>
-		<a href="#show-comodity" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
-		<div class="nav" role="navigation">
-			<ul>
-				<li><a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
-				<li><g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
-				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
-			</ul>
+		<!-- Page Heading -->
+		<div class="row">
+			<div class="col-lg-12">
+				<ol class="breadcrumb">
+					<li><i class="fa fa-dashboard"></i> <a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+					<li class="active"><i class="fa fa-list"></i> <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+					<li class="active"><i class="fa fa-plus"></i> <g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+				</ol>
+			</div>
 		</div>
-		<div id="show-comodity" class="content scaffold-show" role="main">
-			<h1><g:message code="default.show.label" args="[entityName]" /></h1>
-			<g:if test="${flash.message}">
-			<div class="message" role="status">${flash.message}</div>
-			</g:if>
-			<ol class="property-list comodity">
-			
-				<g:if test="${comodityInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="comodity.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${comodityInstance}" field="name"/></span>
-					
-				</li>
+		<!-- /.row -->
+	
+		<div class="row">
+			<div class="col-lg-12">
+				<g:if test="${flash.message}">
+				<div class="alert alert-info" role="status">${flash.message}</div>
 				</g:if>
-			
-				<g:if test="${comodityInstance?.weight}">
-				<li class="fieldcontain">
-					<span id="weight-label" class="property-label"><g:message code="comodity.weight.label" default="Weight" /></span>
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<i class="fa fa-eye"></i>
+							<g:message code="default.show.label" args="[entityName]" />
+						</h3>
+					</div>
+					<table class="table table-striped table-bordered detail-view comodity">
 					
-						<span class="property-value" aria-labelledby="weight-label"><g:fieldValue bean="${comodityInstance}" field="weight"/></span>
+						<g:if test="${comodityInstance?.name}">
+						<tr><th>
+							<span id="name-label" class="property-label"><g:message code="comodity.name.label" default="Name" /></span></th><td>
+							
+								<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${comodityInstance}" field="name"/></span>
+							
+						</td></tr>
+						</g:if>
 					
-				</li>
-				</g:if>
-			
-				<g:if test="${comodityInstance?.comodityList}">
-				<li class="fieldcontain">
-					<span id="comodityList-label" class="property-label"><g:message code="comodity.comodityList.label" default="Comodity List" /></span>
+						<g:if test="${comodityInstance?.weight}">
+						<tr><th>
+							<span id="weight-label" class="property-label"><g:message code="comodity.weight.label" default="Weight" /></span></th><td>
+							
+								<span class="property-value" aria-labelledby="weight-label"><g:fieldValue bean="${comodityInstance}" field="weight"/></span>
+							
+						</td></tr>
+						</g:if>
 					
-						<g:each in="${comodityInstance.comodityList}" var="c">
-						<span class="property-value" aria-labelledby="comodityList-label"><g:link controller="comodityInput" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<g:if test="${comodityInstance?.comodityList}">
+						<tr><th>
+							<span id="comodityList-label" class="property-label"><g:message code="comodity.comodityList.label" default="Comodity List" /></span></th><td>
+							
+								<g:each in="${comodityInstance.comodityList}" var="c">
+								<span class="property-value" aria-labelledby="comodityList-label"><g:link controller="comodityInput" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+								</g:each>
+							
+						</td></tr>
+						</g:if>
 					
-				</li>
-				</g:if>
-			
-				<g:if test="${comodityInstance?.comodityType}">
-				<li class="fieldcontain">
-					<span id="comodityType-label" class="property-label"><g:message code="comodity.comodityType.label" default="Comodity Type" /></span>
+						<g:if test="${comodityInstance?.comodityType}">
+						<tr><th>
+							<span id="comodityType-label" class="property-label"><g:message code="comodity.comodityType.label" default="Comodity Type" /></span></th><td>
+							
+								<span class="property-value" aria-labelledby="comodityType-label"><g:link controller="comodityType" action="show" id="${comodityInstance?.comodityType?.id}">${comodityInstance?.comodityType?.encodeAsHTML()}</g:link></span>
+							
+						</td></tr>
+						</g:if>
 					
-						<span class="property-value" aria-labelledby="comodityType-label"><g:link controller="comodityType" action="show" id="${comodityInstance?.comodityType?.id}">${comodityInstance?.comodityType?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
-			
-			</ol>
-			<g:form url="[resource:comodityInstance, action:'delete']" method="DELETE">
-				<fieldset class="buttons">
-					<g:link class="edit" action="edit" resource="${comodityInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
-					<g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-				</fieldset>
-			</g:form>
+					</table>
+					<div class="clearfix"></div>
+					<div class="panel-footer">
+					<g:form url="[resource:comodityInstance, action:'delete']" method="DELETE">
+						<fieldset class="buttons">
+							<g:link class="btn btn-primary edit" action="edit" resource="${comodityInstance}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
+							<g:actionSubmit class="btn btn-primary delete" action="delete" value="${message(code: 'default.button.delete.label', default: 'Delete')}" onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
+						</fieldset>
+					</g:form>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

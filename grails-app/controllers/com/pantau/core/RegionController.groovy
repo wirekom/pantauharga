@@ -1,10 +1,11 @@
 package com.pantau.core
 
 
-
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
+import grails.plugin.springsecurity.annotation.Secured
 
+@Secured(['ROLE_ADMIN'])
 @Transactional(readOnly = true)
 class RegionController {
 
@@ -12,7 +13,7 @@ class RegionController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Region.list(params), model:[regionInstanceCount: Region.count()]
+        respond Region.list(params), model: [regionInstanceCount: Region.count()]
     }
 
     def show(Region regionInstance) {
@@ -31,11 +32,11 @@ class RegionController {
         }
 
         if (regionInstance.hasErrors()) {
-            respond regionInstance.errors, view:'create'
+            respond regionInstance.errors, view: 'create'
             return
         }
 
-        regionInstance.save flush:true
+        regionInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
@@ -58,18 +59,18 @@ class RegionController {
         }
 
         if (regionInstance.hasErrors()) {
-            respond regionInstance.errors, view:'edit'
+            respond regionInstance.errors, view: 'edit'
             return
         }
 
-        regionInstance.save flush:true
+        regionInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'Region.label', default: 'Region'), regionInstance.id])
                 redirect regionInstance
             }
-            '*'{ respond regionInstance, [status: OK] }
+            '*' { respond regionInstance, [status: OK] }
         }
     }
 
@@ -81,14 +82,14 @@ class RegionController {
             return
         }
 
-        regionInstance.delete flush:true
+        regionInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'Region.label', default: 'Region'), regionInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -98,7 +99,7 @@ class RegionController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'region.label', default: 'Region'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 }

@@ -5,8 +5,11 @@
 // You're free to add application-wide JavaScript to this file, but it's generally better 
 // to create separate JavaScript files as needed.
 //
-//= require jquery
-//= require_tree .
+//= require jquery-1.11.3.min
+//= require jquery-ui.min
+//= require jquery-ui-timepicker-addon.min
+//= require bootstrap.min
+//= require photobooth_min
 //= require_self
 
 if (typeof jQuery !== 'undefined') {

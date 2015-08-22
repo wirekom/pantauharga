@@ -2,16 +2,16 @@
 
 
 
-<div class="fieldcontain ${hasErrors(bean: comodityTypeInstance, field: 'name', 'error')} required">
+<div class="form-group ${hasErrors(bean: comodityTypeInstance, field: 'name', 'error')} required">
 	<label for="name">
 		<g:message code="comodityType.name.label" default="Name" />
 		<span class="required-indicator">*</span>
 	</label>
-	<g:textField name="name" required="" value="${comodityTypeInstance?.name}"/>
+	<g:textField class="form-control" name="name" required="" value="${comodityTypeInstance?.name}"/>
 
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: comodityTypeInstance, field: 'comodity', 'error')} ">
+<div class="form-group ${hasErrors(bean: comodityTypeInstance, field: 'comodity', 'error')} ">
 	<label for="comodity">
 		<g:message code="comodityType.comodity.label" default="Comodity" />
 		
