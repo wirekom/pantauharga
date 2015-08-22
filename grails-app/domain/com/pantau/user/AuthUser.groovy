@@ -7,6 +7,8 @@ class AuthUser {
     String username
     String password
     String email
+	String ktp
+	String nohp
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
