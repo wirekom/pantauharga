@@ -7,8 +7,8 @@ class AuthUser {
     String username
     String password
     String email
-	String ktp
-	String nohp
+    String ktp
+    String nohp
     boolean enabled = true
     boolean accountExpired
     boolean accountLocked
@@ -20,9 +20,9 @@ class AuthUser {
     static constraints = {
         username blank: false, unique: true
         password blank: false
-		ktp blank: true
-		nohp blank: true
-        email blank: false, unique: true, email: true
+        ktp nullable: true, blank: true
+        email nullable: true, blank: true, unique: true, email: true
+        nohp unique: true
         roles bindable: true
     }
 

@@ -24,6 +24,7 @@ class ComodityInput {
         price blank: false
         user nullable: true, blank: true
         region nullable: true, blank: true
+        amount nullable: true, blank: true
     }
 
     String getLocation() {

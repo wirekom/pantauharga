@@ -2,8 +2,8 @@ package com.pantau.core
 
 class Comodity {
 	String name
-	
 	String sku
+
 	static belongsTo = [
 		comodityType: ComodityType
 	]
@@ -12,6 +12,5 @@ class Comodity {
 	]
     static constraints = {
 		name blank : false
-		weight blank :false
     }
 }

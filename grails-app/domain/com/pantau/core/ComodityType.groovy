@@ -3,11 +3,11 @@ package com.pantau.core
 class ComodityType {
 	
 	String name
-	Integer weight
+	Double weight
 	static hasMany = [
 		comodity: Comodity,
 	]
     static constraints = {
-		name blank:false
+		name unique: true
     }
 }
