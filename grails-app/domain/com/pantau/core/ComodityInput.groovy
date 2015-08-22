@@ -25,4 +25,9 @@ class ComodityInput {
         user nullable: true, blank: true
         region nullable: true, blank: true
     }
+
+    String getLocation() {
+        def (latitude, longitude) = geoTag.tokenize(',');
+        return "{lat: ${latitude}, lng: ${longitude}}"
+    }
 }
