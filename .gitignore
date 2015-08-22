@@ -32,3 +32,6 @@
 # "temporary" build files
 /target
 /target-eclipse
+/wrapper
+/lib
+/.settings
