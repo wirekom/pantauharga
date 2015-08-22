@@ -10,8 +10,8 @@ class InflationCommandModel {
 		Double karbohidratSum
 		Double lainlainSum
 		proteinSum = Comodities.findAll{it.ComodityType.name == "Daging" && it.end < end && it.inputDate > start}.sum()
-		karbohidratSum = Comodities.findAll{it.ComodityType.name == "Beras"}
-		lainlainSum = Comodities.findAll{it.ComodityType.name == "Gula"}
+		karbohidratSum = Comodities.findAll{it.ComodityType.name == "Beras" && it.end < end && it.inputDate > start}.sum()
+		lainlainSum = Comodities.findAll{it.ComodityType.name == "Gula"&& it.end < end && it.inputDate > start}.sum()
 		
 	}
 }
