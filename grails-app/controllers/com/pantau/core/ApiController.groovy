@@ -13,6 +13,10 @@ import grails.plugin.springsecurity.annotation.Secured
 class ApiController {
     def passwordEncoder
 
+    def comodityall(){
+        respond Comodity.list([sort: 'name', order: 'asc', max: 10])
+    }
+
     def comodity(LookupCommand lookup){
         println 'test ' + lookup.name
         println "%${lookup.name}%"
