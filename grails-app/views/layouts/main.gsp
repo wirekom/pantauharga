@@ -54,6 +54,8 @@
                         class="fa fa-fw fa-dashboard"></i> Dashboard
                 </a></li>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
+                    <li><g:link controller="comodityInput" action="calculateinflation"><i class="fa fa-fw fa-list"></i>Check Inflasi</g:link></li>
+
                     <li><a href="javascript:;" data-toggle="collapse"
                            data-target="#administration"><i class="fa fa-fw fa-gear"></i>
                         Administration <i class="fa fa-fw fa-caret-down"></i></a>

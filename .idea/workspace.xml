@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f77c80f0-fb10-493a-b4bf-a5551c9f9c65" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ApiController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ApiController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
     </list>
     <ignored path="PantauHarga.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,14 +32,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ApiController.groovy" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ApiController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ApiController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.104347825">
-              <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+            <state vertical-scroll-proportion="-1.9285715">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
               <folding>
                 <element signature="e#25#56#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.gsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5080214">
+              <caret line="56" column="119" selection-start-line="56" selection-start-column="119" selection-end-line="56" selection-end-column="119" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,16 +127,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.gsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/comodityInput/index.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ComodityTypeController.groovy" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ComodityTypeController.groovy">
           <provider selected="true" editor-type-id="text-editor">
@@ -156,7 +156,6 @@
         <option value="$PROJECT_DIR$/grails-app/views/login/auth.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/frontend.gsp" />
         <option value="$PROJECT_DIR$/grails-app/domain/com/pantau/user/PersistentLogin.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/pantau/user/LoginController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ComodityController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/pantau/core/LocationController.groovy" />
@@ -187,6 +186,7 @@
         <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/comodityInput/calculateinflation.gsp" />
         <option value="$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ApiController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
       </list>
     </option>
   </component>
@@ -585,12 +585,12 @@
       <workItem from="1440215137062" duration="18536000" />
       <workItem from="1440241734001" duration="4808000" />
       <workItem from="1440257662159" duration="17940000" />
-      <workItem from="1440285556952" duration="14726000" />
+      <workItem from="1440285556952" duration="15795000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56010000" />
+    <option name="totallyTimeSpent" value="57079000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-4" width="1368" height="773" extended-state="6" />
@@ -718,14 +718,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1037464">
           <caret line="2" column="6" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38297874">
-          <caret line="54" column="25" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1113,11 +1105,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/com/pantau/core/ApiController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.104347825">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
+        <state vertical-scroll-proportion="-1.9285715">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
           <folding>
             <element signature="e#25#56#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5080214">
+          <caret line="56" column="119" selection-start-line="56" selection-start-column="119" selection-end-line="56" selection-end-column="119" />
+          <folding />
         </state>
       </provider>
     </entry>
