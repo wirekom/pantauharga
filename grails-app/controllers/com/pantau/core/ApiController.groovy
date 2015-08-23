@@ -15,7 +15,7 @@ class ApiController {
     def passwordEncoder
 
     def hargaall(LookupCommand lookup) {
-
+        println 'lookup >>>' + lookup.name
         List markers = new ArrayList();
         def comodities = Comodity.where {
             ilike('name', "%${lookup.name}%")
