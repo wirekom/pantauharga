@@ -47,9 +47,11 @@ class ApiController {
                 enabled: true).save(flush: true)
         println 'user ' + member.username
         AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
-        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc'])?.first()
-        Double dt = last?(instanceCommodity.harga - last.price):instanceCommodity.harga
-        println 'harga ' + last.price
+        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc'])
+        Double dt = instanceCommodity.harga
+        if(!last.isEmpty()){
+             dt = nstanceCommodity.harga - last.first().price
+        }
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, geoTag: instanceCommodity.geolocation, amount: instanceCommodity.quantity, delta: dt)
         if (!com.save(flush: true)) {
             println 'error ' +  com.errors.allErrors.join(' \n') //each error is an instance of  org.springframework.validation.FieldError
