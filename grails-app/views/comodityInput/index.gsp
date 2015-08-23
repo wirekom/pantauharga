@@ -44,7 +44,7 @@
 							
 								<g:sortableColumn property="price" title="${message(code: 'comodityInput.price.label', default: 'Price')}" />
 							
-								<g:sortableColumn property="inputDate" title="${message(code: 'comodityInput.inputDate.label', default: 'Input Date')}" />
+								<g:sortableColumn property="dateCreated" title="${message(code: 'comodityInput.dateCreated.label', default: 'Input Date')}" />
 							
 								<th><g:message code="comodityInput.comodityName.label" default="Comodity Name" /></th>
 							
@@ -63,7 +63,7 @@
 								
 								<td><g:link action="show" id="${comodityInputInstance.id}">${fieldValue(bean: comodityInputInstance, field: "price")}</g:link></td>
 							
-								<td><g:formatDate date="${comodityInputInstance.inputDate}" /></td>
+								<td><g:formatDate date="${comodityInputInstance.dateCreated}" /></td>
 							
 								<td>${fieldValue(bean: comodityInputInstance, field: "comodityName")}</td>
 							
