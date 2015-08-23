@@ -7,7 +7,7 @@ class UrlMappings {
             }
         }
 
-        "/"(controller: 'comodityInput')
+        "/"(controller: 'comodityInput', action: 'map')
         "500"(view:'/error')
 	}
 }

@@ -21,12 +21,15 @@ class ApiController {
             ilike('name', "%${lookup.name}%")
 
         }.list()
-        println 'comodities' + comodities
-        ComodityInput.where {
-            'in'('comodityName', comodities)
-        }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
-            def (latitude, longitude) = it.geoTag.tokenize(',')
-            markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: latitude, longitude: longitude))
+        if (!comodities.isEmpty()) {
+            println 'comodities' + comodities
+            ComodityInput.where {
+                'in'('comodityName', comodities)
+            }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
+                def (latitude, longitude) = it.geoTag.tokenize(',')
+                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: latitude, longitude: longitude))
+            }
+
         }
         respond markers
     }
@@ -66,7 +69,7 @@ class ApiController {
         println 'user ' + member.username
         AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
         def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc'])
-        Double dt = instanceCommodity.harga
+        Double dt = 0
         if (!last.isEmpty()) {
             dt = instanceCommodity.harga - last.first().price
         }

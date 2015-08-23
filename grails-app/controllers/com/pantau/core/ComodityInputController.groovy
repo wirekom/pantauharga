@@ -13,7 +13,6 @@ import grails.plugin.springsecurity.annotation.Secured
 class ComodityInputController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-    static defaultAction = "map"
     def map(Integer max) {
         params.max = Math.min(max ?: 10, 100)
         respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count()]
