@@ -53,7 +53,7 @@ class ComodityInputController {
             respond comodityInputInstance.errors, view:'create'
             return
         }
-
+		
         comodityInputInstance.save flush:true
 
         request.withFormat {

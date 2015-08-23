@@ -1,11 +1,14 @@
 package com.pantau.core
 
+import org.springframework.aop.aspectj.RuntimeTestWalker.ThisInstanceOfResidueTestVisitor;
+
 
 class InflationCommandModel {
 	//gw belom test, comodities itu disini semua comodityinput yang ketarik dari awal bulan sampai akhir bulan
 	List<ComodityInput> Comodities
 	Date start
 	Date end
+	Double inflation
 	def countInflation () {
 		Double proteinSum = 0
 		Double karbohidratSum = 0
@@ -15,6 +18,7 @@ class InflationCommandModel {
 		Integer karbohidratCount = 0
 		Integer lainlainCount = 0 
 		for (ComodityInput ci : Comodities) {
+			println ci.comodityName.comodityType.name
 			if (ci.comodityName.comodityType.name == "Daging"){
 				proteinSum + ci.delta
 				proteinCount++
@@ -51,6 +55,7 @@ class InflationCommandModel {
 		Double lainlainWeight = ComodityType.find{name == "Gula"}.weight
 		
 		Double totalInflation = ((proteinAvg*proteinWeight) +(karbohidratAvg*karbohidratWeight)+(lainlainAvg*lainlainWeight))*30/100
+		inflation = totalInflation
 		return totalInflation
 		
 		

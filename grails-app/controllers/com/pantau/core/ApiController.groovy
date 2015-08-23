@@ -3,8 +3,8 @@ package com.pantau.core
 import com.pantau.user.AuthRole
 import com.pantau.user.AuthUser
 import com.pantau.user.AuthUserAuthRole
-import grails.transaction.Transactional
 
+import grails.transaction.Transactional
 import static org.springframework.http.HttpStatus.*
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -28,7 +28,7 @@ class ApiController {
 
     @Transactional
     def input(PostComodityCommand instanceCommodity) {
-        println instanceCommodity.id
+        println "cool" + instanceCommodity.id
         println instanceCommodity.harga
         println instanceCommodity.geolocation
         println instanceCommodity.nohp
@@ -46,6 +46,25 @@ class ApiController {
                 nohp: instanceCommodity.nohp,
                 enabled: true).save(flush: true)
         println 'user ' + member.username
+		//lat long
+		if (instanceCommodity.quantity > 0){
+			def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
+			BigDataRequestModel big = new BigDataRequestModel()
+			def json = big.getNearby(lat, lng, '10')
+			def search
+			for (def ret : json.result){
+				if (ret.masterclass == "Commercial") {
+					search = ret
+					break
+				}
+			}
+			
+			Location loc = Location.findByName(ret.name)?:new Location(
+					name: ret.name,
+					geolocation: ret.latitude+ ","+ret.longitude
+				).save(flush:true)
+			instanceCommodity.geolocation = ret.latitude+ ","+ret.longitude
+		}
         AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
         def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc']).first()
         Double dt = last?(instanceCommodity.harga - last.price):instanceCommodity.harga
