@@ -16,12 +16,7 @@ class ComodityInputController {
     static defaultAction = "map"
     def map(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        List markers = new ArrayList();
-        ComodityInput.list(params).each {
-            def (latitude, longitude) = it.geoTag.tokenize(',')
-            markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: latitude, longitude: longitude))
-        }
-        respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count(), markers: markers]
+        respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count()]
     }
 
     def index(Integer max) {
@@ -127,12 +122,4 @@ class ComodityInputController {
             '*'{ render status: NOT_FOUND }
         }
     }
-}
-
-@Validateable
-class Marker {
-    String barang
-    String latitude
-    String longitude
-    Double price
 }
