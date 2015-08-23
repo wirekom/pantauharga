@@ -66,9 +66,29 @@ class ApiController {
 			instanceCommodity.geolocation = ret.latitude+ ","+ret.longitude
 		}
         AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
-        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc']).first()
-        Double dt = last?(instanceCommodity.harga - last.price):instanceCommodity.harga
-        println 'harga ' + last.price
+        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc'])
+        Double dt = instanceCommodity.harga
+        if(!last.isEmpty()){
+             dt = instanceCommodity.harga - last.first().price
+        }
+        if (instanceCommodity.quantity == 0){
+            def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
+            BigDataRequestModel big = new BigDataRequestModel()
+            def json = big.getNearby(lat, lng, '10')
+            def search
+            for (def ret : json.result){
+                if (ret.masterclass == "Commercial") {
+                    search = ret
+                    break
+                }
+            }
+
+            Location loc = Location.findByName(ret.name)?:new Location(
+                    name: ret.name,
+                    geolocation: ret.latitude+ ","+ret.longitude
+            ).save(flush:true)
+            instanceCommodity.geolocation = ret.latitude+ ","+ret.longitude
+        }
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, geoTag: instanceCommodity.geolocation, amount: instanceCommodity.quantity, delta: dt)
         if (!com.save(flush: true)) {
             println 'error ' +  com.errors.allErrors.join(' \n') //each error is an instance of  org.springframework.validation.FieldError

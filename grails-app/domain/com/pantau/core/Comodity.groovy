@@ -13,4 +13,8 @@ class Comodity {
     static constraints = {
 		name blank : false
     }
+
+	String toString() {
+		name
+	}
 }

@@ -54,6 +54,15 @@
 						</td></tr>
 						</g:if>
 					
+						<g:if test="${comodityTypeInstance?.weight}">
+						<tr><th>
+							<span id="weight-label" class="property-label"><g:message code="comodityType.weight.label" default="Weight" /></span></th><td>
+							
+								<span class="property-value" aria-labelledby="weight-label"><g:fieldValue bean="${comodityTypeInstance}" field="weight"/></span>
+							
+						</td></tr>
+						</g:if>
+					
 					</table>
 					<div class="clearfix"></div>
 					<div class="panel-footer">

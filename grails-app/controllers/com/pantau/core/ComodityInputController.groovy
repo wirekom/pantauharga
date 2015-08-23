@@ -1,8 +1,10 @@
 package com.pantau.core
 
-
+import grails.validation.Validateable
 
 import static org.springframework.http.HttpStatus.*
+import grails.converters.JSON
+import org.codehaus.groovy.grails.web.json.*
 import grails.transaction.Transactional
 import grails.plugin.springsecurity.annotation.Secured
 
@@ -11,10 +13,15 @@ import grails.plugin.springsecurity.annotation.Secured
 class ComodityInputController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
-
+    static defaultAction = "map"
     def map(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count()]
+        List markers = new ArrayList();
+        ComodityInput.list(params).each {
+            def (latitude, longitude) = it.geoTag.tokenize(',')
+            markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: latitude, longitude: longitude))
+        }
+        respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count(), markers: markers]
     }
 
     def index(Integer max) {
@@ -32,8 +39,8 @@ class ComodityInputController {
 		List<ComodityInput> Comodities = ComodityInput.findAllByDateCreatedBetween(inflationCommandModelInstance.start,inflationCommandModelInstance.end)
 		InflationCommandModel inflation = new InflationCommandModel()
 		inflation.Comodities = Comodities
-		Double rate = inflation.countInflation()
-		println rate
+		inflationCommandModelInstance.inflation = inflation.countInflation()
+		//println rate
 		respond inflationCommandModelInstance
 		
 	}
@@ -120,4 +127,12 @@ class ComodityInputController {
             '*'{ render status: NOT_FOUND }
         }
     }
+}
+
+@Validateable
+class Marker {
+    String barang
+    String latitude
+    String longitude
+    Double price
 }

@@ -44,6 +44,8 @@
 							
 								<g:sortableColumn property="name" title="${message(code: 'comodityType.name.label', default: 'Name')}" />
 							
+								<g:sortableColumn property="weight" title="${message(code: 'comodityType.weight.label', default: 'Weight')}" />
+							
 						</tr>
 					</thead>
 					<tbody>
@@ -52,6 +54,8 @@
 							<tr>
 								
 								<td><g:link action="show" id="${comodityTypeInstance.id}">${fieldValue(bean: comodityTypeInstance, field: "name")}</g:link></td>
+							
+								<td>${fieldValue(bean: comodityTypeInstance, field: "weight")}</td>
 							
 							</tr>
 						</g:each>

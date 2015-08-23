@@ -11,15 +11,6 @@
 
 </div>
 
-<div class="form-group ${hasErrors(bean: comodityInstance, field: 'weight', 'error')} required">
-	<label for="weight">
-		<g:message code="comodity.weight.label" default="Weight" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field class="form-control" name="weight" type="number" value="${comodityInstance.weight}" required=""/>
-
-</div>
-
 <div class="form-group ${hasErrors(bean: comodityInstance, field: 'comodityList', 'error')} ">
 	<label for="comodityList">
 		<g:message code="comodity.comodityList.label" default="Comodity List" />
@@ -44,6 +35,15 @@
 		<span class="required-indicator">*</span>
 	</label>
 	<g:select id="comodityType" name="comodityType.id" from="${com.pantau.core.ComodityType.list()}" optionKey="id" required="" value="${comodityInstance?.comodityType?.id}" class="form-control many-to-one"/>
+
+</div>
+
+<div class="form-group ${hasErrors(bean: comodityInstance, field: 'sku', 'error')} required">
+	<label for="sku">
+		<g:message code="comodity.sku.label" default="Sku" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField class="form-control" name="sku" required="" value="${comodityInstance?.sku}"/>
 
 </div>
 

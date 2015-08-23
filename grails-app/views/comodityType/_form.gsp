@@ -29,3 +29,12 @@
 
 </div>
 
+<div class="form-group ${hasErrors(bean: comodityTypeInstance, field: 'weight', 'error')} required">
+	<label for="weight">
+		<g:message code="comodityType.weight.label" default="Weight" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field class="form-control" name="weight" value="${fieldValue(bean: comodityTypeInstance, field: 'weight')}" required=""/>
+
+</div>
+
