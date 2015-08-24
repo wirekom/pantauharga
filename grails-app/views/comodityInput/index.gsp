@@ -50,7 +50,8 @@
 
                     <g:sortableColumn property="amount"
                                       title="${message(code: 'comodityInput.amount.label', default: 'Amount')}"/>
-
+					 <g:sortableColumn property="delta"
+                                      title="${message(code: 'comodityInput.delta.label', default: 'Delta')}"/>
                     <th><g:message code="comodityInput.comodityName.label" default="Comodity Name"/></th>
 
                     <g:sortableColumn property="dateCreated"
@@ -69,6 +70,7 @@
                         <td>${fieldValue(bean: comodityInputInstance, field: "user")}</td>
 
                         <td>${fieldValue(bean: comodityInputInstance, field: "region")}</td>
+                         <td>${fieldValue(bean: comodityInputInstance, field: "delta")}</td>
 
                         <td>${fieldValue(bean: comodityInputInstance, field: "amount")}</td>
 
