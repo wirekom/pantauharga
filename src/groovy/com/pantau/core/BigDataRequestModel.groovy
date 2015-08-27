@@ -3,7 +3,9 @@ package com.pantau.core
 import grails.plugins.rest.client.RestBuilder
 import org.springframework.util.MultiValueMap
 import org.springframework.util.LinkedMultiValueMap
+import grails.validation.Validateable;
 
+@Validateable
 class BigDataRequestModel {
 
 
@@ -22,7 +24,7 @@ class BigDataRequestModel {
         def restBuilder = new RestBuilder()
         MultiValueMap<String, String> form = new LinkedMultiValueMap<String, String>()
         form.add("key", "58b066d5064c98e75bb02adb853bc1ad")
-        def restRequest = restBuilder.post("https://api.bigdataindonesia.com/poi/nearby/json?lat="+lat+"&lng="+lng+"&rad="+rad) {
+        def restRequest = restBuilder.post("https://api.bigdataindonesia.com/poi/nearby/json?lat=" + lat + "&lng=" + lng + "&rad=" + rad) {
             accept("application/json")
             contentType("application/x-www-form-urlencoded")
             body(form)
