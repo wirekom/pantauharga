@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component inheritJdk="true">
+	<exclude-output/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/test/unit"/>
+		<testFolder url="file://$MODULE_DIR$/test/integration"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/classes"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/plugin-classes"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/plugin-provided-classes"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/resources"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/scriptCache"/>
+		<excludeFolder url="file://$MODULE_DIR$/target/work/tomcat"/>
+	</contentEntry>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/services"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/conf"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/services"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/taglib"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/java"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/conf"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/hibernate4-4.3.6.1/src/java"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/assets"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/conf"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/services"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/taglib"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/java"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/groovy"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/java"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf"/>
+	<contentEntry url="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/src/groovy"/>
+	<lib name="Grails User Library (PantauHarga)" scope="COMPILE">
+		<relative-module-cls project-related="file://$PROJECT_DIR$/lib"/>
+	</lib>
+</component>

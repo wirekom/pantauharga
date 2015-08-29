@@ -5,7 +5,8 @@ import grails.validation.Validateable;
 @Validateable
 class PostComodityCommand {
 	Integer id
-	String geolocation
+	Double lat
+	Double lng
 	String nohp
 	Double harga
 	Integer quantity

@@ -6,7 +6,7 @@ import com.pantau.user.AuthUserAuthRole
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import grails.validation.Validateable
-
+import groovy.json.JsonSlurper
 import static org.springframework.http.HttpStatus.*
 
 @Secured(['permitAll'])
@@ -19,6 +19,8 @@ class ApiController {
         List markers = new ArrayList();
         def comodities = Comodity.where {
             ilike('name', "%${lookup.name}%")
+			between('lat', lookup.lat-lookup.radius, lookup.lat+lookup.radius)
+			between('lng', lookup.lng-lookup.radius, lookup.lng+lookup.radius)
 
         }.list()
         if (!comodities.isEmpty()) {
@@ -26,8 +28,8 @@ class ApiController {
             ComodityInput.where {
                 'in'('comodityName', comodities)
             }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
-                def (latitude, longitude) = it.geoTag.tokenize(',')
-                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: latitude, longitude: longitude))
+               
+                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng))
             }
 
         }
@@ -51,7 +53,7 @@ class ApiController {
     def input(PostComodityCommand instanceCommodity) {
         println instanceCommodity.id
         println instanceCommodity.harga
-        println instanceCommodity.geolocation
+      
         println instanceCommodity.nohp
         println instanceCommodity.quantity
         def comodity = Comodity.get(instanceCommodity.id)
@@ -68,38 +70,59 @@ class ApiController {
                 enabled: true).save(flush: true)
         println 'user ' + member.username
         AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
-        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'desc'])
+        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
         Double dt = 0
         if (!last.isEmpty()) {
             dt = instanceCommodity.harga - last.first().price
         }
-        /*
+        
         if (instanceCommodity.quantity == 0) {
-            def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
+            //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
             BigDataRequestModel big = new BigDataRequestModel()
-            def json = big.getNearby(lat, lng, '10')
+            def jsonSlurper = new JsonSlurper()
+           // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
+            def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
             def search
-
+            println "sjon" + json
             for (def ret : json.result) {
+				println "ret" + ret
+              //  def apa = jsonSlurper.parseText(ret.toString())
+               // println apa
+
                 if (ret.masterclass == "Commercial") {
                     search = ret
                     break
                 }
             }
+            println "search" + search.province
+            Region prop = Region.findByName(search.province)
+            if (prop.name==null){
+                prop = new Region(name:search.province, geolocation: search.latitude+","+search.longitude).save(flush: true)
+            }
+            println prop
+            Region district = Region.findByName(search.district)
+            if (district.name == null){
+                district = new Region(name:search.district, geolocation: search.latitude+","+search.longitude)
+                district.setParent(prop)
+                district.save(flush: true)
+            }
 
-            Location loc = Location.findByName(ret.name) ?: new Location(
-                    name: ret.name,
-                    geolocation: ret.latitude + "," + ret.longitude
+            Location loc = Location.findByName(search.name) ?: new Location(
+                    name: search.name,
+                    lat: search.latitude,
+					lng: search.longitude
             ).save(flush: true)
-            instanceCommodity.geolocation = ret.latitude + "," + ret.longitude
+            instanceCommodity.lat = search.latitude
+            instanceCommodity.lng = search.longitude
+
         }
-        */
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, geoTag: instanceCommodity.geolocation, amount: instanceCommodity.quantity, delta: dt)
+        
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
         }
-        println 'com ' + com.geoTag
+        println 'com ' + com.lat+' '+com.lng
         request.withFormat {
             '*' { respond instanceCommodity, [status: CREATED] }
         }

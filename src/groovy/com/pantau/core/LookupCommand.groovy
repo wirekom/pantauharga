@@ -8,4 +8,7 @@ import grails.validation.Validateable;
 @Validateable
 class LookupCommand {
     String name
+	Double radius
+	Double lat
+	Double lng
 }

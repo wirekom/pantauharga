@@ -13,5 +13,6 @@ class Region {
     static constraints = {
 		name blank: false
 		geolocation blank: false
+		parent nullable: true
     }
 }

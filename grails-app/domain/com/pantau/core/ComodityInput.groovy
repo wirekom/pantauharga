@@ -7,7 +7,8 @@ class ComodityInput {
 
     Double price
 	Double delta
-    String geoTag
+    String lat
+	String lng
     Date dateCreated
     Date lastUpdated
 	Integer amount
@@ -28,7 +29,7 @@ class ComodityInput {
     }
 
     String getLocation() {
-        def (latitude, longitude) = geoTag.tokenize(',');
-        return "{lat: ${latitude}, lng: ${longitude}}"
+        //def (latitude, longitude) = geoTag.tokenize(',');
+        return "{lat: ${lat}, lng: ${lng}}"
     }
 }
