@@ -16,11 +16,12 @@ class ApiController {
 
     def hargaall(LookupCommand lookup) {
         println 'lookup >>>' + lookup.name
+        Double radius = lookup.radius/157
         List markers = new ArrayList();
         def comodities = Comodity.where {
             ilike('name', "%${lookup.name}%")
-			between('lat', lookup.lat-lookup.radius, lookup.lat+lookup.radius)
-			between('lng', lookup.lng-lookup.radius, lookup.lng+lookup.radius)
+			between('lat', lookup.lat-radius, lookup.lat+radius)
+			between('lng', lookup.lng-radius, lookup.lng+radius)
 
         }.list()
         if (!comodities.isEmpty()) {
