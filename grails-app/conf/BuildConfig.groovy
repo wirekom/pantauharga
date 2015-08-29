@@ -80,6 +80,8 @@ grails.project.dependency.resolution = {
 		compile ":spring-security-rest:1.5.2", {
 			excludes: ['cors', 'spring-security-core']
 		}
-		
+		compile ":mongodb:3.0.3"
+		compile ":jasper:1.12.0-SNAPSHOT"
+
 	}
 }
