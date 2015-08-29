@@ -13,4 +13,5 @@ class Hotel {
 
     static constraints = {
     }
+    static mapWith = "mongo"
 }

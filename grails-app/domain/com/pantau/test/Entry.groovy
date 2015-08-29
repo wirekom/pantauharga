@@ -12,4 +12,5 @@ class Entry {
     }
     static constraints = {
     }
+    static mapWith = "mongo"
 }

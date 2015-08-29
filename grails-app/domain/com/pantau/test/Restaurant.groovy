@@ -13,4 +13,5 @@ class Restaurant {
     }
     static constraints = {
     }
+    static mapWith = "mongo"
 }
