@@ -7,8 +7,8 @@ class ComodityInput {
 
     Double price
 	Double delta
-    String lat
-	String lng
+    Double lat
+	Double lng
     Date dateCreated
     Date lastUpdated
 	Integer amount

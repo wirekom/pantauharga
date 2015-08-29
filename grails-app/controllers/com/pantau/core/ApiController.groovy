@@ -15,19 +15,20 @@ class ApiController {
     def passwordEncoder
 
     def hargaall(LookupCommand lookup) {
-        println 'lookup >>>' + lookup.name
+        println 'lookup >>>' + lookup.radius
         Double radius = lookup.radius/157
         List markers = new ArrayList();
         def comodities = Comodity.where {
             ilike('name', "%${lookup.name}%")
-			between('lat', lookup.lat-radius, lookup.lat+radius)
-			between('lng', lookup.lng-radius, lookup.lng+radius)
+
 
         }.list()
         if (!comodities.isEmpty()) {
             println 'comodities' + comodities
             ComodityInput.where {
                 'in'('comodityName', comodities)
+                between('lat', lookup.lat-radius, lookup.lat+radius)
+                between('lng', lookup.lng-radius, lookup.lng+radius)
             }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
                
                 markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng))

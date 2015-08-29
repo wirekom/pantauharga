@@ -2,8 +2,8 @@ package com.pantau.core
 
 class Location {
 	String name
-	String lat
-	String lng
+	Double lat
+	Double lng
 	
     static constraints = {
     }
