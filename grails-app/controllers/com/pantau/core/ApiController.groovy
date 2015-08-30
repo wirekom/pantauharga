@@ -13,7 +13,7 @@ import static org.springframework.http.HttpStatus.*
 @Transactional(readOnly = true)
 class ApiController {
     def passwordEncoder
-
+    static allowedMethods = [hargaall: "POST", comodity: "POST", input:"POST", register: "POST", login: "POST"]
     def hargaall(LookupCommand lookup) {
         println 'lookup >>>' + lookup.radius
         Double radius = lookup.radius/157
@@ -131,11 +131,19 @@ class ApiController {
     }
 
     @Transactional
-    def register(UserRegisterCommad userRegister) {
-        def user = new AuthUser(userRegister.properties)
-        user.save(flush: true)
-        AuthUserAuthRole.create user, AuthRole.findByAuthority('ROLE_TRUSTED'), true
+    def register(UserRegisterCommand userRegister) {
+        println userRegister.username
+        def user = AuthUser.findByNohp(userRegister.nohp)
+        println user
+        if (user == null) {
+            user = new AuthUser(userRegister.properties)
+        }
 
+        user.save(flush: false)
+        AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
+        println authRole.authority
+        //AuthUserAuthRole.create user, AuthRole.findByAuthority('ROLE_TRUSTED'), true
+        AuthUserAuthRole.create(user,authRole,true)
         request.withFormat {
             '*' { respond userRegister, [status: CREATED] }
         }

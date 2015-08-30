@@ -6,7 +6,7 @@ package com.pantau.core
 import grails.validation.Validateable;
 
 @Validateable
-class UserRegisterCommad {
+class UserRegisterCommand {
     String username
     String password
     String email

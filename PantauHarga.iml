@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
   <component name="EclipseModuleManager">
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/controllers" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/services" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/src/groovy" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/services" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/taglib" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/groovy" value="linksrc:.link_to_grails_plugins/cache-1.1.8/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/java" value="linksrc:.link_to_grails_plugins/cache-1.1.8/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/controllers" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/controllers" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/views" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/src/groovy" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/hibernate4-4.3.6.1/src/java" value="linksrc:.link_to_grails_plugins/hibernate4-4.3.6.1/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/services" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/services" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/taglib" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/taglib" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/src/groovy" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/groovy" value="linksrc:.link_to_grails_plugins/scaffolding-2.1.2/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/java" value="linksrc:.link_to_grails_plugins/scaffolding-2.1.2/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/groovy" value="linksrc:.link_to_grails_plugins/tomcat-7.0.55/src/groovy" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/java" value="linksrc:.link_to_grails_plugins/tomcat-7.0.55/src/java" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/src/groovy" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/conf" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/controllers" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/services" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/services" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/taglib" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/src/groovy" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/conf" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/conf" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/services" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/services" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/taglib" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/taglib" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/groovy" value="linksrc:.link_to_grails_plugins/cache-1.1.8/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/java" value="linksrc:.link_to_grails_plugins/cache-1.1.8/src/java" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/conf" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/conf" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/controllers" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/views" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/hibernate4-4.3.6.1/src/java" value="linksrc:.link_to_grails_plugins/hibernate4-4.3.6.1/src/java" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/assets" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/services" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/services" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/taglib" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/taglib" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/src/groovy" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/groovy" value="linksrc:.link_to_grails_plugins/scaffolding-2.1.2/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/java" value="linksrc:.link_to_grails_plugins/scaffolding-2.1.2/src/java" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/groovy" value="linksrc:.link_to_grails_plugins/tomcat-7.0.55/src/groovy" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/java" value="linksrc:.link_to_grails_plugins/tomcat-7.0.55/src/java" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
+    <varelement var="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/src/groovy" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/src/groovy" />
     <conelement value="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER" />
     <src_description expected_position="1">
       <src_folder value="file://$MODULE_DIR$/src/java" expected_position="0" />
@@ -39,32 +39,32 @@
       <src_folder value="file://$MODULE_DIR$/grails-app/utils" expected_position="7" />
       <src_folder value="file://$MODULE_DIR$/test/integration" expected_position="8" />
       <src_folder value="file://$MODULE_DIR$/test/unit" expected_position="9" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" expected_position="11" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers" expected_position="12" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/services" expected_position="13" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib" expected_position="14" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/src/groovy" expected_position="15" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" expected_position="16" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/services" expected_position="17" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/taglib" expected_position="18" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/groovy" expected_position="19" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/src/java" expected_position="20" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" expected_position="21" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/controllers" expected_position="22" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" expected_position="23" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/src/groovy" expected_position="24" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/hibernate4-4.3.6.1/src/java" expected_position="25" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" expected_position="26" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" expected_position="27" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/services" expected_position="28" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/taglib" expected_position="29" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/src/groovy" expected_position="30" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/groovy" expected_position="31" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/scaffolding-2.1.2/src/java" expected_position="32" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/groovy" expected_position="33" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/tomcat-7.0.55/src/java" expected_position="34" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" expected_position="35" />
-      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/src/groovy" expected_position="36" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" expected_position="11" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/controllers" expected_position="12" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/services" expected_position="13" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/grails-app/taglib" expected_position="14" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/asset-pipeline-1.9.9/src/groovy" expected_position="15" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/conf" expected_position="16" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/services" expected_position="17" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/grails-app/taglib" expected_position="18" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/groovy" expected_position="19" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/cache-1.1.8/src/java" expected_position="20" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/conf" expected_position="21" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/controllers" expected_position="22" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" expected_position="23" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/src/groovy" expected_position="24" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/hibernate4-4.3.6.1/src/java" expected_position="25" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/assets" expected_position="26" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/conf" expected_position="27" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/services" expected_position="28" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/grails-app/taglib" expected_position="29" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/src/groovy" expected_position="30" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/groovy" expected_position="31" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/scaffolding-2.1.2/src/java" expected_position="32" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/groovy" expected_position="33" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/tomcat-7.0.55/src/java" expected_position="34" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/grails-app/conf" expected_position="35" />
+      <src_folder value="file://$MODULE_DIR$/target/work/plugins/webxml-1.4.1/src/groovy" expected_position="36" />
       <src_folder value="GROOVY_DSL_SUPPORT" expected_position="38" />
     </src_description>
   </component>
@@ -126,6 +126,11 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-classes" />
@@ -242,9 +247,11 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/com/lowagie/itext/2.1.7/itext-2.1.7.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
     <orderEntry type="library" name="grails-2.4.4" level="application" />
