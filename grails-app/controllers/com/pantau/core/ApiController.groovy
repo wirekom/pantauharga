@@ -16,7 +16,7 @@ class ApiController {
     static allowedMethods = [hargaall: "POST", comodity: "POST", input:"POST", register: "POST", login: "POST"]
     def hargaall(LookupCommand lookup) {
         println 'lookup >>>' + lookup.radius
-        Double radius = lookup.radius/157
+        //Double radius = lookup.radius/157
         List markers = new ArrayList();
         def comodities = Comodity.where {
             ilike('name', "%${lookup.name}%")
@@ -28,8 +28,9 @@ class ApiController {
             ComodityInput.where {
 
                 'in'('comodityName', comodities)
-                between('lat', lookup.lat-radius, lookup.lat+radius)
-                between('lng', lookup.lng-radius, lookup.lng+radius)
+                lt('distance', lookup.radius)
+               // between('lat', lookup.lat-radius, lookup.lat+radius)
+                //between('lng', lookup.lng-radius, lookup.lng+radius)
                 order('dateCreated','desc'
                 )
             }.list([sort: 'dateCreated', order: 'desc']).unique {
@@ -91,6 +92,8 @@ class ApiController {
            // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
             def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
             def search
+            def apa = json.result
+
             println "sjon" + json
             for (def ret : json.result) {
 				println "ret" + ret
@@ -98,6 +101,7 @@ class ApiController {
                // println apa
 
                 if (ret.masterclass == "Commercial") {
+                    if (String.toDouble(search.latitude.toString()))
                     search = ret
                     break
                 }

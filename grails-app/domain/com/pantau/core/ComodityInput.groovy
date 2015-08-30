@@ -12,6 +12,7 @@ class ComodityInput {
     Date dateCreated
     Date lastUpdated
 	Integer amount
+    Double distance
     Double plus(ComodityInput other) {
         delta + other.delta
     }
@@ -20,6 +21,9 @@ class ComodityInput {
             user        : AuthUser,
             region      : Region
     ]
+    static mapping = {
+        distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
+    }
 
     static constraints = {
         price blank: false
