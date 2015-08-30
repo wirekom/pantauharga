@@ -26,10 +26,16 @@ class ApiController {
         if (!comodities.isEmpty()) {
             println 'comodities' + comodities
             ComodityInput.where {
+
                 'in'('comodityName', comodities)
                 between('lat', lookup.lat-radius, lookup.lat+radius)
                 between('lng', lookup.lng-radius, lookup.lng+radius)
-            }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
+                order('dateCreated','desc'
+                )
+            }.list([sort: 'dateCreated', order: 'asc', max: 10]).unique {
+                it.lat
+                it.lng
+            }.each {
                
                 markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng))
             }
