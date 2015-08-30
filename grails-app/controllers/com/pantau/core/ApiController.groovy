@@ -30,7 +30,7 @@ class ApiController {
                 between('lat', lookup.lat-radius, lookup.lat+radius)
                 between('lng', lookup.lng-radius, lookup.lng+radius)
             }.list([sort: 'dateCreated', order: 'asc', max: 10]).each {
-               
+
                 markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng))
             }
 
@@ -55,7 +55,7 @@ class ApiController {
     def input(PostComodityCommand instanceCommodity) {
         println instanceCommodity.id
         println instanceCommodity.harga
-      
+
         println instanceCommodity.nohp
         println instanceCommodity.quantity
         def comodity = Comodity.get(instanceCommodity.id)
@@ -77,7 +77,7 @@ class ApiController {
         if (!last.isEmpty()) {
             dt = instanceCommodity.harga - last.first().price
         }
-        
+
         if (instanceCommodity.quantity == 0) {
             //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
             BigDataRequestModel big = new BigDataRequestModel()
@@ -98,12 +98,12 @@ class ApiController {
             }
             println "search" + search.province
             Region prop = Region.findByName(search.province)
-            if (prop.name==null){
+            if (prop?.name==null){
                 prop = new Region(name:search.province, geolocation: search.latitude+","+search.longitude).save(flush: true)
             }
             println prop
             Region district = Region.findByName(search.district)
-            if (district.name == null){
+            if (district?.name == null){
                 district = new Region(name:search.district, geolocation: search.latitude+","+search.longitude)
                 district.setParent(prop)
                 district.save(flush: true)
@@ -114,11 +114,11 @@ class ApiController {
                     lat: search.latitude,
 					lng: search.longitude
             ).save(flush: true)
-            instanceCommodity.lat = search.latitude
-            instanceCommodity.lng = search.longitude
+            instanceCommodity.lat = Double.parseDouble(search.latitude)
+            instanceCommodity.lng = Double.parseDouble(search.longitude)
 
         }
-        
+
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
