@@ -32,7 +32,7 @@ class ApiController {
                 between('lng', lookup.lng-radius, lookup.lng+radius)
                 order('dateCreated','desc'
                 )
-            }.list([sort: 'dateCreated', order: 'desc', max: 10]).unique {
+            }.list([sort: 'dateCreated', order: 'desc']).unique {
                 it.lat
                 it.lng
             }.each {
