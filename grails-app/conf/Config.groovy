@@ -165,5 +165,3 @@ grails.mongo.default.mapping = {
 }
 
 jasper.dir.reports = 'reports'
-
-
