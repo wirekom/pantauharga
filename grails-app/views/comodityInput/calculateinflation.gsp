@@ -70,7 +70,7 @@
             </div>
         </g:form>
         <div class="clearfix"></div>
-        inflasinya : <g:fieldValue bean="${inflationCommandModelInstance}" field="inflation"/> %
+        <span class="inflasi text-success">inflasinya : <g:fieldValue bean="${inflationCommandModelInstance}" field="inflation"/> %</span>
     </div>
 </div>
 </body>

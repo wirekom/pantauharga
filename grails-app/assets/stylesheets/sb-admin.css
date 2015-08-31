@@ -5,11 +5,22 @@
  */
 
 /* Global Styles */
-body {
-	margin-top: 100px;
-	background-color: #ECF0F5;
+html {
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
-
+body {
+	height: 92.5%;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+}
+body::after {
+	content: "";
+	height: 100px;
+}
 @media ( min-width :768px) {
 	body {
 		margin-top: 50px;
@@ -17,13 +28,15 @@ body {
 }
 
 #wrapper {
+	height: auto;
+	min-height: 84.3%;
 	padding-left: 0;
 }
 
 #page-wrapper {
 	width: 100%;
 	padding: 0;
-	background-color: #ECF0F5;
+	/*background-color: #ECF0F5;*/
 }
 
 .huge {
@@ -141,7 +154,42 @@ ul.alert-dropdown {
 .side-nav>li>ul>li>a:hover {
 	color: #fff;
 }
-
+/* Custom */
+.inflasi {
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	border-radius: 4px;
+	display: block;
+	font-size: 30px;
+	font-weight: bold;
+	padding: 10px;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+.footer-wrapper {
+	background: #222 none repeat scroll 0 0;
+	color: #fff;
+	min-height: 90px;
+	padding: 10px 0;
+}
+a.logo {
+	display: block;
+	text-decoration: none;
+	width: 100%;
+}
+.logo > img {
+	width: 100%;
+}
+.crt{
+	font-size:12px;
+	line-height:normal;
+	display:block;
+	width:100%;
+	text-align:right;
+	margin-top: 20px;
+}
 /* Flot Chart Containers */
 .flot-chart {
 	display: block;
