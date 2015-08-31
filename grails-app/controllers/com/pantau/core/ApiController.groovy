@@ -147,11 +147,13 @@ class ApiController {
         println user
         if (user == null) {
             user = new AuthUser(userRegister.properties)
+            println 'userRegister >>>>>>>>> ' + userRegister.properties
         }
 
         user.save(flush: false)
         AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-        println authRole.authority
+        println 'User >>>>>>>>> ' + user
+        println 'AuthRole >>>>>>>>> ' + authRole
         //AuthUserAuthRole.create user, AuthRole.findByAuthority('ROLE_TRUSTED'), true
         AuthUserAuthRole.create(user,authRole,true)
         request.withFormat {

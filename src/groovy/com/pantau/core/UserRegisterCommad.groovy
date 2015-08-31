@@ -12,4 +12,6 @@ class UserRegisterCommand {
     String email
     String ktp
     String nohp
+    String alamat
+    String kodepos
 }

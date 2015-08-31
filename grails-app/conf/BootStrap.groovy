@@ -14,7 +14,7 @@ class BootStrap {
         def untrustedRole = new AuthRole(authority: 'ROLE_UNTRUSTED').save(flush: true)
         def specialRole = new AuthRole(authority: 'ROLE_SPECIAL').save(flush: true)
 
-        def adminUser = new AuthUser(username: 'admin', enabled: true, password: 'admin', email: 'admin@gmail.com', nohp: '8098080980').save(flush: true)
+        def adminUser = new AuthUser(username: 'admin', nama: 'admin', enabled: true, password: 'admin', email: 'admin@gmail.com', nohp: '8098080980').save(flush: true)
 
         AuthUserAuthRole.create adminUser, adminRole, true
 

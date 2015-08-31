@@ -41,7 +41,7 @@ class AuthUserAuthRole implements Serializable {
 
     static AuthUserAuthRole create(AuthUser authUser, AuthRole authRole, boolean flush = false) {
         def instance = new AuthUserAuthRole(authUser: authUser, authRole: authRole)
-        instance.save(flush: flush, insert: true)
+        instance.save(flush: flush, insert: true, failOnError: true)
         instance
     }
 
@@ -89,7 +89,7 @@ class AuthUserAuthRole implements Serializable {
             if (ur.authUser == null) return
             boolean existing = false
             AuthUserAuthRole.withNewSession {
-                existing = AuthUserAuthRole.exists(ur.authUser.id, r.id)
+                existing = (ur.authUser.id) ? AuthUserAuthRole.exists(ur.authUser.id, r.id) : null
             }
             if (existing) {
                 return 'userRole.exists'
