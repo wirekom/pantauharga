@@ -40,8 +40,8 @@
                 </h3>
             </div>
 
-            <div class="panel-body">
-                <div id="map" style="height: 400px;"></div>
+            <div class="panel-body map">
+                <div id="map" style="height: 550px;"></div>
             </div>
         </div>
     </div>
