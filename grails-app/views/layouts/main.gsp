@@ -2,6 +2,8 @@
 <html>
 <head>
     <title><g:layoutTitle default="Pantau Harga Application"/></title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <asset:stylesheet src="application.css"/>
     <asset:javascript src="application.js"/>
     <g:layoutHead/>
