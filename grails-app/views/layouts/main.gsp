@@ -83,7 +83,7 @@
 <div class="footer-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-3"><a href="${createLink(uri: '/')}" class="logo"><img src="/PantauHarga/assets/logo-cloudkilat.png" /></a></div>
+            <div class="col-xs-12 col-sm-6 col-md-3"><a href="${createLink(uri: '/')}" class="logo"><g:img uri="images/logo-cloudkilat.png" /></a></div>
             <div class="col-xs-12 col-sm-6 col-md-9"><span class="crt">Copyleft &copy; 2015<br/> Pantau Harga Application</span></div>
         </div>
     </div>
