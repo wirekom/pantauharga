@@ -78,7 +78,12 @@ class ApiController {
                 nohp: instanceCommodity.nohp,
                 enabled: true).save(flush: true)
         println 'user ' + member.username
-        AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
+
+        def roleUser = AuthRole.findByAuthority('ROLE_USER')
+        if (!AuthUserAuthRole.exists(member.id, roleUser.id)) {
+          AuthUserAuthRole.create member, roleUser, true
+        }
+
         def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
         Double dt = 0
         if (!last.isEmpty()) {
@@ -101,7 +106,7 @@ class ApiController {
                // println apa
 
                 if (ret.masterclass == "Commercial") {
-                    if (String.toDouble(search.latitude.toString()))
+                    if (Double.parseDouble(ret?.latitude?.toString()))
                     search = ret
                     break
                 }
