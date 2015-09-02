@@ -33,7 +33,7 @@
                 </g:eachError>
             </ul>
         </g:hasErrors>
-        <g:form url="[action: 'calculateinflation', , controller: 'ComodityInput']" method="GET" role="form">
+        <g:form url="[action: 'calculateinflation',  controller: 'ComodityInput']" method="GET" role="form">
 
             <div class="panel panel-primary">
                 <div class="panel-heading">

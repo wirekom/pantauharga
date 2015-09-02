@@ -28,7 +28,7 @@ class ApiController {
             ComodityInput.where {
 
                 'in'('comodityName', comodities)
-                lt('distance', lookup.radius)
+                lt('distance', lookup.radius * 1000)
                // between('lat', lookup.lat-radius, lookup.lat+radius)
                 //between('lng', lookup.lng-radius, lookup.lng+radius)
                 order('dateCreated','desc'
