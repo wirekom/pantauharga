@@ -28,9 +28,11 @@ class ApiController {
             ComodityInput.where {
 
                 'in'('comodityName', comodities)
+
                 lt('distance', lookup.radius * 1000)
                // between('lat', lookup.lat-radius, lookup.lat+radius)
                 //between('lng', lookup.lng-radius, lookup.lng+radius)
+
                 order('dateCreated','desc'
                 )
             }.list([sort: 'dateCreated', order: 'desc']).unique {
@@ -78,7 +80,12 @@ class ApiController {
                 nohp: instanceCommodity.nohp,
                 enabled: true).save(flush: true)
         println 'user ' + member.username
-        AuthUserAuthRole.create member, AuthRole.findByAuthority('ROLE_USER'), true
+
+        def roleUser = AuthRole.findByAuthority('ROLE_USER')
+        if (!AuthUserAuthRole.exists(member.id, roleUser.id)) {
+          AuthUserAuthRole.create member, roleUser, true
+        }
+
         def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
         Double dt = 0
         if (!last.isEmpty()) {
@@ -101,7 +108,7 @@ class ApiController {
                // println apa
 
                 if (ret.masterclass == "Commercial") {
-                    if (String.toDouble(search.latitude.toString()))
+                    if (Double.parseDouble(ret?.latitude?.toString()))
                     search = ret
                     break
                 }
