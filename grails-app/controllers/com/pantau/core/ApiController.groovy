@@ -28,9 +28,9 @@ class ApiController {
             ComodityInput.where {
 
                 'in'('comodityName', comodities)
-                lt('distance', lookup.radius)
-               // between('lat', lookup.lat-radius, lookup.lat+radius)
-                //between('lng', lookup.lng-radius, lookup.lng+radius)
+                //lt('distance', lookup.radius)
+                between('lat', lookup.lat-lookup.radius, lookup.lat+lookup.radius)
+                between('lng', lookup.lng-lookup.radius, lookup.lng+lookup.radius)
                 order('dateCreated','desc'
                 )
             }.list([sort: 'dateCreated', order: 'desc']).unique {
