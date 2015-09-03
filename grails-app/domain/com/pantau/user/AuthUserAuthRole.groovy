@@ -85,7 +85,7 @@ class AuthUserAuthRole implements Serializable {
     }
 
     static constraints = {
-        authRole validator: { AuthRole r, AuthUserAuthRole ur ->
+       /* authRole validator: { AuthRole r, AuthUserAuthRole ur ->
             if (ur.authUser == null) return
             boolean existing = false
             AuthUserAuthRole.withNewSession {
@@ -94,7 +94,8 @@ class AuthUserAuthRole implements Serializable {
             if (existing) {
                 return 'userRole.exists'
             }
-        }
+        }*/
+
     }
 
     static mapping = {

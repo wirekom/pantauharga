@@ -9,7 +9,10 @@ class Region {
 	static hasMany = [
 		children: Region,
 	]
-	
+	String toString(){
+		return this.name
+
+	}
     static constraints = {
 		name blank: false
 		geolocation blank: false

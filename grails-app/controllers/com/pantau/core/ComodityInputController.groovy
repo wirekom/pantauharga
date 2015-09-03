@@ -1,6 +1,7 @@
 package com.pantau.core
 
 import grails.validation.Validateable
+import org.hibernate.criterion.CriteriaSpecification
 
 import static org.springframework.http.HttpStatus.*
 import grails.converters.JSON
@@ -14,8 +15,22 @@ class ComodityInputController {
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
     def map(Integer max) {
-        params.max = Math.min(max ?: 10, 100)
-        respond ComodityInput.list(params), model:[comodityInputInstanceCount: ComodityInput.count()]
+        List<ComodityInput> ComodityInputs
+       // params.max = Math.min(max ?: 10, 100)
+        if (params.idparent != null){
+            ComodityInputs= ComodityInput.withCriteria {
+               createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
+               createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
+               and{
+                  eq("p.id",params.idparent)
+              }
+
+            }
+        }else {
+            ComodityInputs = ComodityInput.list()
+
+        }
+        respond ComodityInputs, model:[comodityInputInstanceCount: ComodityInputs.size(), idparent: params.idparent]
     }
 
     def index(Integer max) {
@@ -31,6 +46,30 @@ class ComodityInputController {
 		println params.start
 		println params.end
 		List<ComodityInput> Comodities = ComodityInput.findAllByDateCreatedBetween(params.start,params.end)
+        println inflationCommandModelInstance.region.id
+        if (inflationCommandModelInstance.region.id >0) {
+
+            Comodities = ComodityInput.withCriteria {
+                createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
+                createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
+                and{
+                    between("dateCreated",params.start,params.end)
+                    eq("p.id",inflationCommandModelInstance.region.id)
+                }
+
+            }
+
+
+        } else {
+
+            Comodities = ComodityInput.withCriteria {
+                createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
+                createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
+                between("dateCreated",params.start,params.end)
+
+
+            }
+        }
 		InflationCommandModel inflation = new InflationCommandModel()
 		inflation.Comodities = Comodities
 		inflationCommandModelInstance.inflation = inflation.countInflation()

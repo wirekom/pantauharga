@@ -1,3 +1,4 @@
+<%@ page import="com.pantau.core.Region" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
     <div class="col-lg-12">
         <g:if test="${flash.message}">
             <div class="alert alert-info" role="status">${flash.message}</div>
-        </g:if>
+        </g:if><!--
         <g:hasErrors bean="${inflationCommandModelInstance}">
             <ul class="alert alert-danger" role="alert">
                 <g:eachError bean="${comodityinflationCommandModelInstanceInputInstance}" var="error">
@@ -32,7 +33,7 @@
                             error="${error}"/></li>
                 </g:eachError>
             </ul>
-        </g:hasErrors>
+        </g:hasErrors>-->
         <g:form url="[action: 'calculateinflation',  controller: 'ComodityInput']" method="GET" role="form">
 
             <div class="panel panel-primary">
@@ -44,6 +45,17 @@
                 </div>
 
                 <div class="panel-body">
+                    <div class="form-group">
+                        <label for="price">
+                            <g:message code="comodityInput.start.label" default="Start Date"/>
+                            <span class="required-indicator">*</span>
+                        </label>
+                    <g:select name="inflationCommandModelInstance.region.id"
+                              from="${ com.pantau.core.Region.where {parent == null}}"
+                              value="${inflationCommandModelInstance?.region?.id}"
+                              noSelection="['null':'-Nasional-']"
+                              optionKey="id" />
+                    </div>
                     <div class="form-group">
                         <label for="price">
                             <g:message code="comodityInput.start.label" default="Start Date"/>

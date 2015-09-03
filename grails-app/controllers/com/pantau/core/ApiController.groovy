@@ -39,8 +39,14 @@ class ApiController {
                 it.lat
                 it.lng
             }.each {
+                def nohp = 0
+                if (it.amount > 0) {
+                    if (it.user.enabled == true){
+                        nohp = it.user.nohp
+                    }
 
-                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng))
+                }
+                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng, nohp: nohp))
             }
 
         }
@@ -92,51 +98,52 @@ class ApiController {
             dt = instanceCommodity.harga - last.first().price
         }
 
-        if (instanceCommodity.quantity == 0) {
+
             //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
-            BigDataRequestModel big = new BigDataRequestModel()
-            def jsonSlurper = new JsonSlurper()
-           // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
-            def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
-            def search
-            def apa = json.result
+        BigDataRequestModel big = new BigDataRequestModel()
+        def jsonSlurper = new JsonSlurper()
+       // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
+        def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
+        def search
+        def apa = json.result
 
-            println "sjon" + json
-            for (def ret : json.result) {
-				println "ret" + ret
-              //  def apa = jsonSlurper.parseText(ret.toString())
-               // println apa
+        println "sjon" + json
+        for (def ret : json.result) {
+            println "ret" + ret
+          //  def apa = jsonSlurper.parseText(ret.toString())
+           // println apa
 
-                if (ret.masterclass == "Commercial") {
-                    if (Double.parseDouble(ret?.latitude?.toString()))
-                    search = ret
-                    break
-                }
+            if (ret.masterclass == "Commercial") {
+                if (Double.parseDouble(ret?.latitude?.toString()))
+                search = ret
+                break
             }
-            println "search" + search.province
-            Region prop = Region.findByName(search.province)
-            if (prop?.name==null){
-                prop = new Region(name:search.province, geolocation: search.latitude+","+search.longitude).save(flush: true)
-            }
-            println prop
-            Region district = Region.findByName(search.district)
-            if (district?.name == null){
-                district = new Region(name:search.district, geolocation: search.latitude+","+search.longitude)
-                district.setParent(prop)
-                district.save(flush: true)
-            }
+        }
+        println "search" + search.province
+        Region prop = Region.findByName(search.province)
+        if (prop?.name==null){
+            prop = new Region(name:search.province, geolocation: search.latitude+","+search.longitude).save(flush: true)
+        }
+        println prop
+        Region district = Region.findByName(search.district)
+        if (district?.name == null){
+            district = new Region(name:search.district, geolocation: search.latitude+","+search.longitude)
+            district.setParent(prop)
+            district.save(flush: true)
+        }
 
-            Location loc = Location.findByName(search.name) ?: new Location(
-                    name: search.name,
-                    lat: search.latitude,
-					lng: search.longitude
-            ).save(flush: true)
+        Location loc = Location.findByName(search.name) ?: new Location(
+                name: search.name,
+                lat: search.latitude,
+                lng: search.longitude
+        ).save(flush: true)
+        if (instanceCommodity.quantity == 0) {
             instanceCommodity.lat = Double.parseDouble(search.latitude)
             instanceCommodity.lng = Double.parseDouble(search.longitude)
 
         }
 
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity,  delta: dt, region: district)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
@@ -192,4 +199,5 @@ class Marker {
     String latitude
     String longitude
     Double price
+    String nohp
 }

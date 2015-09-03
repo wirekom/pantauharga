@@ -7,6 +7,7 @@ class InflationCommandModel {
     //gw belom test, comodities itu disini semua comodityinput yang ketarik dari awal bulan sampai akhir bulan
     List<ComodityInput> Comodities
     Date start
+    Region region
     Date end
     Double inflation
 
@@ -18,6 +19,7 @@ class InflationCommandModel {
         Integer proteinCount = 0
         Integer karbohidratCount = 0
         Integer lainlainCount = 0
+
         if (Comodities.size() > 0) {
             if (Comodities.findAll { it -> it.comodityName.comodityType.name == "Daging" }.size() > 0) {
                 proteinSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Daging" }?.last().delta/Comodities.findAll{ it -> it.comodityName.comodityType.name == "Daging" }?.first().price //- Comodities.findAll{ it -> it.comodityName.comodityType.name == "Daging" }?.first().delta

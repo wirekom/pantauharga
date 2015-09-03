@@ -29,6 +29,25 @@
 
 <div class="row">
     <div class="col-lg-12">
+    <g:form url="[action: 'map',  controller: 'ComodityInput']" method="GET" role="form">
+        <div class="panel-body">
+                    <div class="form-group">
+                        <label for="region">
+                        <g:message code="comodityInput.start.label" default="Start Date"/>
+         <span class="required-indicator">*</span>
+        </label>
+        <g:select name="inflationCommandModelInstance.region.id"
+                  from="${ com.pantau.core.Region.where {parent == null}}"
+                  value="${idparent}"
+                  noSelection="['null':'-Nasional-']"
+                  optionKey="id" />
+        </div>
+        </div>
+        <div class="panel-footer">
+            <g:submitButton name="calculate" class="btn btn-primary save"
+                            value="${message(code: 'default.button.calculates.label', default: 'Calculate')}"/>
+        </div>
+    </g:form>
         <g:if test="${flash.message}">
             <div class="alert alert-info" role="status">${flash.message}</div>
         </g:if>

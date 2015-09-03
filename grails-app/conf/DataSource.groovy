@@ -10,6 +10,7 @@ hibernate {
     flush.mode = 'manual' // OSIV session flush mode outside of transactional context
 }
 grails {
+    /*
     mongo {
         databaseName = "pantaudb" // the default database name
         host = "localhost" // the host to connect to
@@ -36,5 +37,5 @@ grails {
             ssl = false // Specifies if the driver should use an SSL connection to Mongo
             // sslSocketFactory = … // Specifies the SSLSocketFactory to use for creating SSL connections
         }
-    }
+    }*/
 }
