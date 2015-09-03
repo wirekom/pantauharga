@@ -20,13 +20,13 @@ class InflationCommandModel {
         Integer lainlainCount = 0
         if (Comodities.size() > 0) {
             if (Comodities.findAll { it -> it.comodityName.comodityType.name == "Daging" }.size() > 0) {
-                proteinSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Daging" }.last().delta - Comodities.first { it -> it.comodityName.comodityType.name == "Daging" }.first().delta
+                proteinSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Daging" }?.last().delta/Comodities.findAll{ it -> it.comodityName.comodityType.name == "Daging" }?.first().price //- Comodities.findAll{ it -> it.comodityName.comodityType.name == "Daging" }?.first().delta
             }
             if (Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }.size() > 0) {
-                karbohidratSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }.last().delta - Comodities.first { it -> it.comodityName.comodityType.name == "Beras" }.first().delta
+                karbohidratSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.last().delta/Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.first().price //- Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.first().delta
             }
             if (Comodities.findAll { it -> it.comodityName.comodityType.name == "Gula" }.size() > 0) {
-                lainlainsumsum = comodities.findall { it -> it.comodityname.comoditytype.name == "Gula" }.last().delta - comodities.first { it -> it.comodityname.comoditytype.name == "Gula" }.first().delta
+                lainlainSum = comodities.findall { it -> it.comodityname.comoditytype.name == "Gula" }?.last().delta/Comodities.findAll{ it -> it.comodityname.comoditytype.name == "Gula" }?.first().price //- comodities.findAll{ it -> it.comodityname.comoditytype.name == "Gula" }?.first().delta
             }
         }
         /*

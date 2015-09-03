@@ -28,9 +28,9 @@ class ComodityInputController {
     }
 	
 	def calculateinflation (InflationCommandModel inflationCommandModelInstance) {
-		println inflationCommandModelInstance.start
-		println inflationCommandModelInstance.end
-		List<ComodityInput> Comodities = ComodityInput.findAllByDateCreatedBetween(inflationCommandModelInstance.start,inflationCommandModelInstance.end)
+		println params.start
+		println params.end
+		List<ComodityInput> Comodities = ComodityInput.findAllByDateCreatedBetween(params.start,params.end)
 		InflationCommandModel inflation = new InflationCommandModel()
 		inflation.Comodities = Comodities
 		inflationCommandModelInstance.inflation = inflation.countInflation()
