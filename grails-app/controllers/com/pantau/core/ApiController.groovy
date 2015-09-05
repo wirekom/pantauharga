@@ -158,18 +158,23 @@ class ApiController {
     def register(UserRegisterCommand userRegister) {
         println userRegister.username
         def user = AuthUser.findByNohp(userRegister.nohp)
-        println user
+        println 'user' + user
+        println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
             user = new AuthUser(userRegister.properties)
-            println 'userRegister >>>>>>>>> ' + userRegister.properties
+        } else {
+            user.properties = userRegister.properties;
         }
 
-        user.save(flush: false)
+        user.save(flush: false, failOnError: true)
         AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
         println 'User >>>>>>>>> ' + user
         println 'AuthRole >>>>>>>>> ' + authRole
-        //AuthUserAuthRole.create user, AuthRole.findByAuthority('ROLE_TRUSTED'), true
-        AuthUserAuthRole.create(user,authRole,true)
+        
+        if (!AuthUserAuthRole.exists(user.id, authRole.id)) {
+          AuthUserAuthRole.create user, authRole, true
+        }
+
         request.withFormat {
             '*' { respond userRegister, [status: CREATED] }
         }
