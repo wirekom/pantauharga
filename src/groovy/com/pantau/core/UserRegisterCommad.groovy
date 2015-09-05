@@ -14,4 +14,5 @@ class UserRegisterCommand {
     String nohp
     String alamat
     String kodepos
+    String nama
 }
