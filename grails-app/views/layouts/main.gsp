@@ -38,10 +38,8 @@
                         <li><a href="#"><i class="fa fa-fw fa-gear"></i>
                             Settings</a></li>
                         <li class="divider"></li>
-                        <li><g:remoteLink class="logout" controller="logout"
-                                          method="post" asynchronous="false"
-                                          onSuccess="location.reload()">
-                            <i class="fa fa-fw fa-sign-out"></i> Logout</g:remoteLink></li>
+                        <li><g:link  class="logout" controller="logout" action="index">
+                            <i class="fa fa-fw fa-sign-out"></i> Logout</g:link></li>
                     </ul></li>
             </sec:ifLoggedIn>
             <sec:ifNotLoggedIn>

@@ -46,14 +46,14 @@ class ComodityInputController {
 		println params.start
 		println params.end
 		List<ComodityInput> Comodities = ComodityInput.findAllByDateCreatedBetween(params.start,params.end)
-        println inflationCommandModelInstance.region.id
-        if (inflationCommandModelInstance.region.id >0) {
+       // println inflationCommandModelInstance.region.id
+        if (inflationCommandModelInstance.region != null || inflationCommandModelInstance.region?.id > 0) {
 
             Comodities = ComodityInput.withCriteria {
                 createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
                 createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
                 and{
-                    between("dateCreated",params.start,params.end)
+                    between("dateCreated",inflationCommandModelInstance.start,inflationCommandModelInstance.end)
                     eq("p.id",inflationCommandModelInstance.region.id)
                 }
 
@@ -63,13 +63,14 @@ class ComodityInputController {
         } else {
 
             Comodities = ComodityInput.withCriteria {
-                createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
-                createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
-                between("dateCreated",params.start,params.end)
+                //createAlias("region", "r", CriteriaSpecification.LEFT_JOIN)
+               // createAlias("region.parent", "p", CriteriaSpecification.LEFT_JOIN)
+                between("dateCreated",inflationCommandModelInstance.start,inflationCommandModelInstance.end)
 
 
             }
         }
+        println Comodities.size()
 		InflationCommandModel inflation = new InflationCommandModel()
 		inflation.Comodities = Comodities
 		inflationCommandModelInstance.inflation = inflation.countInflation()

@@ -61,7 +61,7 @@
                             <g:message code="comodityInput.start.label" default="Start Date"/>
                             <span class="required-indicator">*</span>
                         </label>
-                        <g:datePicker name="start" value="${inflationCommandModelInstance?.start}" precision="month"
+                        <g:datePicker name="inflationCommandModelInstance.start" value="${inflationCommandModelInstance?.start}" precision="month"
                                       noSelection="['': '-Choose-']" relativeYears="[-2..7]"/>
                     </div>
 
@@ -70,7 +70,7 @@
                             <g:message code="comodityInput.end.label" default="End Date"/>
                             <span class="required-indicator">*</span>
                         </label>
-                        <g:datePicker name="end" value="${inflationCommandModelInstance?.end}" precision="month"
+                        <g:datePicker name="inflationCommandModelInstance.end" value="${inflationCommandModelInstance?.end}" precision="month"
                                       noSelection="['': '-Choose-']" relativeYears="[-2..7]"/>
                     </div>
                 </div>

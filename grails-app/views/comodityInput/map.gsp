@@ -33,7 +33,7 @@
         <div class="panel-body">
                     <div class="form-group">
                         <label for="region">
-                        <g:message code="comodityInput.start.label" default="Start Date"/>
+                        <g:message code="comodityInput.start.label" default="Pilih Propinsi"/>
          <span class="required-indicator">*</span>
         </label>
         <g:select name="inflationCommandModelInstance.region.id"
