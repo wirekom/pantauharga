@@ -13,7 +13,8 @@ import static org.springframework.http.HttpStatus.*
 @Transactional(readOnly = true)
 class ApiController {
     def passwordEncoder
-    static allowedMethods = [hargaall: "POST", comodity: "POST", input:"POST", register: "POST", login: "POST"]
+    static allowedMethods = [hargaall: "POST", comodity: "POST", input: "POST", register: "POST", login: "POST"]
+
     def hargaall(LookupCommand lookup) {
         println 'lookup >>>' + lookup.radius
         //Double radius = lookup.radius/157
@@ -30,10 +31,10 @@ class ApiController {
                 'in'('comodityName', comodities)
 
                 lt('distance', lookup.radius * 1000)
-               // between('lat', lookup.lat-radius, lookup.lat+radius)
+                // between('lat', lookup.lat-radius, lookup.lat+radius)
                 //between('lng', lookup.lng-radius, lookup.lng+radius)
 
-                order('dateCreated','desc'
+                order('dateCreated', 'desc'
                 )
             }.list([sort: 'dateCreated', order: 'desc']).unique {
                 it.lat
@@ -41,7 +42,7 @@ class ApiController {
             }.each {
                 def nohp = 0
                 if (it.amount > 0) {
-                    if (it.user.enabled == true){
+                    if (it.user.enabled == true) {
                         nohp = it.user.nohp
                     }
 
@@ -89,7 +90,7 @@ class ApiController {
 
         def roleUser = AuthRole.findByAuthority('ROLE_USER')
         if (!AuthUserAuthRole.exists(member.id, roleUser.id)) {
-          AuthUserAuthRole.create member, roleUser, true
+            AuthUserAuthRole.create member, roleUser, true
         }
 
         def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
@@ -98,11 +99,10 @@ class ApiController {
             dt = instanceCommodity.harga - last.first().price
         }
 
-
-            //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
+        //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
         BigDataRequestModel big = new BigDataRequestModel()
         def jsonSlurper = new JsonSlurper()
-       // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
+        // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
         def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
         def search
         def apa = json.result
@@ -110,24 +110,24 @@ class ApiController {
         println "sjon" + json
         for (def ret : json.result) {
             println "ret" + ret
-          //  def apa = jsonSlurper.parseText(ret.toString())
-           // println apa
+            //  def apa = jsonSlurper.parseText(ret.toString())
+            // println apa
 
             if (ret.masterclass == "Commercial") {
                 if (Double.parseDouble(ret?.latitude?.toString()))
-                search = ret
+                    search = ret
                 break
             }
         }
         println "search" + search.province
         Region prop = Region.findByName(search.province)
-        if (prop?.name==null){
-            prop = new Region(name:search.province, geolocation: search.latitude+","+search.longitude).save(flush: true)
+        if (prop?.name == null) {
+            prop = new Region(name: search.province, geolocation: search.latitude + "," + search.longitude).save(flush: true)
         }
         println prop
         Region district = Region.findByName(search.district)
-        if (district?.name == null){
-            district = new Region(name:search.district, geolocation: search.latitude+","+search.longitude)
+        if (district?.name == null) {
+            district = new Region(name: search.district, geolocation: search.latitude + "," + search.longitude)
             district.setParent(prop)
             district.save(flush: true)
         }
@@ -143,12 +143,12 @@ class ApiController {
 
         }
 
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity,  delta: dt, region: district)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt, region: district)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
         }
-        println 'com ' + com.lat+' '+com.lng
+        println 'com ' + com.lat + ' ' + com.lng
         request.withFormat {
             '*' { respond instanceCommodity, [status: CREATED] }
         }
@@ -170,9 +170,9 @@ class ApiController {
         AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
         println 'User >>>>>>>>> ' + user
         println 'AuthRole >>>>>>>>> ' + authRole
-        
+
         if (!AuthUserAuthRole.exists(user.id, authRole.id)) {
-          AuthUserAuthRole.create user, authRole, true
+            AuthUserAuthRole.create user, authRole, true
         }
 
         request.withFormat {

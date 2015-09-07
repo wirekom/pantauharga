@@ -3,6 +3,7 @@ package com.pantau.core
 class Region {
 	String name
 	String geolocation
+
 	static belongsTo = [
             parent: Region
     ]

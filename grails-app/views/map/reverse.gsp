@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="main">
+    <meta name="layout" content="frontend">
     <g:set var="entityName"
-           value="${message(code: 'comodity.label', default: 'Comodity')}"/>
+           value="${message(code: 'comodityInput.label', default: 'ComodityInput')}"/>
     <title><g:message code="default.map.label" args="[entityName]"/></title>
 </head>
 
@@ -16,6 +16,12 @@
             <li><i class="fa fa-dashboard"></i> <a class="home"
                                                    href="${createLink(uri: '/')}"><g:message
                         code="default.home.label"/></a></li>
+            <li class="active"><i class="fa fa-list"></i> <g:link class="list" action="index"><g:message
+                    code="default.list.label" args="[entityName]"/></g:link></li>
+            <li class="active"><i class="fa fa-plus"></i> <g:link
+                    class="create" action="create">
+                <g:message code="default.new.label" args="[entityName]"/>
+            </g:link></li>
         </ol>
     </div>
 </div>
@@ -26,36 +32,18 @@
         <g:if test="${flash.message}">
             <div class="alert alert-info" role="status">${flash.message}</div>
         </g:if>
+        HEHEHE >> ${location}
         <div class="panel panel-primary">
             <div class="panel-heading">
                 <h3 class="panel-title">
-                    <i class="fa fa-map-marker"></i>
+                    <i class="fa fa-list"></i>
                     <g:message code="default.map.label" args="[entityName]"/>
                 </h3>
             </div>
 
-            <div id="map" style="height: 550px;"></div>
-
-            <g:form url="[action: 'map', controller: 'ComodityInput']" method="GET" role="form">
-                <div class="panel-body">
-                    <div class="form-group">
-                        <label for="region">
-                            <g:message code="comodityInput.start.label" default="Pilih Propinsi"/>
-                            <span class="required-indicator">*</span>
-                        </label>
-                        <g:select name="inflationCommandModelInstance.region.id"
-                                  from="${com.pantau.core.Region.where { parent == null }}"
-                                  value="${idparent}"
-                                  noSelection="['null': '-Nasional-']"
-                                  optionKey="id"/>
-                    </div>
-                </div>
-
-                <div class="panel-footer">
-                    <g:submitButton name="calculate" class="btn btn-primary save"
-                                    value="${message(code: 'default.button.calculates.label', default: 'Calculate')}"/>
-                </div>
-            </g:form>
+            <div class="panel-body map">
+                <div id="map" style="height: 550px;"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -100,11 +88,11 @@
                             position: location,
                             map: map
                         });
-                        infowindow.setContent('Your Location!<br />' + results[0].formatted_address);
+                        var info = '';
+                        for(var i = 0;i < results.length; i++)
+                            info += i + ' > ' + results[i].formatted_address + '<br />';
+                        infowindow.setContent('Your Location!<br />' + info);
                         infowindow.open(map, marker);
-                        google.maps.event.addListener(marker, 'click', function () {
-                            infowindow.open(map, marker);
-                        });
                     } else {
                         window.alert('No results found');
                     }
@@ -113,23 +101,6 @@
                 }
             });
         }
-
-        <g:each in="${comodityInputInstanceList}" status="i"
-							var="comodityInputInstance">
-        var marker${i} = new google.maps.Marker({
-            map: map,
-            position: ${comodityInputInstance.location},
-            clickable: true
-        });
-
-        marker${i}.info = new google.maps.InfoWindow({
-            content: '<b>Comodity:</b> ${comodityInputInstance?.comodityName?.name}</br>' + '<b>Price:</b> Rp. ${comodityInputInstance?.price}</br>'
-        });
-
-        google.maps.event.addListener(marker${i}, 'click', function () {
-            marker${i}.info.open(map, marker${i});
-        });
-        </g:each>
     }
 
 </script>
