@@ -28,7 +28,7 @@ class InflationCommandModel {
                 karbohidratSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.last().delta/Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.first().price //- Comodities.findAll { it -> it.comodityName.comodityType.name == "Beras" }?.first().delta
             }
             if (Comodities.findAll { it -> it.comodityName.comodityType.name == "Gula" }.size() > 0) {
-                lainlainSum = comodities.findall { it -> it.comodityname.comoditytype.name == "Gula" }?.last().delta/Comodities.findAll{ it -> it.comodityname.comoditytype.name == "Gula" }?.first().price //- comodities.findAll{ it -> it.comodityname.comoditytype.name == "Gula" }?.first().delta
+                lainlainSum = Comodities.findAll { it -> it.comodityName.comodityType.name == "Gula" }?.last().delta/Comodities.findAll{ it -> it.comodityName.comodityType.name == "Gula" }?.first().price
             }
         }
         /*

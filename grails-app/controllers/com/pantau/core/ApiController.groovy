@@ -23,6 +23,7 @@ class ApiController {
 
 
         }.list()
+        println(lookup.radius*1000)
         if (!comodities.isEmpty()) {
             println 'comodities' + comodities
             ComodityInput.where {
@@ -143,7 +144,9 @@ class ApiController {
 
         }
 
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity,  delta: dt, region: district)
+        println(instanceCommodity.quantity)
+        println(dt)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng : instanceCommodity.lng, amount: instanceCommodity.quantity.toInteger(),  delta: dt, region: district)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
