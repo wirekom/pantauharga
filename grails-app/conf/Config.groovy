@@ -152,11 +152,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/uploads/**' : ['permitAll'],
         '/**/favicon.ico': ['permitAll']]
 
-grails.mongo.default.mapping = {
-    version false
-    '*'(reference: true)
-}
-
 jasper.dir.reports = 'reports'
 
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true

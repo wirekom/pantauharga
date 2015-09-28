@@ -9,6 +9,7 @@ import grails.plugin.springsecurity.annotation.Secured
 @Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_TRUSTED', 'ROLE_UNTRUSTED', 'ROLE_SPECIAL'])
 @Transactional(readOnly = true)
 class ComodityInputController {
+    def springSecurityService
 
     static allowedMethods = [save: "POST", update: "PUT", delete: "DELETE"]
 
@@ -92,7 +93,7 @@ class ComodityInputController {
             respond comodityInputInstance.errors, view: 'create'
             return
         }
-
+        comodityInputInstance.user = springSecurityService.currentUser
         comodityInputInstance.save flush: true
 
         request.withFormat {
@@ -120,6 +121,7 @@ class ComodityInputController {
             return
         }
 
+        comodityInputInstance.user = springSecurityService.currentUser
         comodityInputInstance.save flush: true
 
         request.withFormat {
