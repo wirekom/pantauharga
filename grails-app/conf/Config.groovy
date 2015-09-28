@@ -151,13 +151,6 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/fonts/**'   : ['permitAll'],
         '/**/uploads/**' : ['permitAll'],
         '/**/favicon.ico': ['permitAll']]
-/*
-grails.plugin.springsecurity.rememberMe.persistent = true
-grails.plugin.springsecurity.rememberMe.persistentToken.domainClassName = 'com.pantau.user.PersistentLogin'
-grails.plugin.springsecurity.rest.token.storage.useGorm = true
-grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
-grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
-grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'*/
 
 grails.mongo.default.mapping = {
     version false
@@ -165,3 +158,37 @@ grails.mongo.default.mapping = {
 }
 
 jasper.dir.reports = 'reports'
+
+grails.plugin.springsecurity.rest.login.useJsonCredentials = true
+grails.plugin.springsecurity.rest.login.failureStatusCode = 401
+grails.plugin.springsecurity.rest.token.storage.useGorm = true
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
+grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+
+grails {
+    plugin {
+        springsecurity {
+            filterChain {
+                chainMap = [
+                        '/api/**'      : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
+                        '/secured/**'  : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
+                        '/anonymous/**': 'anonymousAuthenticationFilter,restTokenValidationFilter,restExceptionTranslationFilter,filterInvocationInterceptor',
+                        '/**'          : 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'
+                ]
+            }
+
+            //Other Spring Security settings
+            //...
+
+            rest {
+                token {
+                    validation {
+                        enableAnonymousAccess = true
+                        useBearerToken = true
+                    }
+                }
+            }
+        }
+    }
+}
