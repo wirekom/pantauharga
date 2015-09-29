@@ -153,7 +153,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/favicon.ico': ['permitAll']]
 
 jasper.dir.reports = 'reports'
-
+/*
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.failureStatusCode = 401
 grails.plugin.springsecurity.rest.token.storage.useGorm = true
@@ -187,3 +187,4 @@ grails {
         }
     }
 }
+*/

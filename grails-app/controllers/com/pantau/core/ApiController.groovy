@@ -6,7 +6,6 @@ import com.pantau.user.AuthUserAuthRole
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import grails.validation.Validateable
-import groovy.json.JsonSlurper
 import static org.springframework.http.HttpStatus.*
 
 @Secured(['permitAll'])
