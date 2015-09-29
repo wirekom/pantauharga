@@ -93,22 +93,22 @@ class ApiController {
             AuthUserAuthRole.create member, roleUser, true
         }
 
-        def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
+       // def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
         Double dt = 0
-        if (!last.isEmpty()) {
-            dt = instanceCommodity.harga - last.first().price
-        }
+        //if (!last.isEmpty()) {
+        //    dt = instanceCommodity.harga - last.first().price
+       // }
 
         //def (lat, lng) = instanceCommodity.geolocation.tokenize(',')
-        BigDataRequestModel big = new BigDataRequestModel()
-        def jsonSlurper = new JsonSlurper()
-        // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
-        def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
-        def search
-        def apa = json.result
+       /// BigDataRequestModel big = new BigDataRequestModel()
+       // def jsonSlurper = new JsonSlurper()
+       // // def json = jsonSlurper.parseText(big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10'))
+       // def json = big.getNearby(Double.toString(instanceCommodity.lat), Double.toString(instanceCommodity.lng), '10')
+       // def search
+       // def apa = json.result
 
-        println "sjon" + json
-        for (def ret : json.result) {
+      //  println "sjon" + json
+      /*  for (def ret : json.result) {
             println "ret" + ret
             //  def apa = jsonSlurper.parseText(ret.toString())
             // println apa
@@ -118,9 +118,10 @@ class ApiController {
                     search = ret
                 break
             }
-        }
-        println "search" + search.province
-        Region prop = Region.findByName(search.province)
+        }*/
+       // println "search" + search.province
+      //  Region prop = Region.findByName(search.province)
+        /*
         if (prop?.name == null) {
             prop = new Region(name: search.province, geolocation: search.latitude + "," + search.longitude).save(flush: true)
         }
@@ -141,7 +142,9 @@ class ApiController {
             instanceCommodity.lat = Double.parseDouble(search.latitude)
             instanceCommodity.lng = Double.parseDouble(search.longitude)
 
-        }
+        }*/
+        //akal2an
+        Region district = Region.find("FROM Region ORDER BY id")
 
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt, region: district)
         if (!com.save(flush: true)) {

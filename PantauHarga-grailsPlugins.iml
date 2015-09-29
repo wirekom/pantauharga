@@ -70,7 +70,6 @@
     <content url="file://$MODULE_DIR$/target/work/plugins/less-asset-pipeline-1.10.0">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/less-asset-pipeline-1.10.0/src/groovy" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/target/work/plugins/mongodb-3.0.3" />
     <content url="file://$MODULE_DIR$/target/work/plugins/rest-0.8">
       <sourceFolder url="file://$MODULE_DIR$/target/work/plugins/rest-0.8/src/groovy" isTestSource="false" />
     </content>
