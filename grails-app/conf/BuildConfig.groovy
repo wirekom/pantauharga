@@ -78,7 +78,7 @@ grails.project.dependency.resolution = {
 		compile ":rest-client-builder:2.1.1"
 		compile ":rest:0.8"
 		compile ":spring-security-rest:1.5.2", {
-			excludes: ['cors', 'spring-security-core']
+			excludes: ['spring-security-core']
 		}
 		compile ":mongodb:3.0.3"
 		compile ":jasper:1.12.0-SNAPSHOT"
