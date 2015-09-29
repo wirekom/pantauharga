@@ -157,16 +157,16 @@ jasper.dir.reports = 'reports'
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.failureStatusCode = 401
 grails.plugin.springsecurity.rest.token.storage.useGorm = true
-grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
-grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
-grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+//grails.plugin.sipringsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
+//grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
+//grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
 
 grails {
     plugin {
         springsecurity {
             filterChain {
                 chainMap = [
-                        '/api/**'      : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
+                       // '/api/**'      : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
                         '/secured/**'  : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
                         '/anonymous/**': 'anonymousAuthenticationFilter,restTokenValidationFilter,restExceptionTranslationFilter,filterInvocationInterceptor',
                         '/**'          : 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'

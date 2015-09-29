@@ -15,4 +15,8 @@ class UserRegisterCommand {
     String alamat
     String kodepos
     String nama
+    static constraints = {
+
+        ktp nullable: true, blank: true
+    }
 }

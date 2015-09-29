@@ -4,11 +4,11 @@
     <facet type="web" name="GrailsWeb">
       <configuration>
         <webroots>
+          <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
+          <root url="file://$MODULE_DIR$/target/work/plugins/spring-security-core-2.0-RC4/grails-app/views" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/jasper-1.12.0-SNAPSHOT/web-app" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/jasper-1.12.0-SNAPSHOT/grails-app/views" relative="/" />
-          <root url="file://$MODULE_DIR$/target/work/plugins/spring-security-core-2.0-RC4/grails-app/views" relative="/" />
           <root url="file://$MODULE_DIR$/target/work/plugins/jquery-1.11.1/web-app" relative="/" />
-          <root url="file://$MODULE_DIR$/target/work/plugins/database-migration-1.4.0/grails-app/views" relative="/" />
         </webroots>
         <sourceRoots />
       </configuration>

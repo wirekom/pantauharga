@@ -17,7 +17,7 @@ class District {
     }
 
     static mapping = {
-        id generator:'sequence', params:[sequence:'seq_district_id']
+        id generator: 'sequence', params: [sequence: 'seq_district_id']
         geometry sqlType: 'geometry(MultiPolygon,4326)'
         geoJSON formula: 'ST_AsGeoJSON(geometry)'
     }
