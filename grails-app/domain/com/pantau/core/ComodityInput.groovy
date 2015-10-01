@@ -21,9 +21,10 @@ class ComodityInput {
             user        : AuthUser,
             region      : Region
     ]
-    static mapping = {
-        distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
-    }
+    static transients = [ "distance"]
+    /*static mapping = {
+        /distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
+    }*/
 
     static constraints = {
         price blank: false

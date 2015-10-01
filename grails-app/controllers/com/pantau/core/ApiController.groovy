@@ -25,17 +25,20 @@ class ApiController {
         }.list()
         if (!comodities.isEmpty()) {
             println 'comodities' + comodities
-            ComodityInput.where {
+            /* ComodityInput.executeQuery {
 
                 'in'('comodityName', comodities)
 
-                lt('distance', lookup.radius * 1000)
+                //lt('distance', lookup.radius)
                 // between('lat', lookup.lat-radius, lookup.lat+radius)
                 //between('lng', lookup.lng-radius, lookup.lng+radius)
 
                 order('dateCreated', 'desc'
                 )
-            }.list([sort: 'dateCreated', order: 'desc']).unique {
+            }.*/
+            String query = "from ComodityInput where sqrt(POWER (69.1 * (lat - :ulatitude),2) + POWER (69.1 * (lng - :ulongitude) * cos(:ulatitude / 57.3),2)) * 1.609344 < :udistance and comodityName in (:ucomodityName) ORDER BY dateCreated desc"
+            def inputs = ComodityInput.executeQuery (query,[ulatitude: lookup.lat, ulongitude:lookup.lng, udistance:lookup.radius, ucomodityName:comodities])
+            .unique {
                 it.lat
                 it.lng
             }.each {
@@ -143,7 +146,7 @@ class ApiController {
 
         }*/
         //akal2an
-        
+
         Region district = Region.find("FROM Region ORDER BY id")
 
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt, region: district)
