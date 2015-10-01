@@ -143,7 +143,7 @@ class ApiController {
 
         }*/
         //akal2an
-        i
+        
         Region district = Region.find("FROM Region ORDER BY id")
 
         def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt, region: district)
