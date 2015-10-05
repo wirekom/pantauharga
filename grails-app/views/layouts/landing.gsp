@@ -52,7 +52,7 @@
                                         <ul class="sf-menu clearfix nav">
                                             <li class="current"><a href="#header" class="trigger"><span>Home</span></a>
                                             </li>
-                                            <li><a href="#services" class="trigger"><span>Services</span></a></li>
+                                            <!-- <li><a href="#services" class="trigger"><span>Services</span></a></li> -->
                                             <li><a href="#about" class="trigger"><span>About</span></a></li>
                                             <li><a href="#map" class="trigger"><span>Map</span></a></li>
                                             <!-- <li><a href="#inflasi" class="trigger"><span>Check Inflasi</span></a></li> -->
@@ -85,11 +85,11 @@
 
                                 <div class=""><hr></div>
                                 <h6 class="block_tile_2">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>
+                                    Mendekatkan petani dengan konsumen akhir<br>
                                 </h6>
 
                                 <div class="slide_down">
-                                    <a href="#services">EXPLORE</a>
+                                    <a href="#about">EXPLORE</a>
                                 </div>
                             </div>
                         </div>

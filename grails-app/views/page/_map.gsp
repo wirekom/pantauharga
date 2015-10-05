@@ -32,13 +32,14 @@
         map.data.loadGeoJson('${createLink(controller: 'page', action: 'comodityInputGeoJSON')}');
         map.data.addListener('click', function (event) {
             var content = '';
-            content += '<b>Comodity Type : </b>' + event.feature.getProperty("comodityType") + '<br />';
-            content += '<b>Comodity Name : </b>' + event.feature.getProperty("comodityName") + '<br />';
+            content += '<strong>Type : </strong>' + event.feature.getProperty("comodityType") + '<br />';
+            content += '<strong>Name : </strong>' + event.feature.getProperty("comodityName") + '<br />';
+            content += '<strong>Price/Kg : </strong>Rp. ' + event.feature.getProperty("price") + '/Kg<br />';
             if( event.feature.getProperty("amount") > 0){
-                content += '<b>Username : </b>' + event.feature.getProperty("username") + '<br />';
-                content += '<b>Phone : </b>' + event.feature.getProperty("phone") + '<br />';
+                content += '<strong>Username : </strong>' + event.feature.getProperty("username") + '<br />';
+                content += '<strong>Phone : </strong>' + event.feature.getProperty("phone") + '<br />';
             }
-            infowindow.setContent("<div style='width:250px;'>" + content + "</div>");
+            infowindow.setContent("<div style='width:250px;'><p>" + content + "</p></div>");
             // position the infowindow on the marker
             infowindow.setPosition(event.feature.getGeometry().get());
             // anchor the infowindow on the marker
@@ -74,7 +75,7 @@
                             position: location,
                             map: map
                         });
-                        infowindow.setContent('Your Location!<br />' + results[0].formatted_address);
+                        infowindow.setContent('<div style="width:250px;"><p>Your Location!<br />' + results[0].formatted_address + '</p></div>');
                         infowindow.open(map, marker);
                         google.maps.event.addListener(marker, 'click', function () {
                             infowindow.open(map, marker);

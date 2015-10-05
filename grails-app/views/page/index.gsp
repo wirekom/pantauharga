@@ -8,7 +8,7 @@
 <body>
 <div class="content_wrapper_inner">
 
-    <g:render template="service"/>
+
 
     <g:render template="about"/>
 

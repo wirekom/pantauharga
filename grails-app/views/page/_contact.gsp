@@ -6,12 +6,7 @@
                 <h1 class="block_tile_1">Contact us</h1>
 
                 <div class="icon_separator"></div>
-                <h6 class="block_tile_2">
-                    Lorem ipsum dolor sit amet, adipisicing elit. Non sed sequi irure in voluptate repellat eum <span
-                        class="color_hi">earum praesentium</span> totam! <br>
-                    Quia, voanim uis aute <span
-                        class="color_hi">consectetur</span> dolor in reprehenderit velit esse
-                </h6>
+
             </div>
 
             <div class="clear"></div>
@@ -66,7 +61,7 @@
 
                             <div class="contact_detail">
                                 <div class="contact_circle_holder">
-                                    <div class="c_d_text">Address : Jl.Bekasi Timur VI No.12, Cipinang Besar Utara, Jakarta Timur.</div>
+                                    <div class="c_d_text">Address : Jl.Sukamakmur Timur VI No.122, Karet Besar Utara, Jakarta Barat.</div>
 
                                     <div class="contact_circle"><i class="icons-map-marker"></i>
                                     </div>
