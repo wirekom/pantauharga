@@ -1,5 +1,5 @@
 <head>
-<meta name='layout' content='frontend' />
+<meta name='layout' content='login' />
 <title><g:message code="springSecurity.login.title" /></title>
 </head>
 

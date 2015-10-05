@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="layout" content="frontend">
+    <meta name="layout" content="login">
     <g:set var="entityName"
            value="${message(code: 'comodity.label', default: 'Comodity')}"/>
     <title><g:message code="default.map.label" args="[entityName]"/></title>

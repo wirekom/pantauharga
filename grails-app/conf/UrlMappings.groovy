@@ -13,7 +13,7 @@ class UrlMappings {
         "/api/comodityInputs"(resources: "comodityInput")
         "/api/comodityTypes"(resources: "comodityType")
         */
-        "/"(controller: 'comodityInput', action: 'map')
+        "/"(controller: 'page', action: 'index')
         "500"(view: '/error')
         "404"(view: '/error')
         "403"(view: '/error')
