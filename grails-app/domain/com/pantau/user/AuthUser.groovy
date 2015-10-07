@@ -36,7 +36,6 @@ class AuthUser {
         password column: '`password`'
     }
 
-
     Set<AuthRole> getAuthorities() {
         AuthUserAuthRole.findAllByAuthUser(this).collect { it.authRole }
     }

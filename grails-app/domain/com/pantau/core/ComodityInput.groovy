@@ -6,35 +6,36 @@ import com.pantau.user.AuthUser
 class ComodityInput {
 
     Double price
-	Double delta
     Double lat
-	Double lng
+    Double lng
+    Integer amount
+    Double delta
     Date dateCreated
     Date lastUpdated
-	Integer amount
-    Double distance
+
     Double plus(ComodityInput other) {
         delta + other.delta
     }
+
     static belongsTo = [
             comodityName: Comodity,
             user        : AuthUser,
             region      : Region
     ]
-    static transients = [ "distance"]
-    /*static mapping = {
-        /distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
-    }*/
 
     static constraints = {
         price blank: false
         user nullable: true, blank: true
         region nullable: true, blank: true
         amount nullable: true, blank: true
+        delta nullable: true, blank: true
+    }
+
+    static mapping = {
+        id generator: 'sequence', params: [sequence: 'seq_comodity_input_id']
     }
 
     String getLocation() {
-        //def (latitude, longitude) = geoTag.tokenize(',');
         return "{lat: ${lat}, lng: ${lng}}"
     }
 }

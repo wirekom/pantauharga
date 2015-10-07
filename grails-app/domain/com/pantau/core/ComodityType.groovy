@@ -1,17 +1,22 @@
 package com.pantau.core
 
 class ComodityType {
-	
-	String name
-	Double weight
-	static hasMany = [
-		comodity: Comodity,
-	]
+
+    String name
+    Double weight
+
+    static hasMany = [comodity: Comodity]
+
     static constraints = {
-		name unique: true
+        name unique: true
     }
 
-	String toString(){
-		name
-	}
+    static mapping = {
+        id generator: 'sequence', params: [sequence: 'seq_comodity_type_id']
+    }
+
+    String toString() {
+        name
+    }
+
 }

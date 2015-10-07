@@ -1,21 +1,25 @@
 class UrlMappings {
 
     static mappings = {
+        "/$namespace/$controller/$action?/$id?(.$format)?" {
+            constraints {
+                // apply constraints here
+            }
+        }
         "/$controller/$action?/$id?(.$format)?" {
             constraints {
                 // apply constraints here
             }
         }
-        /*
-        "/api/authUsers"(resources: "authUser")
-        "/api/authRoles"(resources: "authRole")
-        "/api/comodities"(resources: "comodity")
-        "/api/comodityInputs"(resources: "comodityInput")
-        "/api/comodityTypes"(resources: "comodityType")
-        */
+        "/api/comodityInputs"(resources: 'comodityInput', namespace: 'api')
+        "/api/comodities"(resources: 'comodity', namespace: 'api')
+        "/api/comodityTypes"(resources: 'comodityType', namespace: 'api')
+        "/api/authUsers"(resources: 'authUser', namespace: 'api')
+        "/api/guest/register"(resources: 'authUser', namespace: 'api', action: 'create')
         "/"(controller: 'page', action: 'index')
         "500"(view: '/error')
         "404"(view: '/error')
         "403"(view: '/error')
+        "401"(view: '/error')
     }
 }
