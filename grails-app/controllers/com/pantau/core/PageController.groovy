@@ -23,9 +23,9 @@ class PageController {
             item['properties'] = [
                     'comodityType': it.comodityName?.comodityType?.name,
                     'comodityName': it.comodityName?.name,
-                    'username': it.user?.username,
+                    //'username': it.user?.username,
                     'price': moneyform.format(it.price),
-                    'phone': it.user?.nohp,
+                   // 'phone': it.user?.nohp,
                     'amount': it.amount
             ]
             item['geometry'] = ['type': "Point", 'coordinates': [it?.lng, it?.lat]]
