@@ -1,5 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="PantauHarga" external.linked.project.path="$MODULE_DIR$" external.root.project.path="$MODULE_DIR$" external.system.id="GRADLE" external.system.module.group="" external.system.module.version="unspecified" type="JAVA_MODULE" version="4">
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="file://$MODULE_DIR$/lib" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" value="linksrc:.link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/conf" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" value="linksrc:.link_to_grails_plugins/cache-1.1.8/grails-app/conf" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/conf" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" value="linksrc:.link_to_grails_plugins/database-migration-1.4.0/grails-app/views" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
+    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
+    <conelement value="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER" />
+    <src_description expected_position="1">
+      <src_folder value="file://$MODULE_DIR$/src/java" expected_position="0" />
+      <src_folder value="file://$MODULE_DIR$/src/groovy" expected_position="2" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/conf" expected_position="3" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/controllers" expected_position="4" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/services" expected_position="5" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/taglib" expected_position="6" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/utils" expected_position="7" />
+      <src_folder value="file://$MODULE_DIR$/test/integration" expected_position="8" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/domain" expected_position="9" />
+      <src_folder value="file://$MODULE_DIR$/grails-app/i18n" expected_position="10" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" expected_position="11" />
+      <src_folder value="file://$MODULE_DIR$/test/unit" expected_position="13" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" expected_position="14" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" expected_position="15" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" expected_position="16" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" expected_position="17" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" expected_position="18" />
+      <src_folder value="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" expected_position="19" />
+      <src_folder value="GROOVY_DSL_SUPPORT" expected_position="24" />
+    </src_description>
+  </component>
   <component name="FacetManager">
     <facet type="Spring" name="Spring">
       <configuration>
@@ -23,24 +55,43 @@
         <naming-strategy-map />
       </configuration>
     </facet>
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/templates/war/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/templates/war" relative="/WEB-INF" />
+        </webroots>
+        <sourceRoots>
+          <root url="file://$MODULE_DIR$/src/java" />
+          <root url="file://$MODULE_DIR$/src/groovy" />
+          <root url="file://$MODULE_DIR$/grails-app/conf" />
+          <root url="file://$MODULE_DIR$/grails-app/controllers" />
+          <root url="file://$MODULE_DIR$/grails-app/services" />
+          <root url="file://$MODULE_DIR$/grails-app/taglib" />
+          <root url="file://$MODULE_DIR$/grails-app/utils" />
+          <root url="file://$MODULE_DIR$/grails-app/domain" />
+          <root url="file://$MODULE_DIR$/grails-app/i18n" />
+        </sourceRoots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
-    <output url="file://$MODULE_DIR$/build" />
-    <output-test url="file://$MODULE_DIR$/build" />
+    <output url="file://$MODULE_DIR$/target-eclipse/classes" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/groovy" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/conf" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/controllers" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/domain" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/build" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/gspcompile" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes" />
@@ -52,10 +103,39 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER" level="application" />
+    <orderEntry type="module-library" exported="">
+      <library name="lib">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="PantauHarga-grailsPlugins" />
     <orderEntry type="module-library" exported="">
       <library name="Grails User Library (PantauHarga)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
+          <root url="jar://$MAVEN_REPOSITORY$/jfree/jcommon/1.0.15/jcommon-1.0.15.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/2.1/commons-digester-2.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/5.6.1/jasperreports-5.6.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-sandbox/4.5.1/lucene-sandbox-4.5.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queries/4.5.1/lucene-queries-4.5.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queryparser/4.5.1/lucene-queryparser-4.5.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.1.4/jackson-annotations-2.1.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.1.4/jackson-databind-2.1.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.1.4/jackson-core-2.1.4.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/castor/castor/1.2/castor-1.2.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/eclipse/jdtcore/3.1.0/jdtcore-3.1.0.jar!/" />
+          <root url="jar://$MAVEN_REPOSITORY$/com/lowagie/itext/2.1.7/itext-2.1.7.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/xerces/xercesImpl/2.9.1/xercesImpl-2.9.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/net/sourceforge/nekohtml/nekohtml/1.9.16/nekohtml-1.9.16.jar!/" />
@@ -79,25 +159,8 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/poi/poi/3.10-FINAL/poi-3.10-FINAL.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/olap4j/olap4j/0.9.7.309-JS-3/olap4j-0.9.7.309-JS-3.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/jakarta-regexp/jakarta-regexp/1.4/jakarta-regexp-1.4.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-sandbox/4.5.1/lucene-sandbox-4.5.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queries/4.5.1/lucene-queries-4.5.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-queryparser/4.5.1/lucene-queryparser-4.5.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-analyzers-common/4.5.1/lucene-analyzers-common-4.5.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/apache/lucene/lucene-core/4.5.1/lucene-core-4.5.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-annotations/2.1.4/jackson-annotations-2.1.4.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-core/2.1.4/jackson-core-2.1.4.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/codehaus/castor/castor/1.2/castor-1.2.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/eclipse/jdtcore/3.1.0/jdtcore-3.1.0.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/xml-apis/xml-apis/1.3.02/xml-apis-1.3.02.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/jfree/jfreechart/1.0.12/jfreechart-1.0.12.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/jfree/jcommon/1.0.15/jcommon-1.0.15.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/commons-logging/commons-logging/1.1.1/commons-logging-1.1.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/commons-digester/commons-digester/2.1/commons-digester-2.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/net/sf/jasperreports/jasperreports/5.6.1/jasperreports-5.6.1.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcmail-jdk14/1.38/bcmail-jdk14-1.38.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bcprov-jdk14/1.38/bcprov-jdk14-1.38.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/org/bouncycastle/bctsp-jdk14/1.38/bctsp-jdk14-1.38.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/com/lowagie/itext/2.1.7/itext-2.1.7.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/liquibase/liquibase-core/2.0.5/liquibase-core-2.0.5.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar!/" />
@@ -125,7 +188,6 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-el/7.0.55/tomcat-embed-el-7.0.55.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/embed/tomcat-embed-jasper/7.0.55/tomcat-embed-jasper-7.0.55.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/apache/tomcat/tomcat-catalina-ant/7.0.55/tomcat-catalina-ant-7.0.55.jar!/" />
-          <root url="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.1.4/jackson-databind-2.1.4.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -133,6 +195,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="grails-2.4.4" level="application" />
-    <orderEntry type="module" module-name="PantauHarga-grailsPlugins" />
   </component>
 </module>
