@@ -39,6 +39,7 @@ class BootStrap {
         }
         JSON.registerObjectMarshaller(Comodity) {
             def returnArray = [:]
+            returnArray['id'] = it.id
             returnArray['name'] = it.name
             returnArray['sku'] = it.sku
             return returnArray
