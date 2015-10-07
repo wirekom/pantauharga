@@ -18,5 +18,7 @@ class UserRegisterCommand {
     static constraints = {
 
         ktp nullable: true, blank: true
+        alamat nullable:true, blank:true
+        kodepos nullable: true,blank: true
     }
 }
