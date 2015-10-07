@@ -3,7 +3,7 @@ import com.pantau.core.ComodityType
 import com.pantau.user.AuthRole
 import com.pantau.user.AuthUser
 import com.pantau.user.AuthUserAuthRole
-
+import grails.converters.JSON
 
 class BootStrap {
     def bootstrapService
@@ -36,6 +36,12 @@ class BootStrap {
                     .addToComodity(new Comodity(sku: '2', name: 'Daging Sapi Paha Belakang'))
                     .addToComodity(new Comodity(sku: '2', name: 'Daging Sapi Murni'))
                     .save(flush: true)
+        }
+        JSON.registerObjectMarshaller(Comodity) {
+            def returnArray = [:]
+            returnArray['name'] = it.name
+            returnArray['sku'] = it.sku
+            return returnArray
         }
 
     }

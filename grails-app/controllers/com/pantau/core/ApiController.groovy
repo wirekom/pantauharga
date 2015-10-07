@@ -57,7 +57,7 @@ class ApiController {
     }
 
     def comodityall() {
-        respond Comodity.list([sort: 'name', order: 'asc', max: 10])
+        respond Comodity.list([sort: 'name', order: 'asc'])
     }
 
     def comodity(LookupCommand lookup) {

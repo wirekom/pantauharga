@@ -13,6 +13,9 @@ class Comodity {
     static constraints = {
 		name blank : false
     }
+	static mapping = {
+		comodityType lazy:true;
+	}
 
 	String toString() {
 		name
