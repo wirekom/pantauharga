@@ -78,11 +78,10 @@ grails.project.dependency.resolution = {
         compile ":spring-security-core:2.0-RC4"
         compile ":rest-client-builder:2.1.1"
         compile ":rest:0.8"
-        /*
         compile ":spring-security-rest:1.5.2", {
-            excludes: ['spring-security-core']
+            excludes:
+            ['spring-security-core']
         }
-        */
         compile ":jasper:1.12.0-SNAPSHOT"
 
     }

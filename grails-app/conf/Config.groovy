@@ -120,7 +120,12 @@ log4j.main = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-    debug 'org.hibernate.SQL'
+    debug 'org.hibernate.SQL',
+            'grails.plugin.springsecurity',
+            'grails.app.controllers.grails.plugin.springsecurity',
+            'grails.app.services.grails.plugin.springsecurity',
+            'org.pac4j',
+            'org.springframework.security'
     error 'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
             'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -153,23 +158,21 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/favicon.ico': ['permitAll']]
 
 jasper.dir.reports = 'reports'
-/*
+
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.failureStatusCode = 401
 grails.plugin.springsecurity.rest.token.storage.useGorm = true
-//grails.plugin.sipringsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
-//grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
-//grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
-
+grails.plugin.sipringsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
+grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
 grails {
     plugin {
         springsecurity {
             filterChain {
                 chainMap = [
-                       // '/api/**'      : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
-                        '/secured/**'  : 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
-                        '/anonymous/**': 'anonymousAuthenticationFilter,restTokenValidationFilter,restExceptionTranslationFilter,filterInvocationInterceptor',
-                        '/**'          : 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'
+                    '/api/guest/**': 'anonymousAuthenticationFilter,restTokenValidationFilter,restExceptionTranslationFilter,filterInvocationInterceptor',
+                    '/api/**': 'JOINED_FILTERS,-anonymousAuthenticationFilter,-exceptionTranslationFilter,-authenticationProcessingFilter,-securityContextPersistenceFilter',
+                    '/**': 'JOINED_FILTERS,-restTokenValidationFilter,-restExceptionTranslationFilter'
                 ]
             }
 
@@ -180,11 +183,9 @@ grails {
                 token {
                     validation {
                         enableAnonymousAccess = true
-                        useBearerToken = true
                     }
                 }
             }
         }
     }
 }
-*/

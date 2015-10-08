@@ -6,13 +6,12 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        /*
-        "/api/authUsers"(resources: "authUser")
-        "/api/authRoles"(resources: "authRole")
-        "/api/comodities"(resources: "comodity")
-        "/api/comodityInputs"(resources: "comodityInput")
-        "/api/comodityTypes"(resources: "comodityType")
-        */
+        "/api/comodityInputs"(resources: 'comodityInput', namespace: 'api')
+        "/api/comodities"(resources: 'comodity', namespace: 'api')
+        "/api/comodityTypes"(resources: 'comodityType', namespace: 'api')
+        "/api/authUsers"(resources: 'authUser', namespace: 'api')
+        "/api/guest/register"(resources: 'authUser', namespace: 'api', action: 'create')
+        "/api/guest/test"(resources: 'test', namespace: 'api', action: 'index')
         "/"(controller: 'page', action: 'index')
         "500"(view: '/error')
         "404"(view: '/error')
