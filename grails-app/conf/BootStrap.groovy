@@ -47,7 +47,6 @@ class BootStrap {
         JSON.registerObjectMarshaller(AuthUser) {
             def returnArray = [:]
             returnArray['username'] = it.username
-            returnArray['password'] = it.password
             returnArray['nama'] = it.nama
             returnArray['email'] = it.email
             returnArray['ktp'] = it.ktp
