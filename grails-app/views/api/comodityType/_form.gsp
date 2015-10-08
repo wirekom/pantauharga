@@ -22,7 +22,7 @@
     <li><g:link controller="comodity" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
 </g:each>
 <li class="add">
-<g:link controller="comodity" action="create" params="['comodityType.id': comodityTypeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comodity.label', default: 'Comodity')])}</g:link>
+<g:link controller="comodity" action="create" params="['comodityType.id': comodityTypeInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'comodity.label', default: 'ComodityMarshaller')])}</g:link>
 </li>
 </ul>
 

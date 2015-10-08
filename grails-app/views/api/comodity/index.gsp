@@ -6,7 +6,7 @@
 <head>
 <meta name="layout" content="main">
 <g:set var="entityName"
-	value="${message(code: 'comodity.label', default: 'Comodity')}" />
+	value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>

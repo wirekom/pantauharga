@@ -1,9 +1,10 @@
+<%@ page import="com.pantau.user.AuthRole" %>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}" />
-		<title><g:message code="default.create.label" args="[entityName]" /></title>
+		<g:set var="entityName" value="${message(code: 'authRole.label', default: 'AuthRole')}" />
+		<title><g:message code="default.edit.label" args="[entityName]" /></title>
 	</head>
 	<body>
 		<!-- Page Heading -->
@@ -12,6 +13,7 @@
 				<ol class="breadcrumb">
 					<li><i class="fa fa-dashboard"></i> <a class="home" href="${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
 					<li class="active"><i class="fa fa-list"></i> <g:link class="list" action="index"><g:message code="default.list.label" args="[entityName]" /></g:link></li>
+					<li class="active"><i class="fa fa-plus"></i> <g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
 				</ol>
 			</div>
 		</div>
@@ -22,29 +24,29 @@
 				<g:if test="${flash.message}">
 				<div class="alert alert-info" role="status">${flash.message}</div>
 				</g:if>
-				<g:hasErrors bean="${comodityInstance}">
+				<g:hasErrors bean="${authRoleInstance}">
 				<ul class="alert alert-danger" role="alert">
-					<g:eachError bean="${comodityInstance}" var="error">
+					<g:eachError bean="${authRoleInstance}" var="error">
 					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
 					</g:eachError>
 				</ul>
 				</g:hasErrors>
-				<g:form url="[resource:comodityInstance, action:'save']"  role="form">
-					
+				<g:form url="[resource:authRoleInstance, action:'update']" method="PUT"  role="form">					
 					<div class="panel panel-primary">
 						<div class="panel-heading">
 							<h3 class="panel-title">
-								<i class="fa fa-plus"></i> 
-								<g:message code="default.create.label" args="[entityName]" />
+								<i class="fa fa-pencil"></i>
+								<g:message code="default.edit.label" args="[entityName]" />
 							</h3>
 						</div>
 	
 						<div class="panel-body">
-							<g:render template="form"/>						
+							<g:hiddenField name="version" value="${authRoleInstance?.version}" />
+							<g:render template="form"/>							
 						</div>
 	
 						<div class="panel-footer">
-							<g:submitButton name="create" class="btn btn-primary save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
+							<g:actionSubmit class="btn btn-primary save" action="update" value="${message(code: 'default.button.update.label', default: 'Update')}" />
 						</div>
 					</div>
 				</g:form>

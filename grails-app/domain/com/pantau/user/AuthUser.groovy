@@ -16,7 +16,6 @@ class AuthUser {
     boolean accountExpired
     boolean accountLocked
     boolean passwordExpired
-    List<AuthRole> roles
 
     static transients = ['springSecurityService', 'roles']
 
@@ -29,7 +28,6 @@ class AuthUser {
         nohp unique: true
         alamat nullable: true, blank: true
         kodepos nullable: true, blank: true
-        roles bindable: true
     }
 
     static mapping = {

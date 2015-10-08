@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta name="layout" content="main">
-		<g:set var="entityName" value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}" />
+		<g:set var="entityName" value="${message(code: 'authRole.label', default: 'AuthRole')}" />
 		<title><g:message code="default.create.label" args="[entityName]" /></title>
 	</head>
 	<body>
@@ -22,14 +22,14 @@
 				<g:if test="${flash.message}">
 				<div class="alert alert-info" role="status">${flash.message}</div>
 				</g:if>
-				<g:hasErrors bean="${comodityInstance}">
+				<g:hasErrors bean="${authRoleInstance}">
 				<ul class="alert alert-danger" role="alert">
-					<g:eachError bean="${comodityInstance}" var="error">
+					<g:eachError bean="${authRoleInstance}" var="error">
 					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>><g:message error="${error}"/></li>
 					</g:eachError>
 				</ul>
 				</g:hasErrors>
-				<g:form url="[resource:comodityInstance, action:'save']"  role="form">
+				<g:form url="[resource:authRoleInstance, action:'save']"  role="form">
 					
 					<div class="panel panel-primary">
 						<div class="panel-heading">

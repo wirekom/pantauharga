@@ -41,7 +41,7 @@ class ComodityController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.created.message', args: [message(code: 'comodity.label', default: 'Comodity'), comodityInstance.id])
+                flash.message = message(code: 'default.created.message', args: [message(code: 'comodity.label', default: 'ComodityMarshaller'), comodityInstance.id])
                 redirect comodityInstance
             }
             '*' { respond comodityInstance, [status: CREATED] }
@@ -68,7 +68,7 @@ class ComodityController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.updated.message', args: [message(code: 'Comodity.label', default: 'Comodity'), comodityInstance.id])
+                flash.message = message(code: 'default.updated.message', args: [message(code: 'ComodityMarshaller.label', default: 'ComodityMarshaller'), comodityInstance.id])
                 redirect comodityInstance
             }
             '*'{ respond comodityInstance, [status: OK] }
@@ -87,7 +87,7 @@ class ComodityController {
 
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.deleted.message', args: [message(code: 'Comodity.label', default: 'Comodity'), comodityInstance.id])
+                flash.message = message(code: 'default.deleted.message', args: [message(code: 'ComodityMarshaller.label', default: 'ComodityMarshaller'), comodityInstance.id])
                 redirect action:"index", method:"GET"
             }
             '*'{ render status: NO_CONTENT }
@@ -97,7 +97,7 @@ class ComodityController {
     protected void notFound() {
         request.withFormat {
             form multipartForm {
-                flash.message = message(code: 'default.not.found.message', args: [message(code: 'comodity.label', default: 'Comodity'), params.id])
+                flash.message = message(code: 'default.not.found.message', args: [message(code: 'comodity.label', default: 'ComodityMarshaller'), params.id])
                 redirect action: "index", method: "GET"
             }
             '*'{ render status: NOT_FOUND }

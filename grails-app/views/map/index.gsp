@@ -4,7 +4,7 @@
 <head>
     <meta name="layout" content="login">
     <g:set var="entityName"
-           value="${message(code: 'comodity.label', default: 'Comodity')}"/>
+           value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}"/>
     <title><g:message code="default.map.label" args="[entityName]"/></title>
 </head>
 
@@ -87,13 +87,15 @@
                         var info = '';
                         for (var i = 0; i < results.length; i++)
                             info += i + ' > ' + results[i].formatted_address + '<br />';
+                        info += 'Latitude : ' + location.lat + '<br />';
+                        info += 'Longitude : ' + location.lng + '<br />';
                         infowindow.setContent('Your Location!<br />' + info);
                         infowindow.open(map, marker);
                     } else {
-                        window.alert('No results found');
+                        console.log('No results found');
                     }
                 } else {
-                    window.alert('Geocoder failed due to: ' + status);
+                    console.log('Geocoder failed due to: ' + status);
                 }
             });
         }

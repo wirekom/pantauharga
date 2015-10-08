@@ -4,7 +4,7 @@
 <head>
     <meta name="layout" content="main">
     <g:set var="entityName"
-           value="${message(code: 'comodity.label', default: 'Comodity')}"/>
+           value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}"/>
     <title><g:message code="default.map.label" args="[entityName]"/></title>
 </head>
 
@@ -123,7 +123,7 @@
         });
 
         marker${i}.info = new google.maps.InfoWindow({
-            content: '<b>Comodity:</b> ${comodityInputInstance?.comodityName?.name}</br>' + '<b>Price:</b> Rp. ${comodityInputInstance?.price}</br>'
+            content: '<b>ComodityMarshaller:</b> ${comodityInputInstance?.comodityName?.name}</br>' + '<b>Price:</b> Rp. ${comodityInputInstance?.price}</br>'
         });
 
         google.maps.event.addListener(marker${i}, 'click', function () {

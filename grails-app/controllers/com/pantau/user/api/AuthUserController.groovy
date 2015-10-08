@@ -19,24 +19,24 @@ class AuthUserController {
     @Secured(['ROLE_ADMIN'])
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond AuthUser.list(params), model:[authUserInstanceCount: AuthUser.count()]
+        respond AuthUser.list(params), model: [authUserInstanceCount: AuthUser.count()]
     }
 
     @Secured(['ROLE_ADMIN', 'ROLE_USER', 'ROLE_TRUSTED', 'ROLE_UNTRUSTED', 'ROLE_SPECIAL'])
     def show(AuthUser authUserInstance) {
-        if(authUserInstance != springSecurityService.currentUser){
+        if (authUserInstance != springSecurityService.currentUser) {
             unauthorized()
             return
         }
         respond authUserInstance
     }
 
-    @Secured(["permitAll"])
+    @Secured(['ROLE_ADMIN', 'ROLE_GUEST', 'ROLE_ANONYMOUS'])
     def create() {
         respond new AuthUser(params)
     }
 
-    @Secured(["permitAll"])
+    @Secured(['ROLE_ADMIN', 'ROLE_GUEST', 'ROLE_ANONYMOUS'])
     @Transactional
     def save(AuthUser authUserInstance) {
         if (authUserInstance == null) {
@@ -45,11 +45,11 @@ class AuthUserController {
         }
 
         if (authUserInstance.hasErrors()) {
-            respond authUserInstance.errors, view:'create'
+            respond authUserInstance.errors, view: 'create'
             return
         }
 
-        authUserInstance.save flush:true
+        authUserInstance.save flush: true
         AuthUserAuthRole.create authUserInstance, AuthRole.findByAuthority('ROLE_TRUSTED'), true
 
         request.withFormat {
@@ -74,24 +74,24 @@ class AuthUserController {
             return
         }
 
-        if(authUserInstance != springSecurityService.currentUser){
+        if (authUserInstance != springSecurityService.currentUser) {
             unauthorized()
             return
         }
 
         if (authUserInstance.hasErrors()) {
-            respond authUserInstance.errors, view:'edit'
+            respond authUserInstance.errors, view: 'edit'
             return
         }
 
-        authUserInstance.save flush:true
+        authUserInstance.save flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.updated.message', args: [message(code: 'AuthUser.label', default: 'AuthUser'), authUserInstance.id])
                 redirect authUserInstance
             }
-            '*'{ respond authUserInstance, [status: OK] }
+            '*' { respond authUserInstance, [status: OK] }
         }
     }
 
@@ -104,19 +104,19 @@ class AuthUserController {
             return
         }
 
-        if(authUserInstance != springSecurityService.currentUser){
+        if (authUserInstance != springSecurityService.currentUser) {
             unauthorized()
             return
         }
 
-        authUserInstance.delete flush:true
+        authUserInstance.delete flush: true
 
         request.withFormat {
             form multipartForm {
                 flash.message = message(code: 'default.deleted.message', args: [message(code: 'AuthUser.label', default: 'AuthUser'), authUserInstance.id])
-                redirect action:"index", method:"GET"
+                redirect action: "index", method: "GET"
             }
-            '*'{ render status: NO_CONTENT }
+            '*' { render status: NO_CONTENT }
         }
     }
 
@@ -126,7 +126,7 @@ class AuthUserController {
                 flash.message = message(code: 'default.not.found.message', args: [message(code: 'authUser.label', default: 'AuthUser'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: NOT_FOUND }
+            '*' { render status: NOT_FOUND }
         }
     }
 
@@ -136,7 +136,7 @@ class AuthUserController {
                 flash.message = message(code: 'default.unauthorized.message', args: [message(code: 'authUser.label', default: 'AuthUser'), params.id])
                 redirect action: "index", method: "GET"
             }
-            '*'{ render status: UNAUTHORIZED }
+            '*' { render status: UNAUTHORIZED }
         }
     }
 }

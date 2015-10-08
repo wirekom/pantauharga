@@ -1,12 +1,12 @@
 
 
-<%@ page import="com.pantau.core.Comodity" %>
+<%@ page import="com.pantau.user.AuthRole" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="layout" content="main">
 <g:set var="entityName"
-	value="${message(code: 'comodity.label', default: 'ComodityMarshaller')}" />
+	value="${message(code: 'authRole.label', default: 'AuthRole')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>
@@ -42,31 +42,23 @@
 					<thead>
 						<tr>
 							
-								<g:sortableColumn property="name" title="${message(code: 'comodity.name.label', default: 'Name')}" />
-							
-								<th><g:message code="comodity.comodityType.label" default="Comodity Type" /></th>
-							
-								<g:sortableColumn property="sku" title="${message(code: 'comodity.sku.label', default: 'Sku')}" />
+								<g:sortableColumn property="authority" title="${message(code: 'authRole.authority.label', default: 'Authority')}" />
 							
 						</tr>
 					</thead>
 					<tbody>
-						<g:each in="${comodityInstanceList}" status="i"
-							var="comodityInstance">
+						<g:each in="${authRoleInstanceList}" status="i"
+							var="authRoleInstance">
 							<tr>
 								
-								<td><g:link action="show" id="${comodityInstance.id}">${fieldValue(bean: comodityInstance, field: "name")}</g:link></td>
-							
-								<td>${fieldValue(bean: comodityInstance, field: "comodityType")}</td>
-							
-								<td>${fieldValue(bean: comodityInstance, field: "sku")}</td>
+								<td><g:link action="show" id="${authRoleInstance.id}">${fieldValue(bean: authRoleInstance, field: "authority")}</g:link></td>
 							
 							</tr>
 						</g:each>
 					</tbody>
 				</table>
 				<div class="clearfix"></div>
-				<g:paginate total="${comodityInstanceCount ?: 0}" class="pull-right" />
+				<g:paginate total="${authRoleInstanceCount ?: 0}" class="pull-right" />
 			</div>
 		</div>
 	</div>
