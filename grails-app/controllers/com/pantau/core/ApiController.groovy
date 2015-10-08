@@ -193,7 +193,7 @@ class ApiController {
         if (user) {
             if (passwordEncoder.isPasswordValid(user.password, userLogin.password, null)) {
                 request.withFormat {
-                    '*' { respond userLogin, [status: OK] }
+                    '*' { respond user, [status: OK] }
                 }
             }
         }
