@@ -10,13 +10,6 @@
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
     <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" value="linksrc:.link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/asset-pipeline-1.9.9/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/asset-pipeline-1.9.9/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/cache-1.1.8/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/cache-1.1.8/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/database-migration-1.4.0/grails-app/views" kind="linksrc:" value=".link_to_grails_plugins/database-migration-1.4.0/grails-app/views" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/assets" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/assets" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/jquery-1.11.1/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/jquery-1.11.1/grails-app/conf" />
-    <varelement var="file://C:/Users/ivansugi/Documents/Grails/PantauHarga/target/work/plugins/webxml-1.4.1/grails-app/conf" kind="linksrc:" value=".link_to_grails_plugins/webxml-1.4.1/grails-app/conf" />
     <conelement value="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER" />
     <src_description expected_position="1">
       <src_folder value="file://$MODULE_DIR$/src/java" expected_position="0" />
@@ -96,6 +89,11 @@
       <sourceFolder url="file://$MODULE_DIR$/grails-app/i18n" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test/unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/test/integration" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/utils" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/services" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/grails-app/taglib" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target/classes" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/gspcompile" />
       <excludeFolder url="file://$MODULE_DIR$/target/work/plugin-build-classes" />
@@ -219,9 +217,11 @@
           <root url="jar://$MAVEN_REPOSITORY$/org/opensaml/openws/1.4.2-1/openws-1.4.2-1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/org/opensaml/opensaml/2.5.1-1/opensaml-2.5.1-1.jar!/" />
           <root url="jar://$MAVEN_REPOSITORY$/xalan/xalan/2.7.1/xalan-2.7.1.jar!/" />
+          <root url="file://$MODULE_DIR$/lib" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib" recursive="false" />
       </library>
     </orderEntry>
   </component>
