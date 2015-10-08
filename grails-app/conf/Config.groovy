@@ -162,9 +162,10 @@ jasper.dir.reports = 'reports'
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.failureStatusCode = 401
 grails.plugin.springsecurity.rest.token.storage.useGorm = true
-grails.plugin.sipringsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
+grails.plugin.springsecurity.rest.token.storage.gorm.tokenDomainClassName = 'com.pantau.user.AuthenticationToken'
 grails.plugin.springsecurity.rest.token.storage.gorm.tokenValuePropertyName = 'tokenValue'
 grails.plugin.springsecurity.rest.token.storage.gorm.usernamePropertyName = 'username'
+
 grails {
     plugin {
         springsecurity {
@@ -177,7 +178,7 @@ grails {
             }
 
             //Other Spring Security settings
-            //...
+            //... -rememberMeAuthenticationFilter
 
             rest {
                 token {

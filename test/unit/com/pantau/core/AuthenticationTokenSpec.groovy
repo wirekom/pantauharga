@@ -1,6 +1,6 @@
 package com.pantau.core
 
-import com.pantau.user.AuthenticationToken
+
 import grails.test.mixin.TestFor
 import spock.lang.Specification
 
