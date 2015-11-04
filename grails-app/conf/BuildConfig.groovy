@@ -74,9 +74,7 @@ grails.project.dependency.resolution = {
         compile ":coffee-asset-pipeline:1.8.0"
         compile ":handlebars-asset-pipeline:1.3.0.3"
 
-        compile ":spring-security-core:2.0-RC5"
-        compile ":rest-client-builder:2.1.1"
-        compile ":rest:0.8"
+        compile ":spring-security-core:2.0-RC4"
         compile ":spring-security-rest:1.5.2", {
             excludes:
             ['cors', 'spring-security-core']
