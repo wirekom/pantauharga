@@ -114,10 +114,12 @@
                         <div class="span12">
                             <div class="footer_right">
                                 <div class="clear"></div>
+
+
+                                <div class="pull-left"><img src="<g:resource dir="images" file="logo@2x.png"/>"/></div>
                                 Copyright &copy; ${new Date().format("yyyy")} Team PantauHarga </br>
                                 All Right Reserved
                             </div>
-
                             <div class="clear"></div>
                         </div>
 

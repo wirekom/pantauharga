@@ -195,5 +195,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="grails-2.4.4" level="application" />
+    <orderEntry type="library" name="grails-2.4.4 (2)" level="application" />
   </component>
 </module>

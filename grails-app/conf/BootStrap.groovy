@@ -44,6 +44,17 @@ class BootStrap {
             returnArray['sku'] = it.sku
             return returnArray
         }
+        JSON.registerObjectMarshaller(AuthUser) {
+            def returnArray = [:]
+            returnArray['username'] = it.username
+            returnArray['nama'] = it.nama
+            returnArray['email'] = it.email
+            returnArray['ktp'] = it.ktp
+            returnArray['nohp'] = it.nohp
+            returnArray['alamat'] = it.alamat
+            returnArray['kodepos'] = it.kodepos
+            return returnArray
+        }
 
     }
     def destroy = {
