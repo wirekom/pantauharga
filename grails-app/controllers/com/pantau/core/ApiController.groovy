@@ -49,7 +49,7 @@ class ApiController {
                     }
 
                 }
-                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng, nohp: nohp))
+                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng, nohp: nohp, lastUpdated: it.lastUpdated))
             }
 
         }
@@ -211,4 +211,5 @@ class Marker {
     String longitude
     Double price
     String nohp
+    Date lastUpdated
 }

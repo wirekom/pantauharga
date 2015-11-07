@@ -36,3 +36,6 @@
 /lib
 /.settings
 .DS_Store
+
+# backup
+*.dump
