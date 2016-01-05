@@ -13,6 +13,7 @@ class ComodityInput {
     Date lastUpdated
 	Integer amount
     Double distance
+    Integer type
     Double plus(ComodityInput other) {
         delta + other.delta
     }
@@ -31,10 +32,26 @@ class ComodityInput {
         user nullable: true, blank: true
         region nullable: true, blank: true
         amount nullable: true, blank: true
+        type nullable: true, blank: true
     }
 
     String getLocation() {
         //def (latitude, longitude) = geoTag.tokenize(',');
         return "{lat: ${lat}, lng: ${lng}}"
+    }
+    String getTypeString () {
+        if (type == 0) {
+            return "pantau"
+
+        } else if (type== 1) {
+            return "jual"
+
+        } else if (type == 2) {
+            return "pesan"
+
+        } else {
+            return "pantau"
+
+        }
     }
 }
