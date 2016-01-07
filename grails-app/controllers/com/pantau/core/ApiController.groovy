@@ -148,8 +148,13 @@ class ApiController {
         //akal2an
 
         Region district = Region.find("FROM Region ORDER BY id")
+        Integer type = 0
+        if (instanceCommodity.quantity > 0) {
+            type = 1
 
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, delta: dt, region: district)
+        }
+
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, type:type, delta: dt, region: district)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
@@ -199,6 +204,50 @@ class ApiController {
         }
         request.withFormat {
             '*' { respond userLogin, [status: UNAUTHORIZED] }
+        }
+    }
+
+    @Transactional
+    def inputRequest(PostComodityCommand instanceCommodity) {
+        println instanceCommodity.id
+        println instanceCommodity.harga
+
+        println instanceCommodity.nohp
+        println instanceCommodity.quantity
+        def comodity = Comodity.get(instanceCommodity.id)
+        if (!comodity) {
+            request.withFormat {
+                '*' { render status: NO_CONTENT }
+            }
+            return
+        }
+        def member = AuthUser.findByNohp(instanceCommodity.nohp) ?: new AuthUser(
+                username: instanceCommodity.nohp,
+                password: instanceCommodity.nohp,
+                nohp: instanceCommodity.nohp,
+                enabled: true).save(flush: true)
+        println 'user ' + member.username
+
+        def roleUser = AuthRole.findByAuthority('ROLE_USER')
+        if (!AuthUserAuthRole.exists(member.id, roleUser.id)) {
+            AuthUserAuthRole.create member, roleUser, true
+        }
+
+        // def last = ComodityInput.list([max: 1, sort: 'dateCreated', order: 'asc'])
+        Double dt = 0
+
+        Region district = Region.find("FROM Region ORDER BY id")
+        Integer type = 2
+
+
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, type:type, delta: dt, region: district)
+        if (!com.save(flush: true)) {
+            println 'error ' + com.errors.allErrors.join(' \n')
+            //each error is an instance of  org.springframework.validation.FieldError
+        }
+        println 'com ' + com.lat + ' ' + com.lng
+        request.withFormat {
+            '*' { respond instanceCommodity, [status: CREATED] }
         }
     }
 }
