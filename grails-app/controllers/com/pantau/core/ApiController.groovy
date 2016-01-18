@@ -43,7 +43,7 @@ class ApiController {
                 it.lng
             }.each {
                 def nohp = 0
-                if (it.amount > 0) {
+                if (it.type != null || it.type == 0) {
                     if (it.user.enabled == true) {
                         nohp = it.user.nohp
                     }
