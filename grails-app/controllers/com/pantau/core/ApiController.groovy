@@ -173,12 +173,17 @@ class ApiController {
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
             user = new AuthUser(userRegister.properties)
-            user.save(flush: true, failOnError: true)
-            AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-            AuthUserAuthRole.create user, authRole, true
-
-            request.withFormat {
-                '*' { respond userRegister, [status: CREATED] }
+            if (user.save(failOnError: true)) {
+                AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
+                AuthUserAuthRole.create user, authRole, true
+                request.withFormat {
+                    '*' { respond userRegister, [status: CREATED] }
+                }
+            } else {
+                def res = [message: user.errors.toString()]
+                request.withFormat {
+                    '*' { respond res, [status: BAD_REQUEST] }
+                }
             }
         } else {
 //            user.properties = userRegister.properties;
