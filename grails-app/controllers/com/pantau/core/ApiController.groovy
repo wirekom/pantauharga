@@ -44,7 +44,7 @@ class ApiController {
             }.each {
                 def nohp = 0
                 if (it.type != null || it.type == 0) {
-                    if (it.user.enabled == true) {
+                    if (it.user.enabled) {
                         nohp = it.user.nohp
                     }
 
@@ -147,7 +147,7 @@ class ApiController {
         }*/
         //akal2an
 
-        Region district = Region.find("FROM Region ORDER BY id")
+        Region district = Region.findAll("FROM Region ORDER BY id")
         Integer type = 0
         if (instanceCommodity.quantity > 0) {
             type = 1
@@ -169,25 +169,23 @@ class ApiController {
     def register(UserRegisterCommand userRegister) {
         println userRegister.username
         def user = AuthUser.findByNohp(userRegister.nohp)
-        println 'user' + user
+        println 'user exists: ' + (user != null)
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
             user = new AuthUser(userRegister.properties)
-        } else {
-            user.properties = userRegister.properties;
-        }
-
-        user.save(flush: false, failOnError: true)
-        AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-        println 'User >>>>>>>>> ' + user
-        println 'AuthRole >>>>>>>>> ' + authRole
-
-        if (!AuthUserAuthRole.exists(user.id, authRole.id)) {
+            user.save(flush: true, failOnError: true)
+            AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
             AuthUserAuthRole.create user, authRole, true
-        }
 
-        request.withFormat {
-            '*' { respond userRegister, [status: CREATED] }
+            request.withFormat {
+                '*' { respond userRegister, [status: CREATED] }
+            }
+        } else {
+//            user.properties = userRegister.properties;
+            def res = [message: 'Phone number exists']
+            request.withFormat {
+                '*' { respond res, [status: BAD_REQUEST] }
+            }
         }
     }
 
