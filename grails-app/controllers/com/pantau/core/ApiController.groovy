@@ -172,7 +172,16 @@ class ApiController {
         println 'user exists: ' + (user != null)
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
-            user = new AuthUser(userRegister.properties).save(flush: true)
+            user = new AuthUser()
+            user.nama = userRegister.nama
+            user.nohp = userRegister.nohp
+            user.username = userRegister.username
+            user.email = userRegister.email
+            user.password = userRegister.password
+            user.alamat = userRegister.alamat
+            user.kodepos = userRegister.kodepos
+            user.ktp = userRegister.ktp
+            user.save(flush: true)
 //            println 'user >>>>>>>>> ' + user.properties
             AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
             AuthUserAuthRole.create user, authRole, true
@@ -183,7 +192,7 @@ class ApiController {
                 }
             } else {
                 request.withFormat {
-                    '*' { respond userRegister, [status: CREATED] }
+                    '*' { respond user, [status: CREATED] }
                 }
             }
         } else {
