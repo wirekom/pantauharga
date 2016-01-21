@@ -172,14 +172,21 @@ class ApiController {
         println 'user exists: ' + (user != null)
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
-            user = new AuthUser(userRegister.properties)
+            user = new AuthUser(userRegister.properties).save(flush: true, failOnError: true)
+            println 'user >>>>>>>>> ' + user.properties
             AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-            AuthUserAuthRole.create user, authRole, true
-            request.withFormat {
-                '*' { respond userRegister, [status: CREATED] }
+//            AuthUserAuthRole.create user, authRole, true
+            if (user.hasErrors()) {
+                def res = [message: user.errors.toString()]
+                request.withFormat {
+                    '*' { respond res, [status: BAD_REQUEST] }
+                }
+            } else {
+                request.withFormat {
+                    '*' { respond userRegister, [status: CREATED] }
+                }
             }
         } else {
-//            user.properties = userRegister.properties;
             def res = [message: 'Phone number exists']
             request.withFormat {
                 '*' { respond res, [status: BAD_REQUEST] }
