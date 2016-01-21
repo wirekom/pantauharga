@@ -29,7 +29,7 @@ class AuthUser {
         nohp unique: true
         alamat nullable: true, blank: true
         kodepos nullable: true, blank: true
-        roles bindable: true
+        roles nullable:true, bindable: true
     }
 
     static mapping = {
