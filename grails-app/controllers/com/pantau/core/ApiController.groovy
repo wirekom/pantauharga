@@ -147,7 +147,7 @@ class ApiController {
         }*/
         //akal2an
 
-        Region district = Region.findAll("FROM Region ORDER BY id")
+        Region district = Region.find("FROM Region ORDER BY id")
         Integer type = 0
         if (instanceCommodity.quantity > 0) {
             type = 1
