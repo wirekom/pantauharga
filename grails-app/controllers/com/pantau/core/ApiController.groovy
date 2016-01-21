@@ -173,7 +173,8 @@ class ApiController {
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
             try {
-                user = new AuthUser(userRegister.properties).save(flush: true)
+                user = new AuthUser(userRegister.properties)
+                user.save()
             } catch (NullPointerException e) {
                 // ignore
             }
