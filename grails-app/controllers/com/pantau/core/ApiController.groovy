@@ -173,9 +173,9 @@ class ApiController {
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
             user = new AuthUser(userRegister.properties).save(flush: true, failOnError: true)
-            println 'user >>>>>>>>> ' + user.properties
+//            println 'user >>>>>>>>> ' + user.properties
             AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-//            AuthUserAuthRole.create user, authRole, true
+            AuthUserAuthRole.create user, authRole, true
             if (user.hasErrors()) {
                 def res = [message: user.errors.toString()]
                 request.withFormat {
