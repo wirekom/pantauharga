@@ -172,12 +172,7 @@ class ApiController {
         println 'user exists: ' + (user != null)
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
-            try {
-                user = new AuthUser(userRegister.properties)
-                user.save()
-            } catch (NullPointerException e) {
-                // ignore
-            }
+            user = new AuthUser(userRegister.properties).save()
             AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
             AuthUserAuthRole.create user, authRole, false
             if (user.hasErrors()) {
