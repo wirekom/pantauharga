@@ -125,10 +125,10 @@ class ApiController {
                     }
                 }
             } else {
-                res = new Message(message: 'Email is already used', error: true)
+                res = new Message(message: 'Email sudah digunakan', error: true)
             }
         } else {
-            res = new Message(message: 'Phone number is already used', error: true)
+            res = new Message(message: 'No Handphone sudah digunakan', error: true)
         }
         println 'user exists: ' + (user != null)
         request.withFormat {
