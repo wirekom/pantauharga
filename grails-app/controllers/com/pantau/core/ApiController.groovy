@@ -3,6 +3,7 @@ package com.pantau.core
 import com.pantau.user.AuthRole
 import com.pantau.user.AuthUser
 import com.pantau.user.AuthUserAuthRole
+import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 import grails.validation.Validateable
@@ -104,28 +105,34 @@ class ApiController {
     @Transactional
     def register(UserRegisterCommand userRegister) {
         println userRegister.username
+        def res
         def user = AuthUser.findByNohp(userRegister.nohp)
-        println 'user exists: ' + (user != null)
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
-            user = new AuthUser(userRegister.properties).save()
-            AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-            AuthUserAuthRole.create user, authRole, false
-            if (user.hasErrors()) {
-                def res = [message: user.errors.toString()]
-                request.withFormat {
-                    '*' { respond res, [status: BAD_REQUEST] }
+            user = AuthUser.findByUsername(userRegister.username?.toLowerCase())
+            if (user == null) {
+                user = new AuthUser(userRegister.properties).save()
+                AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
+                AuthUserAuthRole.create user, authRole, false
+                if (user.hasErrors()) {
+                    res = new Message(message: user.errors.toString(), error: true)
+                    request.withFormat {
+                        '*' { respond res, [status: INTERNAL_SERVER_ERROR] }
+                    }
+                } else {
+                    request.withFormat {
+                        '*' { respond user, [status: CREATED] }
+                    }
                 }
             } else {
-                request.withFormat {
-                    '*' { respond user, [status: CREATED] }
-                }
+                res = new Message(message: 'Email is already used', error: true)
             }
         } else {
-            def res = [message: 'Phone number exists']
-            request.withFormat {
-                '*' { respond res, [status: BAD_REQUEST] }
-            }
+            res = new Message(message: 'Phone number is already used', error: true)
+        }
+        println 'user exists: ' + (user != null)
+        request.withFormat {
+            '*' { respond res, [status: FORBIDDEN] }
         }
     }
 
@@ -189,4 +196,9 @@ class Marker {
     Double price
     String nohp
     Date lastUpdated
+}
+
+class Message {
+    String message
+    boolean error = false
 }
