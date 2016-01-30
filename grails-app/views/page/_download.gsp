@@ -1,5 +1,5 @@
 <!-- Start download block -->
-<section id="download" class="anchor_holder">
+<section id="download" class="content_wrapper_gray">
     <div class="container content_wrapper_section">
         <div class="main_title_wrapper">
             <div class="block_tile_wrapper">
@@ -16,10 +16,12 @@
 
         <div class="download_sc">
             <div class="img_dark">
-                <img src="<g:resource dir="images" absolute="true"/>/gplay.jpg">
+                <a href="https://play.google.com/store/apps/details?id=id.pantauharga.android" target="_blank">
+                    <img src="<g:resource dir="images" absolute="true"/>/gplay.jpg">
+                </a>
             </div>
             <span>
-                Download aja di <a href="https://goo.gl/vZO23R" target="_blank"
+                Download aja di <a href="https://play.google.com/store/apps/details?id=id.pantauharga.android" target="_blank"
                                    class="color_hi">Playstore</a>
                 dan bergabung menjadi tester/data inputer untuk membantu rakyat!
             </span>

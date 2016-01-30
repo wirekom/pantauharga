@@ -8,9 +8,9 @@
 <body>
 <div class="content_wrapper_inner">
 
-    <g:render template="rank" model="['ranks':ranks]"/>
-
     <g:render template="about"/>
+
+    <g:render template="rank" model="['ranks':ranks]"/>
 
     <g:render template="map"/>
 

@@ -1,5 +1,5 @@
 <!-- Start About us block -->
-<section id="about" class="anchor_holder">
+<section id="about" class="anchor_holder content_wrapper_gray">
     <div class="container content_wrapper_section">
         <div class="main_title_wrapper">
             <div class="block_tile_wrapper">
@@ -12,12 +12,10 @@
 
         <div class="container">
             <div class="row">
-                <div class="span12">
-                    <ol class="ranks">
+                <div class="span12 ranks">
                     <g:each in="${ranks}" var="rank">
-                        <li>${rank.username} (${rank.posts} posts)</li>
+                        <div>${rank.name} (${rank.posts} posts)</div>
                     </g:each>
-                    </ol>
                 </div>
             </div>
         </div>

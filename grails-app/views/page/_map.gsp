@@ -1,5 +1,5 @@
 <!-- Start map block -->
-<section id="map" class="content_wrapper_gray">
+<section id="map">
     <div class="container content_wrapper_section">
         <div class="main_title_wrapper">
             <div class="block_tile_wrapper">

@@ -182,11 +182,11 @@ body.boxlayout {
 .ranks {
     color: #333;
     text-align: center;
-    font-size: 30px;
+    font-size: 2em;
 }
 
-.ranks li {
-    padding-bottom: 10px;
+.ranks div {
+    padding: 0.5em 0;
 }
 
 /*========end============*/

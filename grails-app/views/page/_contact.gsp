@@ -1,5 +1,5 @@
 <!-- contact Block -->
-<section id="contact" class="anchor_holder">
+<section id="contact" class="content_wrapper_gray">
     <div class="content_wrapper_gray">
         <div class="container  main_title_wrapper">
             <div class="block_tile_wrapper">

@@ -42,16 +42,16 @@ class PageController {
         def res = []
         def excludes = "'admin', 'ivan.sugiarto@gmail.com', 'wid.pangestu@gmail.com'"
         def query = """
-            select count(c.id) as posts, u.username as username
+            select count(c.id) as posts, u.nama as name
             from ComodityInput c join c.user u
             where u.username not in ( ${excludes} )
             and u.username like '%@%'
-            group by u.username
+            group by u.nama
             order by posts desc
         """
         def result = ComodityInput.executeQuery(query, [max: 10])
         result?.each {
-            res << [posts: it[0], username: it[1]]
+            res << [posts: it[0], name: it[1]]
         }
         return res
     }
