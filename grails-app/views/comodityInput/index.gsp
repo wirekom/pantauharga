@@ -27,6 +27,17 @@
 
 <div class="row">
     <div class="col-lg-12">
+        <a class="btn btn-success" href="${g.createLink(controller: 'comodityInput', action: 'download.csv')}">
+            <i class="fa fa-download"></i>
+            Download CSV
+        </a>
+    </div>
+</div>
+
+<br/>
+
+<div class="row">
+    <div class="col-lg-12">
         <g:if test="${flash.message}">
             <div class="alert alert-info" role="status">${flash.message}</div>
         </g:if>
@@ -37,6 +48,7 @@
                     <g:message code="default.list.label" args="[entityName]"/>
                 </h3>
             </div>
+
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
@@ -84,7 +96,7 @@
             </table>
 
             <div class="clearfix"></div>
-            <g:paginate total="${comodityInputInstanceCount ?: 0}" class="pull-right"/>
+            <g:paginate total="${comodityInputInstanceCount ?: 0}"/>
         </div>
     </div>
 </div>

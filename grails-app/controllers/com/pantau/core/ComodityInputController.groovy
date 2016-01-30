@@ -1,5 +1,6 @@
 package com.pantau.core
 
+import com.pantau.user.AuthUser
 import org.hibernate.criterion.CriteriaSpecification
 
 import static org.springframework.http.HttpStatus.*
@@ -33,8 +34,22 @@ class ComodityInputController {
     }
 
     def index(Integer max) {
+        def currentUser = (AuthUser) springSecurityService.currentUser
         params.max = Math.min(max ?: 10, 100)
-        respond ComodityInput.list(params), model: [comodityInputInstanceCount: ComodityInput.count()]
+        def comodityInputs = ComodityInput.findAll('from ComodityInput where user = ? order by dateCreated desc', [currentUser], params)
+        def comodityInputCount = ComodityInput.executeQuery('select count(id) from ComodityInput where user = ?', [currentUser])
+        respond comodityInputs, model: [comodityInputInstanceCount: comodityInputCount.get(0)]
+    }
+
+    def download() {
+        def currentUser = (AuthUser) springSecurityService.currentUser
+        def comodityInputs = ComodityInput.findAll('from ComodityInput where user = ? order by dateCreated desc', [currentUser], [eager: 'user'])
+        def result = ''
+        result += ['Price', 'Lat', 'Lng', 'Date', 'Username'].join('\t') + '\n'
+        comodityInputs?.each {
+            result += [it.price, it.lat, it.lng, it.dateCreated, it.user.username ].join('\t') + '\n'
+        }
+        render (contentType: 'text/csv', text: result)
     }
 
     def show(ComodityInput comodityInputInstance) {

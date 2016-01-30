@@ -140,6 +140,7 @@ grails.plugin.springsecurity.password.bcrypt.logrounds = 15
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.pantau.user.AuthUser'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.pantau.user.AuthUserAuthRole'
 grails.plugin.springsecurity.authority.className = 'com.pantau.user.AuthRole'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/comodityInput'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/'              : ['permitAll'],
         '/index'         : ['permitAll'],
