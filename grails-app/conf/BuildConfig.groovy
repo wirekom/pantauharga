@@ -83,6 +83,7 @@ grails.project.dependency.resolution = {
             excludes: ['spring-security-core']
         }
         */
+        compile "org.grails.plugins:mail:1.0.7"
         compile ":jasper:1.12.0-SNAPSHOT"
 
     }
