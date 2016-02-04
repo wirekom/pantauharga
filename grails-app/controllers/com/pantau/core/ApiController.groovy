@@ -16,29 +16,20 @@ class ApiController {
     static allowedMethods = [hargaall: "POST", comodity: "POST", input: "POST", register: "POST", login: "POST"]
 
     def hargaall(LookupCommand lookup) {
-        println 'lookup >>>' + lookup.radius
-        //Double radius = lookup.radius/157
-        List markers = new ArrayList();
-        def comodities = Comodity.where {
-            ilike('name', "%${lookup.name}%")
-
-
-        }.list()
+        List markers = new ArrayList()
+        def comodities = Comodity.findAll("from Comodity where name = ?", [lookup.name])
         if (!comodities.isEmpty()) {
-            println 'comodities' + comodities
-            /* ComodityInput.executeQuery {
-
-                'in'('comodityName', comodities)
-
-                //lt('distance', lookup.radius)
-                // between('lat', lookup.lat-radius, lookup.lat+radius)
-                //between('lng', lookup.lng-radius, lookup.lng+radius)
-
-                order('dateCreated', 'desc'
-                )
-            }.*/
-            String query = "from ComodityInput where sqrt(POWER (69.1 * (lat - :ulatitude),2) + POWER (69.1 * (lng - :ulongitude) * cos(:ulatitude / 57.3),2)) * 1.609344 < :udistance and comodityName in (:ucomodityName) ORDER BY dateCreated desc"
-            def inputs = ComodityInput.executeQuery (query,[ulatitude: lookup.lat, ulongitude:lookup.lng, udistance:lookup.radius, ucomodityName:comodities])
+            // return price newer than MAX_DAY
+            def maxDay = 30
+            def nowCal = Calendar.instance
+            nowCal.roll(Calendar.DAY_OF_YEAR, (maxDay * -1))
+            println 'date ' + nowCal.time
+            String query = "from ComodityInput " +
+                    "where sqrt(POWER (69.1 * (lat - :ulatitude),2) + POWER (69.1 * (lng - :ulongitude) * cos(:ulatitude / 57.3),2)) * 1.609344 < :udistance " +
+                    "and comodityName in (:ucomodityName) " +
+                    "and dateCreated >= :fewDays  " +
+                    "ORDER BY dateCreated desc"
+            ComodityInput.executeQuery (query,[ulatitude: lookup.lat, ulongitude:lookup.lng, udistance:lookup.radius, ucomodityName:comodities, fewDays:nowCal.time])
             .unique {
                 it.lat
                 it.lng

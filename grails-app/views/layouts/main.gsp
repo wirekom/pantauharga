@@ -62,6 +62,7 @@
                         <ul id="administration" class="collapse">
                             <li><g:link controller="authUser">User</g:link></li>
                             <li><g:link controller="authRole">Role</g:link></li>
+                            <li><g:link controller="misc">Email Blast</g:link></li>
                         </ul></li>
                 </sec:ifAnyGranted>
             </ul>

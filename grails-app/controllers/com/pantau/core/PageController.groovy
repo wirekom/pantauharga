@@ -19,7 +19,11 @@ class PageController {
         def results = [:]
         results['type'] = 'FeatureCollection'
         def items = []
-        ComodityInput.list(params).each {
+        def maxDay = 30
+        def maxCal = Calendar.instance
+        maxCal.add(Calendar.DAY_OF_MONTH, maxDay * -1)
+        println maxCal.time
+        ComodityInput.findAll('from ComodityInput where dateCreated >= ?', [maxCal.time]).each {
             def item = [:]
             item['type'] = 'Feature'
             item['properties'] = [

@@ -58,6 +58,7 @@
                                             <!-- <li><a href="#inflasi" class="trigger"><span>Check Inflasi</span></a></li> -->
                                             <li><a href="#download" class="trigger"><span>Download</span></a></li>
                                             <li><a href="#contact" class="trigger"><span>Contact</span></a></li>
+                                            <li><a href="${g.createLink(controller: 'login', action: 'auth')}" class="trigger"><span>Login</span></a></li>
                                         </ul>
                                     </nav>
                                 </div>
