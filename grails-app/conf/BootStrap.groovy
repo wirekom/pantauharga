@@ -9,7 +9,7 @@ class BootStrap {
         def bootstrapService
         def grailsApplication
         def init = { servletContext ->
-            //if(grailsApplication.config.dataSource.dbCreate == "create-drop") {
+            if(grailsApplication.config.dataSource.dbCreate == "create-drop") {
                 def adminRole = new AuthRole(authority: 'ROLE_ADMIN').save(flush: true)
                 def userRole = new AuthRole(authority: 'ROLE_USER').save(flush: true)
                 def trustedRole = new AuthRole(authority: 'ROLE_TRUSTED').save(flush: true)
@@ -37,7 +37,7 @@ class BootStrap {
                         .addToComodity(new Comodity(sku: '2', name: 'Daging Sapi Paha Belakang'))
                         .addToComodity(new Comodity(sku: '2', name: 'Daging Sapi Murni'))
                         .save(flush: true)
-          //  }
+            }
             JSON.registerObjectMarshaller(Comodity) {
                 def returnArray = [:]
                 returnArray['id'] = it.id
