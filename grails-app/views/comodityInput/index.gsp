@@ -27,17 +27,6 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <a class="btn btn-success" href="${g.createLink(controller: 'comodityInput', action: 'download.csv')}">
-            <i class="fa fa-download"></i>
-            Download CSV
-        </a>
-    </div>
-</div>
-
-<br/>
-
-<div class="row">
-    <div class="col-lg-12">
         <g:if test="${flash.message}">
             <div class="alert alert-info" role="status">${flash.message}</div>
         </g:if>
@@ -100,5 +89,17 @@
         </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-xs-12">
+        <a class="btn btn-success" href="${g.createLink(controller: 'comodityInput', action: 'download.csv')}">
+            <i class="fa fa-download"></i>
+            Download CSV
+        </a>
+    </div>
+</div>
+
+<br/>
+
 </body>
 </html>
