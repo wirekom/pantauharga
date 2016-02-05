@@ -95,35 +95,34 @@ class ApiController {
 
     @Transactional
     def register(UserRegisterCommand userRegister) {
-        println userRegister.username
+//        println userRegister.username
         def res
-        def user = AuthUser.findByNohp(userRegister.nohp)
+        def user = AuthUser.findByNohpOrUsername(userRegister.nohp, userRegister.username?.toLowerCase())
         println 'userRegister >>>>>>>>> ' + userRegister.properties
         if (user == null) {
-            user = AuthUser.findByUsername(userRegister.username?.toLowerCase())
-            if (user == null) {
-                user = new AuthUser(userRegister.properties).save()
-                AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
-                AuthUserAuthRole.create user, authRole, false
-                if (user.hasErrors()) {
-                    res = new Message(message: user.errors.toString(), error: true)
-                    request.withFormat {
-                        '*' { respond res, [status: INTERNAL_SERVER_ERROR] }
-                    }
-                } else {
-                    request.withFormat {
-                        '*' { respond user, [status: CREATED] }
-                    }
+            user = new AuthUser(userRegister.properties).save()
+            AuthRole authRole = AuthRole.findByAuthority('ROLE_TRUSTED')
+            AuthUserAuthRole.create user, authRole, false
+            if (user.hasErrors()) {
+                res = new Message(message: user.errors.toString(), error: true)
+                request.withFormat {
+                    '*' { respond res, [status: INTERNAL_SERVER_ERROR] }
                 }
             } else {
-                res = new Message(message: 'Email sudah digunakan', error: true)
+                request.withFormat {
+                    '*' { respond user, [status: CREATED] }
+                }
             }
         } else {
-            res = new Message(message: 'No Handphone sudah digunakan', error: true)
-        }
-        println 'user exists: ' + (user != null)
-        request.withFormat {
-            '*' { respond res, [status: FORBIDDEN] }
+            if (userRegister.nohp.equals(user.nohp)) {
+                res = new Message(message: 'No Handphone sudah digunakan', error: true)
+            } else if (userRegister.username.equalsIgnoreCase(user.username)) {
+                res = new Message(message: 'Email sudah digunakan', error: true)
+            }
+            println 'user exists: ' + (user != null)
+            request.withFormat {
+                '*' { respond res, [status: FORBIDDEN] }
+            }
         }
     }
 
