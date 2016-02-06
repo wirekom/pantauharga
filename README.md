@@ -139,7 +139,7 @@ Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
 ]
 ```
 
-**POST (/api/hargadate.json)**
+**GET (/api/hargadate.json)**
 
 
 **PARAMETER** :
@@ -149,12 +149,9 @@ Parameter  | Tipe | Keterangan
 date (mandatory)       | String | tanggal post harga (format: dd/mm/yyyy, cth: 31/12/2015)
 name (optional)    | String | nama komoditas (dari /api/comodityall.json)
 
-Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
-```json
-{
-    "date":"31/12/2015",
-    "name":"Cabe Merah Keriting"
-}
+Contoh:
+```
+http://pantauharga.id/api/hargadate.json?date=31/12/2015&name=Cabe Merah Keriting
 ```
 
 **RESPONSE**
