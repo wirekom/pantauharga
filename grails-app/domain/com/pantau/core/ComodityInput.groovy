@@ -9,6 +9,7 @@ class ComodityInput {
 	Double delta
     Double lat
 	Double lng
+    Date availableOn
     Date dateCreated
     Date lastUpdated
 	Integer amount
@@ -29,10 +30,11 @@ class ComodityInput {
 
     static constraints = {
         price blank: false
-        user nullable: true, blank: true
-        region nullable: true, blank: true
-        amount nullable: true, blank: true
-        type nullable: true, blank: true
+        user nullable: true
+        region nullable: true
+        amount nullable: true
+        type nullable: true
+        availableOn nullable: true
     }
 
     String getLocation() {

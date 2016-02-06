@@ -1,6 +1,6 @@
 package com.pantau.core
 
-
+import grails.plugin.cache.CacheEvict
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -26,6 +26,7 @@ class ComodityController {
     }
 
     @Transactional
+    @CacheEvict(value = ['comodity', 'comodityall'], allEntries = true)
     def save(Comodity comodityInstance) {
         if (comodityInstance == null) {
             notFound()
@@ -53,6 +54,7 @@ class ComodityController {
     }
 
     @Transactional
+    @CacheEvict(value = ['comodity', 'comodityall'], allEntries = true)
     def update(Comodity comodityInstance) {
         if (comodityInstance == null) {
             notFound()
@@ -76,6 +78,7 @@ class ComodityController {
     }
 
     @Transactional
+    @CacheEvict(value = ['comodity', 'comodityall'], allEntries = true)
     def delete(Comodity comodityInstance) {
 
         if (comodityInstance == null) {

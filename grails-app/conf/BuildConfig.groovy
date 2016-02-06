@@ -62,6 +62,7 @@ grails.project.dependency.resolution = {
         // plugins for the compile step
         compile ":scaffolding:2.1.2"
         compile ':cache:1.1.8'
+        compile ":cache-ehcache:1.0.5"
         compile ":asset-pipeline:1.9.9"
 
         // plugins needed at runtime but not for compilation
@@ -85,6 +86,5 @@ grails.project.dependency.resolution = {
         */
         compile "org.grails.plugins:mail:1.0.7"
         compile ":jasper:1.12.0-SNAPSHOT"
-
     }
 }

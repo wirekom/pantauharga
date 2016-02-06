@@ -11,4 +11,5 @@ class LookupCommand {
 	Double radius
 	Double lat
 	Double lng
+	String date
 }

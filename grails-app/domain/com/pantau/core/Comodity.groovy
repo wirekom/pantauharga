@@ -14,7 +14,8 @@ class Comodity {
 		name blank : false
     }
 	static mapping = {
-		comodityType lazy:true;
+		comodityType lazy:true
+		cache true
 	}
 
 	String toString() {
