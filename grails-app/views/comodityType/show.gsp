@@ -42,23 +42,28 @@
 							
 						</td></tr>
 						</g:if>
+
+						<g:if test="${comodityTypeInstance?.weight}">
+							<tr><th>
+								<span id="weight-label" class="property-label"><g:message
+										code="comodityType.weight.label" default="Weight"/></span></th><td>
+
+								<span class="property-value" aria-labelledby="weight-label"><g:fieldValue
+										bean="${comodityTypeInstance}" field="weight"/></span>
+
+							</td></tr>
+						</g:if>
 					
 						<g:if test="${comodityTypeInstance?.comodity}">
 						<tr><th>
 							<span id="comodity-label" class="property-label"><g:message code="comodityType.comodity.label" default="Comodity" /></span></th><td>
-							
+							<ol>
 								<g:each in="${comodityTypeInstance.comodity}" var="c">
-								<span class="property-value" aria-labelledby="comodity-label"><g:link controller="comodity" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+									<li><span class="property-value" aria-labelledby="comodity-label"><g:link
+											controller="comodity" action="show"
+											id="${c.id}">${c?.encodeAsHTML()}</g:link></span></li>
 								</g:each>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${comodityTypeInstance?.weight}">
-						<tr><th>
-							<span id="weight-label" class="property-label"><g:message code="comodityType.weight.label" default="Weight" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="weight-label"><g:fieldValue bean="${comodityTypeInstance}" field="weight"/></span>
+							</ol>
 							
 						</td></tr>
 						</g:if>

@@ -148,6 +148,8 @@ log4j.main = {
 }
 
 // Added by the Spring Security Core plugin:
+grails.plugin.springsecurity.successHandler.alwaysUseDefault = true
+grails.plugin.springsecurity.successHandler.defaultTargetUrl = '/'
 grails.plugin.springsecurity.password.algorithm = 'bcrypt'
 grails.plugin.springsecurity.password.bcrypt.logrounds = 15
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.pantau.user.AuthUser'
@@ -167,6 +169,7 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/**/favicon.ico': ['permitAll']]
 
 jasper.dir.reports = 'reports'
+
 /*
 grails.plugin.springsecurity.rest.login.useJsonCredentials = true
 grails.plugin.springsecurity.rest.login.failureStatusCode = 401

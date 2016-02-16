@@ -42,21 +42,20 @@
                 <thead>
                 <tr>
 
-                    <g:sortableColumn property="price"
-                                      title="${message(code: 'comodityInput.price.label', default: 'Price')}"/>
-
                     <th><g:message code="comodityInput.user.label" default="User"/></th>
+
+                    <th><g:message code="comodityInput.type.label" default="Type"/></th>
 
                     <th><g:message code="comodityInput.region.label" default="Region"/></th>
 
-                    <g:sortableColumn property="amount"
-                                      title="${message(code: 'comodityInput.amount.label', default: 'Amount')}"/>
-					 <g:sortableColumn property="delta"
-                                      title="${message(code: 'comodityInput.delta.label', default: 'Delta')}"/>
                     <th><g:message code="comodityInput.comodityName.label" default="Comodity Name"/></th>
 
+                    <g:sortableColumn property="price"
+                                      title="${message(code: 'comodityInput.price.label', default: 'Price')}"/>
+
+
                     <g:sortableColumn property="dateCreated"
-                                      title="${message(code: 'comodityInput.dateCreated.label', default: 'Date Created')}"/>
+                                      title="${message(code: 'comodityInput.lastUpdated.label', default: 'Last Updated')}"/>
 
                 </tr>
                 </thead>
@@ -65,28 +64,27 @@
                         var="comodityInputInstance">
                     <tr>
 
-                        <td><g:link action="show"
-                                    id="${comodityInputInstance.id}">${fieldValue(bean: comodityInputInstance, field: "price")}</g:link></td>
-
                         <td>${fieldValue(bean: comodityInputInstance, field: "user")}</td>
 
-                        <td>${fieldValue(bean: comodityInputInstance, field: "region")}</td>
-                         <td>${fieldValue(bean: comodityInputInstance, field: "delta")}</td>
+                        <td>${fieldValue(bean: comodityInputInstance, field: "typeString")}</td>
 
-                        <td>${fieldValue(bean: comodityInputInstance, field: "amount")}</td>
+                        <td>${fieldValue(bean: comodityInputInstance, field: "region")}</td>
 
                         <td>${fieldValue(bean: comodityInputInstance, field: "comodityName")}</td>
 
-                        <td><g:formatDate date="${comodityInputInstance.dateCreated}"/></td>
+                        <td><g:link action="show"
+                                    id="${comodityInputInstance.id}">${fieldValue(bean: comodityInputInstance, field: "price")}</g:link></td>
+
+                        <td><g:formatDate date="${comodityInputInstance.lastUpdated}"/></td>
 
                     </tr>
                 </g:each>
                 </tbody>
             </table>
-
-            <div class="clearfix"></div>
-            <g:paginate total="${comodityInputInstanceCount ?: 0}"/>
         </div>
+
+        <div class="clearfix"></div>
+        <g:paginate total="${comodityInputInstanceCount ?: 0}" class="pull-right"/>
     </div>
 </div>
 

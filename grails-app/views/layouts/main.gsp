@@ -50,11 +50,21 @@
         <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav side-nav">
-                <li><a href="${createLink(uri: '/')}"><i
-                        class="fa fa-fw fa-dashboard"></i> Dashboard
-                </a></li>
+                <li><g:link controller="comodityInput" action="map"><i
+                        class="fa fa-fw fa-dashboard"></i> Dashboard</g:link>
+                </li>
                 <sec:ifAnyGranted roles="ROLE_ADMIN">
-                    <li><g:link controller="comodityInput" action="calculateinflation"><i class="fa fa-fw fa-list"></i>Check Inflasi</g:link></li>
+                    <li><g:link controller="comodityInput" action="calculateinflation"><i class="fa fa-fw fa-list"></i>
+                        Check Inflasi</g:link></li>
+
+                    <li><a href="javascript:;" data-toggle="collapse"
+                           data-target="#master"><i class="fa fa-fw fa-list-alt"></i>
+                        Master <i class="fa fa-fw fa-caret-down"></i></a>
+                        <ul id="master" class="collapse">
+                            <li><g:link controller="comodityType">Comodity Type</g:link></li>
+                            <li><g:link controller="comodity">Comodity</g:link></li>
+                            <li><g:link controller="comodityInput">Comodity Input</g:link></li>
+                        </ul></li>
 
                     <li><a href="javascript:;" data-toggle="collapse"
                            data-target="#administration"><i class="fa fa-fw fa-gear"></i>

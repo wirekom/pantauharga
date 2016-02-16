@@ -43,15 +43,6 @@
 						</td></tr>
 						</g:if>
 					
-						<g:if test="${authUserInstance?.password}">
-						<tr><th>
-							<span id="password-label" class="property-label"><g:message code="authUser.password.label" default="Password" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${authUserInstance}" field="password"/></span>
-							
-						</td></tr>
-						</g:if>
-					
 						<g:if test="${authUserInstance?.email}">
 						<tr><th>
 							<span id="email-label" class="property-label"><g:message code="authUser.email.label" default="Email" /></span></th><td>
@@ -60,23 +51,27 @@
 							
 						</td></tr>
 						</g:if>
-					
-						<g:if test="${authUserInstance?.accountExpired}">
-						<tr><th>
-							<span id="accountExpired-label" class="property-label"><g:message code="authUser.accountExpired.label" default="Account Expired" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="accountExpired-label"><g:formatBoolean boolean="${authUserInstance?.accountExpired}" /></span>
-							
-						</td></tr>
+
+						<g:if test="${authUserInstance?.ktp}">
+							<tr><th>
+								<span id="ktp-label" class="property-label"><g:message code="authUser.ktp.label"
+																					   default="Ktp"/></span></th><td>
+
+								<span class="property-value" aria-labelledby="ktp-label"><g:fieldValue
+										bean="${authUserInstance}" field="ktp"/></span>
+
+							</td></tr>
 						</g:if>
-					
-						<g:if test="${authUserInstance?.accountLocked}">
-						<tr><th>
-							<span id="accountLocked-label" class="property-label"><g:message code="authUser.accountLocked.label" default="Account Locked" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="accountLocked-label"><g:formatBoolean boolean="${authUserInstance?.accountLocked}" /></span>
-							
-						</td></tr>
+
+						<g:if test="${authUserInstance?.nohp}">
+							<tr><th>
+								<span id="nohp-label" class="property-label"><g:message code="authUser.nohp.label"
+																						default="Nohp"/></span></th><td>
+
+								<span class="property-value" aria-labelledby="nohp-label"><g:fieldValue
+										bean="${authUserInstance}" field="nohp"/></span>
+
+							</td></tr>
 						</g:if>
 					
 						<g:if test="${authUserInstance?.enabled}">
@@ -84,33 +79,6 @@
 							<span id="enabled-label" class="property-label"><g:message code="authUser.enabled.label" default="Enabled" /></span></th><td>
 							
 								<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${authUserInstance?.enabled}" /></span>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${authUserInstance?.ktp}">
-						<tr><th>
-							<span id="ktp-label" class="property-label"><g:message code="authUser.ktp.label" default="Ktp" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="ktp-label"><g:fieldValue bean="${authUserInstance}" field="ktp"/></span>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${authUserInstance?.nohp}">
-						<tr><th>
-							<span id="nohp-label" class="property-label"><g:message code="authUser.nohp.label" default="Nohp" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="nohp-label"><g:fieldValue bean="${authUserInstance}" field="nohp"/></span>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${authUserInstance?.passwordExpired}">
-						<tr><th>
-							<span id="passwordExpired-label" class="property-label"><g:message code="authUser.passwordExpired.label" default="Password Expired" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="passwordExpired-label"><g:formatBoolean boolean="${authUserInstance?.passwordExpired}" /></span>
 							
 						</td></tr>
 						</g:if>

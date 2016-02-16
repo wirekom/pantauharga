@@ -43,15 +43,9 @@
 						<tr>
 							
 								<g:sortableColumn property="username" title="${message(code: 'authUser.username.label', default: 'Username')}" />
-							
-								<g:sortableColumn property="password" title="${message(code: 'authUser.password.label', default: 'Password')}" />
-							
+
 								<g:sortableColumn property="email" title="${message(code: 'authUser.email.label', default: 'Email')}" />
-							
-								<g:sortableColumn property="accountExpired" title="${message(code: 'authUser.accountExpired.label', default: 'Account Expired')}" />
-							
-								<g:sortableColumn property="accountLocked" title="${message(code: 'authUser.accountLocked.label', default: 'Account Locked')}" />
-							
+
 								<g:sortableColumn property="enabled" title="${message(code: 'authUser.enabled.label', default: 'Enabled')}" />
 							
 						</tr>
@@ -63,13 +57,7 @@
 								
 								<td><g:link action="show" id="${authUserInstance.id}">${fieldValue(bean: authUserInstance, field: "username")}</g:link></td>
 							
-								<td>${fieldValue(bean: authUserInstance, field: "password")}</td>
-							
 								<td>${fieldValue(bean: authUserInstance, field: "email")}</td>
-							
-								<td><g:formatBoolean boolean="${authUserInstance.accountExpired}" /></td>
-							
-								<td><g:formatBoolean boolean="${authUserInstance.accountLocked}" /></td>
 							
 								<td><g:formatBoolean boolean="${authUserInstance.enabled}" /></td>
 							

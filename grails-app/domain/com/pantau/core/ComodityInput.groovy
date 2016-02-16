@@ -45,7 +45,7 @@ class ComodityInput {
         if (type == 0) {
             return "pantau"
 
-        } else if (type== 1) {
+        } else if (type == 1) {
             return "jual"
 
         } else if (type == 2) {
@@ -53,7 +53,10 @@ class ComodityInput {
 
         } else {
             return "pantau"
-
         }
+    }
+
+    String toString() {
+        user?.username + ' ' + typeString + ' ' + comodityName?.name
     }
 }

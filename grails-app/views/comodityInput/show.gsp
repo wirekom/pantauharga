@@ -37,17 +37,6 @@
             </div>
             <table class="table table-striped table-bordered detail-view comodityInput">
 
-                <g:if test="${comodityInputInstance?.price}">
-                    <tr><th>
-                        <span id="price-label" class="property-label"><g:message code="comodityInput.price.label"
-                                                                                 default="Price"/></span></th><td>
-
-                        <span class="property-value" aria-labelledby="price-label"><g:fieldValue
-                                bean="${comodityInputInstance}" field="price"/></span>
-
-                    </td></tr>
-                </g:if>
-
                 <g:if test="${comodityInputInstance?.user}">
                     <tr><th>
                         <span id="user-label" class="property-label"><g:message code="comodityInput.user.label"
@@ -72,17 +61,6 @@
                     </td></tr>
                 </g:if>
 
-                <g:if test="${comodityInputInstance?.amount}">
-                    <tr><th>
-                        <span id="amount-label" class="property-label"><g:message code="comodityInput.amount.label"
-                                                                                  default="Amount"/></span></th><td>
-
-                        <span class="property-value" aria-labelledby="amount-label"><g:fieldValue
-                                bean="${comodityInputInstance}" field="amount"/></span>
-
-                    </td></tr>
-                </g:if>
-
                 <g:if test="${comodityInputInstance?.comodityName}">
                     <tr><th>
                         <span id="comodityName-label" class="property-label"><g:message
@@ -95,13 +73,32 @@
                     </td></tr>
                 </g:if>
 
-                <g:if test="${comodityInputInstance?.dateCreated}">
-                    <tr><th>
-                        <span id="dateCreated-label" class="property-label"><g:message
-                                code="comodityInput.dateCreated.label" default="Date Created"/></span></th><td>
+                <tr><th>
+                    <span id="type-label" class="property-label"><g:message
+                            code="comodityInput.type.label" default="Type"/></span></th><td>
 
-                        <span class="property-value" aria-labelledby="dateCreated-label"><g:formatDate
-                                date="${comodityInputInstance?.dateCreated}"/></span>
+                    <span class="property-value" aria-labelledby="type-label">${comodityInputInstance?.typeString}</span>
+
+                </td></tr>
+
+                <g:if test="${comodityInputInstance?.price}">
+                    <tr><th>
+                        <span id="price-label" class="property-label"><g:message code="comodityInput.price.label"
+                                                                                 default="Price"/></span></th><td>
+
+                        <span class="property-value" aria-labelledby="price-label"><g:fieldValue
+                                bean="${comodityInputInstance}" field="price"/></span>
+
+                    </td></tr>
+                </g:if>
+
+                <g:if test="${comodityInputInstance?.amount}">
+                    <tr><th>
+                        <span id="amount-label" class="property-label"><g:message code="comodityInput.amount.label"
+                                                                                  default="Amount"/></span></th><td>
+
+                        <span class="property-value" aria-labelledby="amount-label"><g:fieldValue
+                                bean="${comodityInputInstance}" field="amount"/></span>
 
                     </td></tr>
                 </g:if>
@@ -113,17 +110,6 @@
 
                         <span class="property-value" aria-labelledby="delta-label"><g:fieldValue
                                 bean="${comodityInputInstance}" field="delta"/></span>
-
-                    </td></tr>
-                </g:if>
-
-                <g:if test="${comodityInputInstance?.geoTag}">
-                    <tr><th>
-                        <span id="geoTag-label" class="property-label"><g:message code="comodityInput.geoTag.label"
-                                                                                  default="Geo Tag"/></span></th><td>
-
-                        <span class="property-value" aria-labelledby="geoTag-label"><g:fieldValue
-                                bean="${comodityInputInstance}" field="geoTag"/></span>
 
                     </td></tr>
                 </g:if>

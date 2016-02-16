@@ -33,41 +33,35 @@
 						</h3>
 					</div>
 					<table class="table table-striped table-bordered detail-view comodity">
+
+                        <g:if test="${comodityInstance?.comodityType}">
+                            <tr><th>
+                                <span id="comodityType-label" class="property-label"><g:message
+                                        code="comodity.comodityType.label" default="Comodity Type"/></span></th><td>
+
+                                <span class="property-value" aria-labelledby="comodityType-label"><g:link
+                                        controller="comodityType" action="show"
+                                        id="${comodityInstance?.comodityType?.id}">${comodityInstance?.comodityType?.encodeAsHTML()}</g:link></span>
+
+                            </td></tr>
+                        </g:if>
+
+                        <g:if test="${comodityInstance?.sku}">
+                            <tr><th>
+                                <span id="sku-label" class="property-label"><g:message code="comodity.sku.label"
+                                                                                       default="Sku"/></span></th><td>
+
+                                <span class="property-value" aria-labelledby="sku-label"><g:fieldValue
+                                        bean="${comodityInstance}" field="sku"/></span>
+
+                            </td></tr>
+                        </g:if>
 					
 						<g:if test="${comodityInstance?.name}">
 						<tr><th>
 							<span id="name-label" class="property-label"><g:message code="comodity.name.label" default="Name" /></span></th><td>
 							
 								<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${comodityInstance}" field="name"/></span>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${comodityInstance?.comodityList}">
-						<tr><th>
-							<span id="comodityList-label" class="property-label"><g:message code="comodity.comodityList.label" default="Comodity List" /></span></th><td>
-							
-								<g:each in="${comodityInstance.comodityList}" var="c">
-								<span class="property-value" aria-labelledby="comodityList-label"><g:link controller="comodityInput" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
-								</g:each>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${comodityInstance?.comodityType}">
-						<tr><th>
-							<span id="comodityType-label" class="property-label"><g:message code="comodity.comodityType.label" default="Comodity Type" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="comodityType-label"><g:link controller="comodityType" action="show" id="${comodityInstance?.comodityType?.id}">${comodityInstance?.comodityType?.encodeAsHTML()}</g:link></span>
-							
-						</td></tr>
-						</g:if>
-					
-						<g:if test="${comodityInstance?.sku}">
-						<tr><th>
-							<span id="sku-label" class="property-label"><g:message code="comodity.sku.label" default="Sku" /></span></th><td>
-							
-								<span class="property-value" aria-labelledby="sku-label"><g:fieldValue bean="${comodityInstance}" field="sku"/></span>
 							
 						</td></tr>
 						</g:if>

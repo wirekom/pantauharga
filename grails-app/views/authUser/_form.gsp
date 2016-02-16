@@ -29,33 +29,6 @@
 
 </div>
 
-<div class="form-group ${hasErrors(bean: authUserInstance, field: 'accountExpired', 'error')} ">
-	<label for="accountExpired">
-		<g:message code="authUser.accountExpired.label" default="Account Expired" />
-		
-	</label>
-	<g:checkBox class="checkbox-inline" name="accountExpired" value="${authUserInstance?.accountExpired}" />
-
-</div>
-
-<div class="form-group ${hasErrors(bean: authUserInstance, field: 'accountLocked', 'error')} ">
-	<label for="accountLocked">
-		<g:message code="authUser.accountLocked.label" default="Account Locked" />
-		
-	</label>
-	<g:checkBox class="checkbox-inline" name="accountLocked" value="${authUserInstance?.accountLocked}" />
-
-</div>
-
-<div class="form-group ${hasErrors(bean: authUserInstance, field: 'enabled', 'error')} ">
-	<label for="enabled">
-		<g:message code="authUser.enabled.label" default="Enabled" />
-		
-	</label>
-	<g:checkBox class="checkbox-inline" name="enabled" value="${authUserInstance?.enabled}" />
-
-</div>
-
 <div class="form-group ${hasErrors(bean: authUserInstance, field: 'ktp', 'error')} required">
 	<label for="ktp">
 		<g:message code="authUser.ktp.label" default="Ktp" />
@@ -74,12 +47,13 @@
 
 </div>
 
-<div class="form-group ${hasErrors(bean: authUserInstance, field: 'passwordExpired', 'error')} ">
-	<label for="passwordExpired">
-		<g:message code="authUser.passwordExpired.label" default="Password Expired" />
-		
+
+<div class="form-group ${hasErrors(bean: authUserInstance, field: 'enabled', 'error')} ">
+	<label for="enabled">
+		<g:message code="authUser.enabled.label" default="Enabled" />
+
 	</label>
-	<g:checkBox class="checkbox-inline" name="passwordExpired" value="${authUserInstance?.passwordExpired}" />
+	<g:checkBox class="checkbox-inline" name="enabled" value="${authUserInstance?.enabled}" />
 
 </div>
 
