@@ -202,6 +202,7 @@ Ing     | Double | koordinat longitude
 nohp    |String  | nomor handphone pengguna atau pelapor
 harga | Integer | harga komoditas pangan
 quantity | Integer | jumlah komoditas yang tersedia
+description | Text | keterangan komoditas
 
 Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
 ```json
@@ -211,7 +212,8 @@ Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
     "lng": "106.9",
     "nohp": "08123123",
     "harga": "20000",
-    "quantity": "30"
+    "quantity": "30",
+    "description": "cabai segar dan alami"
 }
 ```
 **RESPONSE**
@@ -225,7 +227,8 @@ Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
     "lat": -6.217,
     "lng": 106.9,
     "nohp": "08123123",
-    "quantity": 30
+    "quantity": 30,
+    "description": "cabai segar dan alami"
 }
 ```
 
