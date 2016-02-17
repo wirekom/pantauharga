@@ -15,6 +15,7 @@ class ComodityInput {
 	Integer amount
     Double distance
     Integer type
+    String description
     Double plus(ComodityInput other) {
         delta + other.delta
     }
@@ -24,9 +25,11 @@ class ComodityInput {
             region      : Region
     ]
     static transients = [ "distance"]
-    /*static mapping = {
-        /distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
-    }*/
+
+    static mapping = {
+        description type: 'text'
+        //distance formula:"( 6371 * acos( cos( radians(37) ) * cos( radians( lat ) ) * cos( radians( lng ) - radians(-122) ) + sin( radians(37) ) * sin( radians( lat ) ) ) )"
+    }
 
     static constraints = {
         price blank: false
@@ -35,6 +38,7 @@ class ComodityInput {
         amount nullable: true
         type nullable: true
         availableOn nullable: true
+        description nullable: true, blank: true
     }
 
     String getLocation() {

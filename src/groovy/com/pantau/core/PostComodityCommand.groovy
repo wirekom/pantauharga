@@ -10,4 +10,9 @@ class PostComodityCommand {
 	String nohp
 	Double harga
 	Integer quantity
+	String description
+
+	static constraints = {
+		description nullable: true, blank: true
+	}
 }

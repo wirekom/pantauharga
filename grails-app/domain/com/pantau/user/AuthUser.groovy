@@ -12,6 +12,7 @@ class AuthUser {
     String nohp
     String alamat
     String kodepos
+    String token
     boolean enabled = true
     boolean accountExpired = false
     boolean accountLocked = false
@@ -29,6 +30,7 @@ class AuthUser {
         nohp unique: true
         alamat nullable: true, blank: true
         kodepos nullable: true, blank: true
+        token nullable: true, blank: true
         roles bindable: true
     }
 

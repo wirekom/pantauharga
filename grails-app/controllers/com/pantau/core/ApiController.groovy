@@ -78,7 +78,7 @@ class ApiController {
             type = 1
         }
         def member = AuthUser.findByNohp(instanceCommodity.nohp)
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, type:type, delta: dt, region: district)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity?.harga, lat: instanceCommodity?.lat, lng: instanceCommodity?.lng, amount: instanceCommodity?.quantity, type:type, delta: dt, region: district, description: instanceCommodity?.description)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
