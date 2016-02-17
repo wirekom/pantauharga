@@ -116,25 +116,33 @@ Disusun dalam bentuk respon body String tipe JSON dengan contoh berikut :
 [
     {
         "barang": "Beras Medium",
-        "errors": {
-            "errors": []
+        "errors":
+        {
+            "errors":
+            [
+            ]
         },
-        "lastUpdated": "2015-11-12T17:00:00Z",
+        "lastUpdated": "2016-02-16T17:00:00Z",
         "latitude": "-6.849407",
         "longitude": "106.955305",
         "nohp": "0",
-        "price": 9700
+        "price": 9600,
+        "type": null
     },
     {
         "barang": "Beras Medium",
-        "errors": {
-            "errors": []
+        "errors":
+        {
+            "errors":
+            [
+            ]
         },
-        "lastUpdated": "2015-10-03T02:09:21Z",
-        "latitude": "-6.2418255816301045",
-        "longitude": "106.87362134456635",
+        "lastUpdated": "2016-02-10T17:00:00Z",
+        "latitude": "-6.4952915",
+        "longitude": "107.7345795",
         "nohp": "0",
-        "price": 10000
+        "price": 9500,
+        "type": null
     }
 ]
 ```
@@ -158,30 +166,38 @@ http://pantauharga.id/api/hargadate.json?date=31/12/2015&name=Cabe Merah Keritin
 
 ```json
 [
-  {
-    "barang": "Cabe Merah Keriting",
-    "errors": {
-      "errors": []
+    {
+        "barang": "Cabe Merah Keriting",
+        "description": null,
+        "errors":
+        {
+            "errors":
+            [
+            ]
+        },
+        "lastUpdated": "2015-12-31T17:00:00Z",
+        "latitude": "-0.927534",
+        "longitude": "100.837884",
+        "nohp": "0",
+        "price": 65000,
+        "type": null
     },
-    "lastUpdated": "2015-12-31T17:00:00Z",
-    "latitude": "-0.927534",
-    "longitude": "100.837884",
-    "nohp": "0",
-    "price": 65000,
-    "type": null
-  },
-  {
-    "barang": "Cabe Merah Keriting",
-    "errors": {
-      "errors": []
-    },
-    "lastUpdated": "2015-12-31T17:00:00Z",
-    "latitude": "-3.242327",
-    "longitude": "118.9360231",
-    "nohp": "0",
-    "price": 35000,
-    "type": null
-  }
+    {
+        "barang": "Cabe Merah Keriting",
+        "description": null,
+        "errors":
+        {
+            "errors":
+            [
+            ]
+        },
+        "lastUpdated": "2015-12-31T17:00:00Z",
+        "latitude": "-3.242327",
+        "longitude": "118.9360231",
+        "nohp": "0",
+        "price": 35000,
+        "type": null
+    }
 ]
 ```
 

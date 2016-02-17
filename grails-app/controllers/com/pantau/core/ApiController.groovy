@@ -4,10 +4,8 @@ import com.pantau.user.AuthRole
 import com.pantau.user.AuthUser
 import com.pantau.user.AuthUserAuthRole
 import grails.converters.JSON
-import grails.plugin.cache.Cacheable
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-import grails.validation.Validateable
 
 import static org.springframework.http.HttpStatus.*
 
@@ -30,17 +28,17 @@ class ApiController {
                 "ORDER BY dateCreated desc"
         ComodityInput.findAll (query,[ulatitude: lookup.lat, ulongitude:lookup.lng, udistance:lookup.radius, ucomodityName:lookup.name, fewDays:nowCal.time], [cache: true])
                 .unique {
-            it.lat
-            it.lng
+            it?.lat
+            it?.lng
         }.each {
             def nohp = 0
-            if (it.type != null || it.type == 0) {
-                if (it.user.enabled) {
-                    nohp = it.user.nohp
+            if (it?.type != null || it?.type == 0) {
+                if (it?.user?.enabled) {
+                    nohp = it?.user?.nohp
                 }
 
             }
-            markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng, nohp: nohp, lastUpdated: it.lastUpdated, type:it.type))
+            markers.add(new Marker(barang: it?.comodityName?.name, price: it?.price, latitude: it?.lat, longitude: it?.lng, nohp: nohp, lastUpdated: it?.lastUpdated, type: it?.type, description: it?.description))
         }
         render markers as JSON
     }
@@ -193,7 +191,7 @@ class ApiController {
                     }
 
                 }
-                markers.add(new Marker(barang: it.comodityName.name, price: it.price, latitude: it.lat, longitude: it.lng, nohp: nohp, lastUpdated: it.lastUpdated, type:it.type))
+                markers.add(new Marker(barang: it?.comodityName?.name, price: it?.price, latitude: it?.lat, longitude: it?.lng, nohp: nohp, lastUpdated: it?.lastUpdated, type: it?.type, description: it?.description))
             }
             render markers as JSON
         } catch (Exception e) {
@@ -202,21 +200,4 @@ class ApiController {
         }
     }
 
-}
-
-
-@Validateable
-class Marker {
-    String barang
-    String latitude
-    String longitude
-    Integer type
-    Double price
-    String nohp
-    Date lastUpdated
-}
-
-class Message {
-    String message
-    boolean error = false
 }
