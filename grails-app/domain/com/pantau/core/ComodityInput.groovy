@@ -16,6 +16,7 @@ class ComodityInput {
     Double distance
     Integer type
     String description
+    String keterangan
     Double plus(ComodityInput other) {
         delta + other.delta
     }
@@ -38,6 +39,7 @@ class ComodityInput {
         amount nullable: true
         type nullable: true
         availableOn nullable: true
+        keterangan nullable: true
         description nullable: true, blank: true
     }
 

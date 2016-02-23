@@ -38,7 +38,7 @@ class ApiController {
                 }
 
             }
-            markers.add(new Marker(barang: it?.comodityName?.name, price: it?.price, latitude: it?.lat, longitude: it?.lng, nohp: nohp, lastUpdated: it?.lastUpdated, type: it?.type, description: it?.description))
+            markers.add(new Marker(barang: it?.comodityName?.name, price: it?.price, latitude: it?.lat, longitude: it?.lng, nohp: nohp, lastUpdated: it?.lastUpdated, type: it?.type, description: it?.description, keterangan:it?.keterangan))
         }
         render markers as JSON
     }
@@ -76,7 +76,7 @@ class ApiController {
             type = 1
         }
         def member = AuthUser.findByNohp(instanceCommodity.nohp)
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity?.harga, lat: instanceCommodity?.lat, lng: instanceCommodity?.lng, amount: instanceCommodity?.quantity, type:type, delta: dt, region: district, description: instanceCommodity?.description)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity?.harga, lat: instanceCommodity?.lat, lng: instanceCommodity?.lng, amount: instanceCommodity?.quantity, type:type, delta: dt, region: district, description: instanceCommodity?.description,keterangan: instanceCommodity?.keterangan)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError
@@ -158,7 +158,7 @@ class ApiController {
         Integer type = 2
 
         def member = AuthUser.findByNohp(instanceCommodity.nohp)
-        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, type:type, delta: dt, region: district)
+        def com = new ComodityInput(user: member, comodityName: comodity, price: instanceCommodity.harga, lat: instanceCommodity.lat, lng: instanceCommodity.lng, amount: instanceCommodity.quantity, type:type, delta: dt, region: district,keterangan: instanceCommodity.keterangan)
         if (!com.save(flush: true)) {
             println 'error ' + com.errors.allErrors.join(' \n')
             //each error is an instance of  org.springframework.validation.FieldError

@@ -44,7 +44,7 @@ class PageController {
 
     def topPosters() {
         def res = []
-        def excludes = "'admin', 'ivan.sugiarto@gmail.com', 'wid.pangestu@gmail.com'"
+        def excludes = "'admin', 'ivan.sugiarto@gmail.com', 'wid.pangestu@gmail.com', 'rohmadijafar@qwer.com'"
         def query = """
             select count(c.id) as posts, u.nama as name
             from ComodityInput c join c.user u
