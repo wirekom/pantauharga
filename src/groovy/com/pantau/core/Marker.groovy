@@ -15,4 +15,5 @@ class Marker {
     String nohp
     Date lastUpdated
     String description
+    String keterangan
 }

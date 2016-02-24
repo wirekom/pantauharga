@@ -11,8 +11,9 @@ class PostComodityCommand {
 	Double harga
 	Integer quantity
 	String description
-
+    String keterangan
 	static constraints = {
 		description nullable: true, blank: true
 	}
+
 }
