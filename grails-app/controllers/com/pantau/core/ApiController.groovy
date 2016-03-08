@@ -6,7 +6,7 @@ import com.pantau.user.AuthUserAuthRole
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
-
+import groovy.json.JsonSlurper
 import static org.springframework.http.HttpStatus.*
 
 @Secured(['permitAll'])
@@ -198,6 +198,27 @@ class ApiController {
             log.error(e.message, e)
             render status: BAD_REQUEST
         }
+    }
+    @Transactional
+    def getFromEws() {
+        List<KemendagConsumerModel> jsons = grails.converters.JSON.parse( new URL( 'http://ews.kemendag.go.id/api/hargaharian.aspx' ).text )
+        Region district = Region.find("FROM Region ORDER BY id")
+        def user = AuthUser.findByUsername("admin")
+        Integer type = 2
+        for(item in jsons){
+            def comodity = Comodity.findByName(item.komoditas)
+            def pasar = Pasar.findByNama(item.pasar)
+            if (comodity != null && pasar != null) {
+                def com = new ComodityInput(user: user, comodityName: comodity, price: item?.harga, lat: pasar?.lat, lng: pasar?.lng, amount: 0, type: type, delta: 0, region: district, description: "", keterangan: "")
+                if (!com.save(flush: true)) {
+                    println 'error ' + com.errors.allErrors.join(' \n')
+                    //each error is an instance of  org.springframework.validation.FieldError
+                }
+            }
+        }
+
+        render status: OK
+
     }
 
 }

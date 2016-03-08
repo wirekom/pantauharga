@@ -53,6 +53,12 @@ grails.project.dependency.resolution = {
         // runtime 'mysql:mysql-connector-java:5.1.29'
         runtime 'org.postgresql:postgresql:9.3-1101-jdbc41'
         //		test "org.grails:grails-datastore-test-support:1.0.2-grails-2.4"
+
+        compile 'org.apache.poi:poi:3.13'
+        compile 'org.apache.poi:poi-ooxml:3.13'
+        compile 'org.apache.poi:poi-ooxml-schemas:3.13'
+        compile 'org.apache.poi:poi-scratchpad:3.13'
+        compile 'org.apache.poi:ooxml-schemas:1.1'
     }
 
     plugins {
@@ -86,5 +92,6 @@ grails.project.dependency.resolution = {
         */
         compile "org.grails.plugins:mail:1.0.7"
         compile ":jasper:1.12.0-SNAPSHOT"
+       // compile "org.grails.plugins:excel-import:1.0.0"
     }
 }
