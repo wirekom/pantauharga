@@ -204,7 +204,7 @@ class ApiController {
         List<KemendagConsumerModel> jsons = grails.converters.JSON.parse( new URL( 'http://ews.kemendag.go.id/api/hargaharian.aspx' ).text )
         Region district = Region.find("FROM Region ORDER BY id")
         def user = AuthUser.findByUsername("admin")
-        Integer type = 2
+        Integer type = 0
         for(item in jsons){
             def comodity = Comodity.findByName(item.komoditas)
             def pasar = Pasar.findByNama(item.pasar)
